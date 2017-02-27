@@ -2,13 +2,13 @@
 
 This [Visual Studio Code](https://code.visualstudio.com/) extension reveals invisible whitespace characters (zero-width spaces) in code.
 
-It is based on [Sublime Gremlins](https://packagecontrol.io/packages/Gremlins) for the feature, and [highlight trailing spaces](https://github.com/yifu/highlight-trailing-whitespaces) for most of the code.
+Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremlins).
 
 ## Features
 
 When there is a zero-width space in the code, the characters before and after will have a red background.
 
-![](screenshot.png)
+![A screenshot of Gremlins in action](screenshot.png)
 
 ## Known Issues
 
