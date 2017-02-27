@@ -29,7 +29,9 @@ function activate(context) {
         borderStyle: 'solid',
         borderColor: 'red',
         overviewRulerColor: 'darkred',
-        overviewRulerLane: vscode.OverviewRulerLane.Right
+        overviewRulerLane: vscode.OverviewRulerLane.Right,
+        gutterIconPath: context.asAbsolutePath('gremlin.png'),
+        gutterIconSize: 'contain'
     });
 
     function updateDecorations(activeTextEditor) {
