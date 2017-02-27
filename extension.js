@@ -24,8 +24,12 @@ function activate(context) {
         updateDecorations(vscode.window.activeTextEditor);
     }, null, context.subscriptions);
 
-    let trailingSpacesDecorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor: "rgba(255,0,0,0.5)"
+    const zeroWidthSpaceDecorationType = vscode.window.createTextEditorDecorationType({
+        borderWidth: '2px',
+        borderStyle: 'solid',
+        borderColor: 'red',
+        overviewRulerColor: 'darkred',
+        overviewRulerLane: vscode.OverviewRulerLane.Right
     });
 
     function updateDecorations(activeTextEditor) {
@@ -46,13 +50,13 @@ function activate(context) {
 
             let match;
             while (match = regEx.exec(line)) {
-                let startPos = new vscode.Position(i, match.index - 1);
-                let endPos = new vscode.Position(i, match.index + match[0].length + 1);
-                const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: match[0].length + " zero-width space" + (match[0].length > 1 ? "s" : "") + " (unicode U+200B) between these characters"};
+                let startPos = new vscode.Position(i, match.index);
+                let endPos = new vscode.Position(i, match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: match[0].length + " zero-width space" + (match[0].length > 1 ? "s" : "") + " (unicode U+200B) here"};
                 decorationOptions.push(decoration);
             }
         }
-        activeTextEditor.setDecorations(trailingSpacesDecorationType, decorationOptions);
+        activeTextEditor.setDecorations(zeroWidthSpaceDecorationType, decorationOptions);
     }
 
     updateDecorations(vscode.window.activeTextEditor);
