@@ -25,7 +25,7 @@ function activate(context) {
     }, null, context.subscriptions);
 
     const zeroWidthSpaceDecorationType = vscode.window.createTextEditorDecorationType({
-        borderWidth: '2px',
+        borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: 'red',
         overviewRulerColor: 'darkred',
