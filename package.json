@@ -4,6 +4,7 @@
     "description": "Reveal invisible whitespace characters. Inspired by Sublime Gremlins.",
     "version": "0.0.1",
     "publisher": "nhoizey",
+    "repository": "https://github.com/nhoizey/vscode-gremlins",
     "engines": {
         "vscode": "^1.5.0"
     },
