@@ -2,7 +2,7 @@
     "name": "gremlins",
     "displayName": "Gremlins",
     "description": "Reveal invisible whitespace characters. Inspired by Sublime Gremlins.",
-    "version": "0.1.1",
+    "version": "0.2.1",
     "publisher": "nhoizey",
     "repository": "https://github.com/nhoizey/vscode-gremlins",
     "engines": {
