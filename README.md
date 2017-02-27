@@ -1,4 +1,4 @@
-# VS Code Gremlins
+# Gremlins, for Visual Studio Code
 
 This [Visual Studio Code](https://code.visualstudio.com/) extension reveals invisible whitespace characters (zero-width spaces) in code.
 
