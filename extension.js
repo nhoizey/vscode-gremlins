@@ -10,7 +10,6 @@ function activate(context) {
 
     vscode.window.onDidChangeTextEditorSelection(event => {
         if (!event.textEditor) {
-            console.error("onDidChangeTextEditorSelection(" + event + "): no active text editor.");
             return;
         }
         updateDecorations(event.textEditor);
@@ -18,7 +17,6 @@ function activate(context) {
 
     vscode.workspace.onDidChangeTextDocument(event => {
         if (!vscode.window.activeTextEditor) {
-            console.error("onDidChangeTextDocument(" + event + "): no active text editor.");
             return;
         }
         updateDecorations(vscode.window.activeTextEditor);
@@ -41,7 +39,6 @@ function activate(context) {
 
     function updateDecorations(activeTextEditor) {
         if (!activeTextEditor) {
-            console.error("updateDecorations(): no active text editor.");
             return;
         }
 
