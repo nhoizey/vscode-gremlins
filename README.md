@@ -8,7 +8,7 @@ Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremli
 
 When there is a zero-width space in the code, the characters before and after will have a red background.
 
-![A screenshot of Gremlins in action](screenshot.png)
+![A screenshot of Gremlins in action](images/screenshot.png)
 
 ## Known Issues
 

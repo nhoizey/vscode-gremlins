@@ -30,7 +30,12 @@ function activate(context) {
         borderColor: 'red',
         overviewRulerColor: 'darkred',
         overviewRulerLane: vscode.OverviewRulerLane.Right,
-        gutterIconPath: context.asAbsolutePath('gremlin.png'),
+        light: {
+            gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+        },
+        dark: {
+            gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+        },
         gutterIconSize: 'contain'
     });
 
