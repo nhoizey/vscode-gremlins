@@ -48,10 +48,6 @@ function activate(context) {
         for (let i = 0; i < doc.lineCount; i++) {
             let lineText = doc.lineAt(i);
             let line = lineText.text;
-            if (i === activeTextEditor.selection.active.line) {
-                continue;
-            }
-
             let match;
             while (match = regEx.exec(line)) {
                 let startPos = new vscode.Position(i, match.index);
