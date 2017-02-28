@@ -1,13 +1,13 @@
 {
     "name": "gremlins",
     "displayName": "Gremlins",
-    "description": "Reveal invisible whitespace characters. Inspired by Sublime Gremlins.",
+    "description": "Reveal invisible whitespace characters and non-breaking spaces. Inspired by Sublime Gremlins.",
     "icon": "images/gremlins-light.svg",
     "galleryBanner": {
         "color": "#ccc",
         "theme": "light"
     },
-    "version": "0.3.2",
+    "version": "0.4.0",
     "publisher": "nhoizey",
     "license": "See license in the LICENSE file",
     "homepage": "https://github.com/nhoizey/vscode-gremlins/",

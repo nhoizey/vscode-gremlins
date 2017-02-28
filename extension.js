@@ -37,26 +37,52 @@ function activate(context) {
         gutterIconSize: 'contain'
     });
 
+    const nonBreakingSpaceDecorationType = vscode.window.createTextEditorDecorationType({
+        backgroundColor: 'rgba(255,128,128,.5)',
+        overviewRulerColor: 'darkred',
+        overviewRulerLane: vscode.OverviewRulerLane.Right,
+        light: {
+            gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+        },
+        dark: {
+            gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+        },
+        gutterIconSize: 'contain'
+    });
+
     function updateDecorations(activeTextEditor) {
         if (!activeTextEditor) {
             return;
         }
 
-        const regEx = /\u200b+/g;
+        const zeroWidthSpaceRegEx = /\u200b+/g;
+        const nonBreakingSpaceRegEx = /\u00a0+/g;
+
         const doc = activeTextEditor.document;
-        const decorationOptions = [];
+        const decorationOptions = {
+            zeroWidthSpace: [],
+            nonBreakingSpace: []
+        };
         for (let i = 0; i < doc.lineCount; i++) {
             let lineText = doc.lineAt(i);
             let line = lineText.text;
             let match;
-            while (match = regEx.exec(line)) {
+            while (match = zeroWidthSpaceRegEx.exec(line)) {
                 let startPos = new vscode.Position(i, match.index);
                 let endPos = new vscode.Position(i, match.index + match[0].length);
-                const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: match[0].length + " zero-width space" + (match[0].length > 1 ? "s" : "") + " (unicode U+200B) here"};
-                decorationOptions.push(decoration);
+                const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: match[0].length + " zero-width space" + (match[0].length > 1 ? "s" : "") + " (unicode U+200b) here"};
+                decorationOptions.zeroWidthSpace.push(decoration);
+            }
+            while (match = nonBreakingSpaceRegEx.exec(line)) {
+                let startPos = new vscode.Position(i, match.index);
+                let endPos = new vscode.Position(i, match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: match[0].length + " non-breaking space" + (match[0].length > 1 ? "s" : "") + " (unicode U+00a0) here"};
+                decorationOptions.nonBreakingSpace.push(decoration);
             }
         }
-        activeTextEditor.setDecorations(zeroWidthSpaceDecorationType, decorationOptions);
+
+        activeTextEditor.setDecorations(zeroWidthSpaceDecorationType, decorationOptions.zeroWidthSpace);
+        activeTextEditor.setDecorations(nonBreakingSpaceDecorationType, decorationOptions.nonBreakingSpace);
     }
 
     updateDecorations(vscode.window.activeTextEditor);
