@@ -7,7 +7,7 @@
         "color": "#ccc",
         "theme": "light"
     },
-    "version": "0.4.0",
+    "version": "0.4.1",
     "publisher": "nhoizey",
     "license": "See license in the LICENSE file",
     "homepage": "https://github.com/nhoizey/vscode-gremlins/",
