@@ -66,6 +66,21 @@ function activate(context) {
     },
   )
 
+  const rightDoubleQuotationMarkDecorationType = vscode.window.createTextEditorDecorationType(
+    {
+      backgroundColor: 'rgba(255,128,128,.5)',
+      overviewRulerColor: 'darkred',
+      overviewRulerLane: vscode.OverviewRulerLane.Right,
+      light: {
+        gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+      },
+      dark: {
+        gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+      },
+      gutterIconSize: 'contain',
+    },
+  )
+
   function updateDecorations(activeTextEditor) {
     if (!activeTextEditor) {
       return
@@ -73,11 +88,13 @@ function activate(context) {
 
     const zeroWidthSpaceRegEx = /\u200b+/g
     const nonBreakingSpaceRegEx = /\u00a0+/g
+    const rightDoubleQuotationMarkRegEx = /\u201d+/g
 
     const doc = activeTextEditor.document
     const decorationOptions = {
       zeroWidthSpace: [],
       nonBreakingSpace: [],
+      rightDoubleQuotationMark: [],
     }
     for (let i = 0; i < doc.lineCount; i++) {
       let lineText = doc.lineAt(i)
@@ -109,6 +126,19 @@ function activate(context) {
         }
         decorationOptions.nonBreakingSpace.push(decoration)
       }
+      while ((match = rightDoubleQuotationMarkRegEx.exec(line))) {
+        let startPos = new vscode.Position(i, match.index)
+        let endPos = new vscode.Position(i, match.index + match[0].length)
+        const decoration = {
+          range: new vscode.Range(startPos, endPos),
+          hoverMessage:
+            match[0].length +
+            ' right double quotation mark' +
+            (match[0].length > 1 ? 's' : '') +
+            ' (unicode U+201d) here',
+        }
+        decorationOptions.rightDoubleQuotationMark.push(decoration)
+      }
     }
 
     activeTextEditor.setDecorations(
@@ -118,6 +148,10 @@ function activate(context) {
     activeTextEditor.setDecorations(
       nonBreakingSpaceDecorationType,
       decorationOptions.nonBreakingSpace,
+    )
+    activeTextEditor.setDecorations(
+      rightDoubleQuotationMarkDecorationType,
+      decorationOptions.rightDoubleQuotationMark,
     )
   }
 

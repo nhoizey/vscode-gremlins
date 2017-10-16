@@ -7,7 +7,9 @@ Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremli
 ## Features
 
 - When there is a zero-width space in the code, the extension shows a red bar
-- Non-breaking spaces have a light red background
+- A few characters that can be harmful have a light red background
+  - Non-breaking spaces
+  - Right double quotation marks
 - Move the cursor over the red bar or red background to have a hint of the potential issue
 - A gremlin icon is show in the gutter for every line that contains one of these characters
 
