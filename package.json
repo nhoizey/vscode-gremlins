@@ -1,6 +1,12 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins",
+  "publisher": "nhoizey",
+  "author": {
+    "name": "Nicolas Hoizey",
+    "email": "nicolas@hoizey.com",
+    "url": "https://nicolas-hoizey.com/"
+  },
   "description":
     "Reveal invisible whitespace characters and non-breaking spaces. Inspired by Sublime Gremlins.",
   "icon": "images/gremlins-light.png",
@@ -9,8 +15,7 @@
     "theme": "light"
   },
   "version": "0.4.1",
-  "publisher": "nhoizey",
-  "license": "See license in the LICENSE file",
+  "license": "MIT",
   "homepage": "https://github.com/nhoizey/vscode-gremlins/",
   "repository": {
     "type": "git",
