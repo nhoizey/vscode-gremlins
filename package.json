@@ -3,7 +3,7 @@
   "displayName": "Gremlins",
   "description":
     "Reveal invisible whitespace characters and non-breaking spaces. Inspired by Sublime Gremlins.",
-  "icon": "images/gremlins-light.svg",
+  "icon": "images/gremlins-light.png",
   "galleryBanner": {
     "color": "#ccc",
     "theme": "light"
