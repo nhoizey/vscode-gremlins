@@ -1,43 +1,40 @@
 {
-    "name": "gremlins",
-    "displayName": "Gremlins",
-    "description": "Reveal invisible whitespace characters and non-breaking spaces. Inspired by Sublime Gremlins.",
-    "icon": "images/gremlins-light.svg",
-    "galleryBanner": {
-        "color": "#ccc",
-        "theme": "light"
-    },
-    "version": "0.4.1",
-    "publisher": "nhoizey",
-    "license": "See license in the LICENSE file",
-    "homepage": "https://github.com/nhoizey/vscode-gremlins/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nhoizey/vscode-gremlins.git"
-    },
-    "bugs": {
-        "url": "https://github.com/nhoizey/vscode-gremlins/issues"
-    },
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Linters"
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./extension",
-    "contributes": {},
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "eslint": "^3.6.0",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
-    }
+  "name": "gremlins",
+  "displayName": "Gremlins",
+  "description":
+    "Reveal invisible whitespace characters and non-breaking spaces. Inspired by Sublime Gremlins.",
+  "icon": "images/gremlins-light.svg",
+  "galleryBanner": {
+    "color": "#ccc",
+    "theme": "light"
+  },
+  "version": "0.4.1",
+  "publisher": "nhoizey",
+  "license": "See license in the LICENSE file",
+  "homepage": "https://github.com/nhoizey/vscode-gremlins/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhoizey/vscode-gremlins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nhoizey/vscode-gremlins/issues"
+  },
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": ["Linters"],
+  "activationEvents": ["*"],
+  "main": "./extension",
+  "contributes": {},
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^3.6.0",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  }
 }
