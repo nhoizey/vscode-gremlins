@@ -43,11 +43,12 @@ function activate(context) {
       overviewRulerLane: vscode.OverviewRulerLane.Right,
       light: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+        gutterIconSize: 'contain',
       },
       dark: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+        gutterIconSize: 'contain',
       },
-      gutterIconSize: 'contain',
     },
   )
 
@@ -58,11 +59,12 @@ function activate(context) {
       overviewRulerLane: vscode.OverviewRulerLane.Right,
       light: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+        gutterIconSize: 'contain',
       },
       dark: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+        gutterIconSize: 'contain',
       },
-      gutterIconSize: 'contain',
     },
   )
 
@@ -73,11 +75,12 @@ function activate(context) {
       overviewRulerLane: vscode.OverviewRulerLane.Right,
       light: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+        gutterIconSize: 'contain',
       },
       dark: {
         gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+        gutterIconSize: 'contain',
       },
-      gutterIconSize: 'contain',
     },
   )
 
