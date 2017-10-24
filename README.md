@@ -15,3 +15,33 @@ Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremli
 
 ![A screenshot of Gremlins in action](images/screenshot.png)
 
+## Adding new gremlins characters
+
+The list of supported characters is an array at the begining of the extension source code:
+
+```javascript
+const gremlins = [
+  {
+    char: '200b',
+    regex: /\u200b+/g,
+    width: 0,
+    message: 'zero width space',
+  },
+  {
+    char: '00a0',
+    regex: /\u00a0+/g,
+    width: 1,
+    message: 'non breaking space',
+  },
+  {
+    char: '201d',
+    regex: /\u201d+/g,
+    width: 1,
+    message: 'right double quotation mark',
+    backgroundColor: 'rgba(255,127,80,.5)',
+    overviewRulerColor: 'rgba(255,127,80,1)',
+  },
+]
+```
+
+Please help enhance the extension by suggesting new characters, through Pull Requests or Issues.
