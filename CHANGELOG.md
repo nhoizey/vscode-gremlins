@@ -20,3 +20,7 @@
 ## 0.5.1
 
 - Fix issue with gutter icons
+
+## 0.6.0
+
+- Refactor all code to ease addition of new gremlins
