@@ -14,7 +14,7 @@
 
 ## 0.5.0
 
-- Now finds right double quotation marks
+- Add right double quotation marks
 - PNG icon (SVG icons not allowed anymore)
 
 ## 0.5.1
@@ -24,3 +24,7 @@
 ## 0.6.0
 
 - Refactor all code to ease addition of new gremlins
+
+## 0.6.1
+
+- Add left double quotation marks

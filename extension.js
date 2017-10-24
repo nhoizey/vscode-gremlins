@@ -14,6 +14,14 @@ const gremlins = [
     message: 'non breaking space',
   },
   {
+    char: '201c',
+    regex: /\u201c+/g,
+    width: 1,
+    message: 'left double quotation mark',
+    backgroundColor: 'rgba(255,127,80,.5)',
+    overviewRulerColor: 'rgba(255,127,80,1)',
+  },
+  {
     char: '201d',
     regex: /\u201d+/g,
     width: 1,

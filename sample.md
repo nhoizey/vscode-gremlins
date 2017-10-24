@@ -8,4 +8,4 @@ Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit Sed Do Eiusmod�
 
 # Right double quotation mark
 
-<img src="image.jpg” />
+<img src=“image.jpg” />
