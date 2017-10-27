@@ -1,6 +1,6 @@
 var vscode = require('vscode')
 
-const gremlins = [
+const gremlinsConfig = [
   {
     char: '200b',
     regex: /\u200b+/g,
@@ -74,10 +74,11 @@ function activate(context) {
     context.subscriptions,
   )
 
-  const decorationTypes = gremlins.map(gremlin => {
+  const gremlins = gremlinsConfig.map(gremlin => {
+    let decorationType
     switch (gremlin.width) {
       case 0:
-        return vscode.window.createTextEditorDecorationType({
+        decorationType = vscode.window.createTextEditorDecorationType({
           borderWidth: '1px',
           borderStyle: 'solid',
           borderColor: gremlin.borderColor || 'darkred',
@@ -88,7 +89,7 @@ function activate(context) {
         })
         break
       case 1:
-        return vscode.window.createTextEditorDecorationType({
+        decorationType = vscode.window.createTextEditorDecorationType({
           backgroundColor: gremlin.backgroundColor || 'rgba(255,128,128,.5)',
           overviewRulerColor: gremlin.overviewRulerColor || 'darkred',
           overviewRulerLane: vscode.OverviewRulerLane.Right,
@@ -99,6 +100,8 @@ function activate(context) {
       default:
         break
     }
+
+    return Object.assign({}, gremlin, { decorationType })
   })
 
   function updateDecorations(activeTextEditor) {
@@ -108,7 +111,7 @@ function activate(context) {
 
     const doc = activeTextEditor.document
 
-    gremlins.forEach((gremlin, i) => {
+    for (const gremlin of gremlins) {
       const decorationOption = []
 
       for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
@@ -137,8 +140,8 @@ function activate(context) {
         }
       }
 
-      activeTextEditor.setDecorations(decorationTypes[i], decorationOption)
-    })
+      activeTextEditor.setDecorations(gremlin.decorationType, decorationOption)
+    }
   }
 
   updateDecorations(vscode.window.activeTextEditor)
