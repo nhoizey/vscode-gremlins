@@ -3,19 +3,16 @@ var vscode = require('vscode')
 const gremlinsConfig = [
   {
     char: '200b',
-    regex: /\u200b+/g,
     width: 0,
     message: 'zero width space',
   },
   {
     char: '00a0',
-    regex: /\u00a0+/g,
     width: 1,
     message: 'non breaking space',
   },
   {
     char: '201c',
-    regex: /\u201c+/g,
     width: 1,
     message: 'left double quotation mark',
     backgroundColor: 'rgba(255,127,80,.5)',
@@ -23,7 +20,6 @@ const gremlinsConfig = [
   },
   {
     char: '201d',
-    regex: /\u201d+/g,
     width: 1,
     message: 'right double quotation mark',
     backgroundColor: 'rgba(255,127,80,.5)',
@@ -75,6 +71,7 @@ function activate(context) {
   )
 
   const gremlins = gremlinsConfig.map(gremlin => {
+    const regex = new RegExp(`\\u${gremlin.char}+`, 'g')
     let decorationType
     switch (gremlin.width) {
       case 0:
@@ -101,7 +98,7 @@ function activate(context) {
         break
     }
 
-    return Object.assign({}, gremlin, { decorationType })
+    return Object.assign({}, gremlin, { decorationType, regex })
   })
 
   function updateDecorations(activeTextEditor) {
