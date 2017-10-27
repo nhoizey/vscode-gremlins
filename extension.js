@@ -74,25 +74,23 @@ function activate(context) {
     context.subscriptions,
   )
 
-  let decorationTypes = new Array()
-  for (let i = 0; i < gremlins.length; i++) {
-    switch (gremlins[i].width) {
+  const decorationTypes = gremlins.map(gremlin => {
+    switch (gremlin.width) {
       case 0:
-        decorationTypes[i] = vscode.window.createTextEditorDecorationType({
+        return vscode.window.createTextEditorDecorationType({
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: gremlins[i].borderColor || 'darkred',
-          overviewRulerColor: gremlins[i].overviewRulerColor || 'darkred',
+          borderColor: gremlin.borderColor || 'darkred',
+          overviewRulerColor: gremlin.overviewRulerColor || 'darkred',
           overviewRulerLane: vscode.OverviewRulerLane.Right,
           light: lightIcon,
           dark: darkIcon,
         })
         break
       case 1:
-        decorationTypes[i] = vscode.window.createTextEditorDecorationType({
-          backgroundColor:
-            gremlins[i].backgroundColor || 'rgba(255,128,128,.5)',
-          overviewRulerColor: gremlins[i].overviewRulerColor || 'darkred',
+        return vscode.window.createTextEditorDecorationType({
+          backgroundColor: gremlin.backgroundColor || 'rgba(255,128,128,.5)',
+          overviewRulerColor: gremlin.overviewRulerColor || 'darkred',
           overviewRulerLane: vscode.OverviewRulerLane.Right,
           light: lightIcon,
           dark: darkIcon,
@@ -101,7 +99,7 @@ function activate(context) {
       default:
         break
     }
-  }
+  })
 
   function updateDecorations(activeTextEditor) {
     if (!activeTextEditor) {
