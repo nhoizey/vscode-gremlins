@@ -108,16 +108,15 @@ function activate(context) {
 
     const doc = activeTextEditor.document
 
-    let decorationOptions = new Array()
-    for (let i = 0; i < gremlins.length; i++) {
-      decorationOptions[i] = new Array()
-    }
-    for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
-      let lineText = doc.lineAt(lineNum)
-      let line = lineText.text
-      let match
-      for (let i = 0; i < gremlins.length; i++) {
-        while ((match = gremlins[i].regex.exec(line))) {
+    gremlins.forEach((gremlin, i) => {
+      const decorationOption = []
+
+      for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
+        let lineText = doc.lineAt(lineNum)
+        let line = lineText.text
+
+        let match
+        while ((match = gremlin.regex.exec(line))) {
           let startPos = new vscode.Position(lineNum, match.index)
           let endPos = new vscode.Position(
             lineNum,
@@ -128,20 +127,18 @@ function activate(context) {
             hoverMessage:
               match[0].length +
               ' ' +
-              gremlins[i].message +
+              gremlin.message +
               (match[0].length > 1 ? 's' : '') +
               ' (unicode U+' +
-              gremlins[i].char +
+              gremlin.char +
               ') here',
           }
-          decorationOptions[i].push(decoration)
+          decorationOption.push(decoration)
         }
       }
-    }
 
-    for (let i = 0; i < gremlins.length; i++) {
-      activeTextEditor.setDecorations(decorationTypes[i], decorationOptions[i])
-    }
+      activeTextEditor.setDecorations(decorationTypes[i], decorationOption)
+    })
   }
 
   updateDecorations(vscode.window.activeTextEditor)
