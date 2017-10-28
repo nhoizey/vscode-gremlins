@@ -38,34 +38,19 @@ function activate(context) {
   }
 
   vscode.window.onDidChangeActiveTextEditor(
-    editor => {
-      if (!editor) {
-        return
-      }
-      updateDecorations(editor)
-    },
+    editor => updateDecorations(editor),
     null,
     context.subscriptions,
   )
 
   vscode.window.onDidChangeTextEditorSelection(
-    event => {
-      if (!event.textEditor) {
-        return
-      }
-      updateDecorations(event.textEditor)
-    },
+    event => updateDecorations(event.textEditor),
     null,
     context.subscriptions,
   )
 
   vscode.workspace.onDidChangeTextDocument(
-    event => {
-      if (!vscode.window.activeTextEditor) {
-        return
-      }
-      updateDecorations(vscode.window.activeTextEditor)
-    },
+    event => updateDecorations(vscode.window.activeTextEditor),
     null,
     context.subscriptions,
   )
