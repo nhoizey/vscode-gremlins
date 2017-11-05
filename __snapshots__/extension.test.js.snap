@@ -1,0 +1,539 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`clears decorations with a clean document 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`shows left double quotation mark 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 left double quotation mark (unicode U+201c) here",
+        "range": Object {
+          "left": Object {
+            "char": 27,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 28,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`shows multiple characters on multiple lines 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "3 zero width spaces (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 19,
+            "line": 1,
+          },
+          "right": Object {
+            "char": 22,
+            "line": 1,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "3 non breaking spaces (unicode U+00a0) here",
+        "range": Object {
+          "left": Object {
+            "char": 21,
+            "line": 2,
+          },
+          "right": Object {
+            "char": 24,
+            "line": 2,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "3 left double quotation marks (unicode U+201c) here",
+        "range": Object {
+          "left": Object {
+            "char": 29,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 32,
+            "line": 3,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "3 right double quotation marks (unicode U+201d) here",
+        "range": Object {
+          "left": Object {
+            "char": 30,
+            "line": 4,
+          },
+          "right": Object {
+            "char": 33,
+            "line": 4,
+          },
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`shows non breaking space 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 non breaking space (unicode U+00a0) here",
+        "range": Object {
+          "left": Object {
+            "char": 19,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 20,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`shows right double quotation mark 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 right double quotation mark (unicode U+201d) here",
+        "range": Object {
+          "left": Object {
+            "char": 28,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 29,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`shows zero width space 1`] = `
+Array [
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,128,128,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "backgroundColor": "rgba(255,127,80,.5)",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "contain",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "contain",
+      },
+      "overviewRulerColor": "rgba(255,127,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+]
+`;
