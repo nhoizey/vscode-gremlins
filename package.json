@@ -1,60 +1,65 @@
 {
-    "name": "gremlins",
-    "displayName": "Gremlins",
-    "version": "0.6.2",
-    "publisher": "nhoizey",
-    "author": {
-        "name": "Nicolas Hoizey",
-        "email": "nicolas@hoizey.com",
-        "url": "https://nicolas-hoizey.com/"
+  "name": "gremlins",
+  "displayName": "Gremlins",
+  "version": "0.6.2",
+  "publisher": "nhoizey",
+  "author": {
+    "name": "Nicolas Hoizey",
+    "email": "nicolas@hoizey.com",
+    "url": "https://nicolas-hoizey.com/"
+  },
+  "description":
+    "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
+  "icon": "images/gremlins-light.png",
+  "galleryBanner": {
+    "color": "#ccc",
+    "theme": "light"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nhoizey/vscode-gremlins/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhoizey/vscode-gremlins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nhoizey/vscode-gremlins/issues"
+  },
+  "badges": [
+    {
+      "href":
+        "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+      "url":
+        "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
+      "description": "Visual Studio Marketplace"
     },
-    "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
-    "icon": "images/gremlins-light.png",
-    "galleryBanner": {
-        "color": "#ccc",
-        "theme": "light"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/nhoizey/vscode-gremlins/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nhoizey/vscode-gremlins.git"
-    },
-    "bugs": {
-        "url": "https://github.com/nhoizey/vscode-gremlins/issues"
-    },
-    "badges": [
-        {
-            "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-            "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
-            "description": "Visual Studio Marketplace"
-        },
-        {
-            "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-            "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
-            "description": "GitHub package version"
-        }
-    ],
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Linters"
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./extension",
-    "contributes": {},
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "eslint": "^3.6.0",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+    {
+      "href":
+        "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+      "url":
+        "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
+      "description": "GitHub package version"
     }
+  ],
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": ["Linters"],
+  "activationEvents": ["*"],
+  "main": "./extension",
+  "contributes": {},
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "prettier": "prettier --write '**/*{js,json}'"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.7.4",
+    "vscode": "^1.0.0"
+  }
 }
