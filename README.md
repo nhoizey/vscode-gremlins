@@ -1,6 +1,6 @@
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 [![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
-[![Build Status](https://travis-ci.org/nhoizey/vscode-gremlins.svg?branch=master)](https://travis-ci.org/nhoizey/vscode-gremlins)
+[![Travis](https://img.shields.io/travis/nhoizey/vscode-gremlins.svg?style=plastic)](https://travis-ci.org/nhoizey/vscode-gremlins)
 
 # Gremlins, for Visual Studio Code
 
