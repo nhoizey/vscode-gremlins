@@ -1,21 +1,18 @@
 var vscode = require('vscode')
 
-const gremlins = [
+const gremlinsConfig = [
   {
     char: '200b',
-    regex: /\u200b+/g,
     width: 0,
     message: 'zero width space',
   },
   {
     char: '00a0',
-    regex: /\u00a0+/g,
     width: 1,
     message: 'non breaking space',
   },
   {
     char: '201c',
-    regex: /\u201c+/g,
     width: 1,
     message: 'left double quotation mark',
     backgroundColor: 'rgba(255,127,80,.5)',
@@ -23,7 +20,6 @@ const gremlins = [
   },
   {
     char: '201d',
-    regex: /\u201d+/g,
     width: 1,
     message: 'right double quotation mark',
     backgroundColor: 'rgba(255,127,80,.5)',
@@ -42,57 +38,42 @@ function activate(context) {
   }
 
   vscode.window.onDidChangeActiveTextEditor(
-    editor => {
-      if (!editor) {
-        return
-      }
-      updateDecorations(editor)
-    },
+    editor => updateDecorations(editor),
     null,
     context.subscriptions,
   )
 
   vscode.window.onDidChangeTextEditorSelection(
-    event => {
-      if (!event.textEditor) {
-        return
-      }
-      updateDecorations(event.textEditor)
-    },
+    event => updateDecorations(event.textEditor),
     null,
     context.subscriptions,
   )
 
   vscode.workspace.onDidChangeTextDocument(
-    event => {
-      if (!vscode.window.activeTextEditor) {
-        return
-      }
-      updateDecorations(vscode.window.activeTextEditor)
-    },
+    event => updateDecorations(vscode.window.activeTextEditor),
     null,
     context.subscriptions,
   )
 
-  let decorationTypes = new Array()
-  for (let i = 0; i < gremlins.length; i++) {
-    switch (gremlins[i].width) {
+  const gremlins = gremlinsConfig.map(gremlin => {
+    const regex = new RegExp(`\\u${gremlin.char}+`, 'g')
+    let decorationType
+    switch (gremlin.width) {
       case 0:
-        decorationTypes[i] = vscode.window.createTextEditorDecorationType({
+        decorationType = vscode.window.createTextEditorDecorationType({
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: gremlins[i].borderColor || 'darkred',
-          overviewRulerColor: gremlins[i].overviewRulerColor || 'darkred',
+          borderColor: gremlin.borderColor || 'darkred',
+          overviewRulerColor: gremlin.overviewRulerColor || 'darkred',
           overviewRulerLane: vscode.OverviewRulerLane.Right,
           light: lightIcon,
           dark: darkIcon,
         })
         break
       case 1:
-        decorationTypes[i] = vscode.window.createTextEditorDecorationType({
-          backgroundColor:
-            gremlins[i].backgroundColor || 'rgba(255,128,128,.5)',
-          overviewRulerColor: gremlins[i].overviewRulerColor || 'darkred',
+        decorationType = vscode.window.createTextEditorDecorationType({
+          backgroundColor: gremlin.backgroundColor || 'rgba(255,128,128,.5)',
+          overviewRulerColor: gremlin.overviewRulerColor || 'darkred',
           overviewRulerLane: vscode.OverviewRulerLane.Right,
           light: lightIcon,
           dark: darkIcon,
@@ -101,7 +82,9 @@ function activate(context) {
       default:
         break
     }
-  }
+
+    return Object.assign({}, gremlin, { decorationType, regex })
+  })
 
   function updateDecorations(activeTextEditor) {
     if (!activeTextEditor) {
@@ -110,16 +93,15 @@ function activate(context) {
 
     const doc = activeTextEditor.document
 
-    let decorationOptions = new Array()
-    for (let i = 0; i < gremlins.length; i++) {
-      decorationOptions[i] = new Array()
-    }
-    for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
-      let lineText = doc.lineAt(lineNum)
-      let line = lineText.text
-      let match
-      for (let i = 0; i < gremlins.length; i++) {
-        while ((match = gremlins[i].regex.exec(line))) {
+    for (const gremlin of gremlins) {
+      const decorationOption = []
+
+      for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
+        let lineText = doc.lineAt(lineNum)
+        let line = lineText.text
+
+        let match
+        while ((match = gremlin.regex.exec(line))) {
           let startPos = new vscode.Position(lineNum, match.index)
           let endPos = new vscode.Position(
             lineNum,
@@ -130,19 +112,17 @@ function activate(context) {
             hoverMessage:
               match[0].length +
               ' ' +
-              gremlins[i].message +
+              gremlin.message +
               (match[0].length > 1 ? 's' : '') +
               ' (unicode U+' +
-              gremlins[i].char +
+              gremlin.char +
               ') here',
           }
-          decorationOptions[i].push(decoration)
+          decorationOption.push(decoration)
         }
       }
-    }
 
-    for (let i = 0; i < gremlins.length; i++) {
-      activeTextEditor.setDecorations(decorationTypes[i], decorationOptions[i])
+      activeTextEditor.setDecorations(gremlin.decorationType, decorationOption)
     }
   }
 
