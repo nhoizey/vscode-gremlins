@@ -15,7 +15,7 @@ Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremli
   - Non-breaking spaces
   - Left and right double quotation marks
 - Move the cursor over the character to have a hint of the potential issue
-- A gremlin icon is show in the gutter for every line that contains at least one of these characters
+- A gremlin icon is shown in the gutter for every line that contains at least one of these characters
 
 ![A screenshot of Gremlins in action](images/screenshot.png)
 
@@ -24,28 +24,25 @@ Heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremli
 The list of supported characters is an array at the begining of the extension source code:
 
 ```javascript
-const gremlins = [
-  {
-    char: '200b',
-    regex: /\u200b+/g,
-    width: 0,
-    message: 'zero width space',
+const gremlinsConfig = {
+  '200b': {
+    zeroWidth: true,
+    description: 'zero width space',
   },
-  {
-    char: '00a0',
-    regex: /\u00a0+/g,
-    width: 1,
-    message: 'non breaking space',
+  '00a0': {
+    description: 'non breaking space',
   },
-  {
-    char: '201d',
-    regex: /\u201d+/g,
-    width: 1,
-    message: 'right double quotation mark',
+  '201c': {
+    description: 'left double quotation mark',
     backgroundColor: 'rgba(255,127,80,.5)',
     overviewRulerColor: 'rgba(255,127,80,1)',
   },
-]
+  '201d': {
+    description: 'right double quotation mark',
+    backgroundColor: 'rgba(255,127,80,.5)',
+    overviewRulerColor: 'rgba(255,127,80,1)',
+  },
+}
 ```
 
 Please help enhance the extension by suggesting new characters, through Pull Requests or Issues.
