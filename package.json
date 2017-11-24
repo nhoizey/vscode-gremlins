@@ -1,13 +1,19 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "publisher": "nhoizey",
   "author": {
     "name": "Nicolas Hoizey",
     "email": "nicolas@hoizey.com",
     "url": "https://nicolas-hoizey.com/"
   },
+  "contributors": [
+    {
+      "name": "Anthony Ricaud",
+      "url": "https://github.com/rik"
+    }
+  ],
   "description":
     "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
   "icon": "images/gremlins-light.png",
