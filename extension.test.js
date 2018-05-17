@@ -78,6 +78,12 @@ it('shows object replacement character', () => {
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
 
+it('shows end of text', () => {
+  mockDocument.text = 'end of text \u0003'
+  activate(context)
+  expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
 it('shows multiple characters on multiple lines', () => {
   mockDocument.text = `
   zero width space \u200b\u200b\u200b

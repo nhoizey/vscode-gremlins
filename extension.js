@@ -21,6 +21,11 @@ const gremlinsConfig = {
   'fffc': {
     zeroWidth: true,
     description: 'object replacement character',
+  },
+  '0003': {
+    description: 'end of text',
+    backgroundColor: 'rgba(255,127,80,.5)',
+    overviewRulerColor: 'rgba(255,127,80,1)',
   }
 }
 
