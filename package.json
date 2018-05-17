@@ -14,8 +14,7 @@
       "url": "https://github.com/rik"
     }
   ],
-  "description":
-    "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
+  "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
   "icon": "images/gremlins-light.png",
   "galleryBanner": {
     "color": "#ccc",
@@ -32,25 +31,25 @@
   },
   "badges": [
     {
-      "href":
-        "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url":
-        "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
+      "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+      "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
       "description": "Visual Studio Marketplace"
     },
     {
-      "href":
-        "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url":
-        "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
+      "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+      "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
       "description": "GitHub package version"
     }
   ],
   "engines": {
     "vscode": "^1.5.0"
   },
-  "categories": ["Linters"],
-  "activationEvents": ["*"],
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./extension",
   "contributes": {},
   "scripts": {
