@@ -18,6 +18,11 @@ const gremlinsConfig = {
     backgroundColor: 'rgba(255,127,80,.5)',
     overviewRulerColor: 'rgba(255,127,80,1)',
   },
+  '0003': {
+    description: '<control>',
+    backgroundColor: 'rgba(255,0,235,.5)',
+    overviewRulerColor: 'rgba(255,0,235,1)',
+  },
 }
 
 function gremlinsFromConfig(context) {
