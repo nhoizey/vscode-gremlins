@@ -72,6 +72,12 @@ it('shows right double quotation mark', () => {
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
 
+it('shows object replacement character', () => {
+  mockDocument.text = 'object replacement character \ufffc'
+  activate(context)
+  expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
 it('shows multiple characters on multiple lines', () => {
   mockDocument.text = `
   zero width space \u200b\u200b\u200b
