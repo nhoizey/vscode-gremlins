@@ -18,20 +18,20 @@ const gremlinsConfig = {
     backgroundColor: 'rgba(255,127,80,.5)',
     overviewRulerColor: 'rgba(255,127,80,1)',
   },
-  'fffc': {
+  fffc: {
     zeroWidth: true,
     description: 'object replacement character',
-  }
+  },
 }
 
 function gremlinsFromConfig(context) {
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
-    gutterIconSize: 'contain',
+    gutterIconSize: '75%',
   }
   const darkIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
-    gutterIconSize: 'contain',
+    gutterIconSize: '75%',
   }
 
   const gremlins = {}
