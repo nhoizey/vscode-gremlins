@@ -18,10 +18,10 @@ const gremlinsConfig = {
     backgroundColor: 'rgba(255,127,80,.5)',
     overviewRulerColor: 'rgba(255,127,80,1)',
   },
-  'fffc': {
+  fffc: {
     zeroWidth: true,
     description: 'object replacement character',
-  }
+  },
 }
 
 function gremlinsFromConfig(context) {
