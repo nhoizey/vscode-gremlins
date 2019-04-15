@@ -27,11 +27,11 @@ const gremlinsConfig = {
 function gremlinsFromConfig(context) {
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
-    gutterIconSize: 'contain',
+    gutterIconSize: '75%',
   }
   const darkIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
-    gutterIconSize: 'contain',
+    gutterIconSize: '75%',
   }
 
   const gremlins = {}
