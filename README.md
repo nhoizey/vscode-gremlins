@@ -37,11 +37,7 @@ const gremlinsConfig = {
     backgroundColor: 'rgba(255,127,80,.5)',
     overviewRulerColor: 'rgba(255,127,80,1)',
   },
-  '201d': {
-    description: 'right double quotation mark',
-    backgroundColor: 'rgba(255,127,80,.5)',
-    overviewRulerColor: 'rgba(255,127,80,1)',
-  },
+  …
 }
 ```
 
