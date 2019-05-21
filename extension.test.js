@@ -53,6 +53,11 @@ it('shows zero width space', () => {
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
+it('shows zero width non-joiner', () => {
+  mockDocument.text = 'zero width non-joiner \u200c'
+  activate(context)
+  expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
 
 it('shows non breaking space', () => {
   mockDocument.text = 'non breaking space \u00a0'
@@ -81,6 +86,7 @@ it('shows object replacement character', () => {
 it('shows multiple characters on multiple lines', () => {
   mockDocument.text = `
   zero width space \u200b\u200b\u200b
+  zero width non-joiner \u200c\u200c\u200c
   non breaking space \u00a0\u00a0\u00a0
   left double quotation mark \u201c\u201c\u201c
   right double quotation mark \u201d\u201d\u201d
@@ -92,6 +98,7 @@ it('shows multiple characters on multiple lines', () => {
 it('clears decorations with a clean document', () => {
   mockDocument.text = `
   zero width space \u200b\u200b\u200b
+  zero width non-joiner \u200c\u200c\u200c
   non breaking space \u00a0\u00a0\u00a0
   left double quotation mark \u201c\u201c\u201c
   right double quotation mark \u201d\u201d\u201d
@@ -101,6 +108,7 @@ it('clears decorations with a clean document', () => {
 
   mockDocument.text = `
   zero width space
+  zero width non-joiner
   non breaking space
   left double quotation mark
   right double quotation mark
