@@ -5,6 +5,10 @@ const gremlinsConfig = {
     zeroWidth: true,
     description: 'zero width space',
   },
+  '200c': {
+    zeroWidth: true,
+    description: 'zero width non-joiner',
+  },
   '00a0': {
     description: 'non breaking space',
   },
