@@ -9,6 +9,7 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 ## Features
 
 - When there is a zero-width space in the code, the extension shows a red bar
+- When there is a zero-width non-joiner in the code, the extension shows a red bar
 - A few characters that can be harmful have a light red or orange background
   - Non-breaking spaces
   - Left and right double quotation marks
@@ -26,6 +27,10 @@ const gremlinsConfig = {
   '200b': {
     zeroWidth: true,
     description: 'zero width space',
+  },
+  '200c': {
+    zeroWidth: true,
+    description: 'zero width non-joiner',
   },
   '00a0': {
     description: 'non breaking space',
