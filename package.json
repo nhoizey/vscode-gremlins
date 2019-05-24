@@ -64,8 +64,8 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "jest": "^24.7.1",
-    "prettier": "^1.17.0",
-    "vscode": "^1.1.33"
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1",
+    "vscode": "^1.1.34"
   }
 }
