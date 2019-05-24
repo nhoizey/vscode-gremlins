@@ -1,6 +1,9 @@
 var vscode = require('vscode')
 
 const gremlinsConfig = {
+  '00a0': {
+    description: 'non breaking space',
+  },
   '200b': {
     zeroWidth: true,
     description: 'zero width space',
@@ -8,9 +11,6 @@ const gremlinsConfig = {
   '200c': {
     zeroWidth: true,
     description: 'zero width non-joiner',
-  },
-  '00a0': {
-    description: 'non breaking space',
   },
   '201c': {
     description: 'left double quotation mark',
