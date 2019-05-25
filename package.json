@@ -109,10 +109,5 @@
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "vscode": "^1.1.34"
-  },
-  "__metadata": {
-    "id": "0fcefdd8-e09c-4b96-9998-f5dc891893dd",
-    "publisherId": "1e02cadf-733a-47be-8772-75da47b7921f",
-    "publisherDisplayName": "Nicolas Hoizey"
   }
 }
