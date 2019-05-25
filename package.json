@@ -1,71 +1,118 @@
 {
-  "name": "gremlins",
-  "displayName": "Gremlins",
-  "version": "0.10.0",
-  "publisher": "nhoizey",
-  "author": {
-    "name": "Nicolas Hoizey",
-    "email": "nicolas@hoizey.com",
-    "url": "https://nicolas-hoizey.com/"
-  },
-  "contributors": [
-    {
-      "name": "Anthony Ricaud",
-      "url": "https://github.com/rik"
-    }
-  ],
-  "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
-  "icon": "images/gremlins-light.png",
-  "galleryBanner": {
-    "color": "#ccc",
-    "theme": "light"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/nhoizey/vscode-gremlins/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nhoizey/vscode-gremlins.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nhoizey/vscode-gremlins/issues"
-  },
-  "badges": [
-    {
-      "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
-      "description": "Visual Studio Marketplace"
+    "name": "gremlins",
+    "displayName": "Gremlins",
+    "version": "0.10.0",
+    "publisher": "nhoizey",
+    "author": {
+        "name": "Nicolas Hoizey",
+        "email": "nicolas@hoizey.com",
+        "url": "https://nicolas-hoizey.com/"
     },
-    {
-      "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
-      "description": "GitHub package version"
+    "contributors": [
+        {
+            "name": "Anthony Ricaud",
+            "url": "https://github.com/rik"
+        }
+    ],
+    "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
+    "icon": "images/gremlins-light.png",
+    "galleryBanner": {
+        "color": "#ccc",
+        "theme": "light"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/nhoizey/vscode-gremlins/",
+    "repository": "https://github.com/nhoizey/vscode-gremlins.git",
+    "badges": [
+        {
+            "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+            "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
+            "description": "Visual Studio Marketplace"
+        },
+        {
+            "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
+            "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
+            "description": "GitHub package version"
+        }
+    ],
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Linters"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "gremlins configuration",
+            "properties": {
+                "gremlins.characters": {
+                    "type": "object",
+                    "default": {
+                        "00a0": {
+                            "description": "non breaking space"
+                        },
+                        "200b": {
+                            "zeroWidth": true,
+                            "description": "zero width space"
+                        },
+                        "200c": {
+                            "zeroWidth": true,
+                            "description": "zero width non-joiner"
+                        },
+                        "201c": {
+                            "description": "left double quotation mark",
+                            "backgroundColor": "rgba(255,127,80,.5)",
+                            "overviewRulerColor": "rgba(255,127,80,1)"
+                        },
+                        "201d": {
+                            "description": "right double quotation mark",
+                            "backgroundColor": "rgba(255,127,80,.5)",
+                            "overviewRulerColor": "rgba(255,127,80,1)"
+                        },
+                        "fffc": {
+                            "zeroWidth": true,
+                            "description": "object replacement character"
+                        }
+                    },
+                    "items": {
+                        "type": "object"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "bad characters list"
+                },
+                "gremlins.gutterIconSize": {
+                    "type": "string",
+                    "default": "75%",
+                    "description": "gutter icon size"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "prettier": "prettier --write '**/*{js,json}'",
+        "test": "jest"
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "all"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "jest": "^24.8.0",
+        "prettier": "^1.17.1",
+        "vscode": "^1.1.34"
+    },
+    "__metadata": {
+        "id": "0fcefdd8-e09c-4b96-9998-f5dc891893dd",
+        "publisherId": "1e02cadf-733a-47be-8772-75da47b7921f",
+        "publisherDisplayName": "Nicolas Hoizey"
     }
-  ],
-  "engines": {
-    "vscode": "^1.5.0"
-  },
-  "categories": [
-    "Linters"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./extension",
-  "contributes": {},
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "prettier": "prettier --write '**/*{js,json}'",
-    "test": "jest"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "jest": "^24.8.0",
-    "prettier": "^1.17.1",
-    "vscode": "^1.1.34"
-  }
 }
