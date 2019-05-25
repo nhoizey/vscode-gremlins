@@ -16,7 +16,7 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 - Move the cursor over the character to have a hint of the potential issue
 - A gremlin icon is shown in the gutter for every line that contains at least one of these characters
 
-![A screenshot of Gremlins in action](https://github.com/nhoizey/vscode-gremlins/raw/master/images/screenshot.png)
+![A screenshot of Gremlins in action](images/screenshot.png)
 
 ## Adding new gremlins characters
 
