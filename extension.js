@@ -1,41 +1,16 @@
 var vscode = require('vscode')
 
-const gremlinsConfig = {
-  '00a0': {
-    description: 'non breaking space',
-  },
-  '200b': {
-    zeroWidth: true,
-    description: 'zero width space',
-  },
-  '200c': {
-    zeroWidth: true,
-    description: 'zero width non-joiner',
-  },
-  '201c': {
-    description: 'left double quotation mark',
-    backgroundColor: 'rgba(255,127,80,.5)',
-    overviewRulerColor: 'rgba(255,127,80,1)',
-  },
-  '201d': {
-    description: 'right double quotation mark',
-    backgroundColor: 'rgba(255,127,80,.5)',
-    overviewRulerColor: 'rgba(255,127,80,1)',
-  },
-  fffc: {
-    zeroWidth: true,
-    description: 'object replacement character',
-  },
-}
+const gremlinsConfig = vscode.workspace.getConfiguration('gremlins').characters
+const gutterIconSize = vscode.workspace.getConfiguration('gremlins').gutterIconSize
 
 function gremlinsFromConfig(context) {
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
-    gutterIconSize: '75%',
+    gutterIconSize: gutterIconSize
   }
   const darkIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
-    gutterIconSize: '75%',
+    gutterIconSize: gutterIconSize
   }
 
   const gremlins = {}

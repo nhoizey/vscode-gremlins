@@ -22,13 +22,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/nhoizey/vscode-gremlins/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nhoizey/vscode-gremlins.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nhoizey/vscode-gremlins/issues"
-  },
+  "repository": "https://github.com/nhoizey/vscode-gremlins.git",
   "badges": [
     {
       "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
@@ -51,7 +45,55 @@
     "*"
   ],
   "main": "./extension",
-  "contributes": {},
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "gremlins configuration",
+      "properties": {
+        "gremlins.characters": {
+          "type": "object",
+          "default": {
+            "00a0": {
+              "description": "non breaking space"
+            },
+            "200b": {
+              "zeroWidth": true,
+              "description": "zero width space"
+            },
+            "200c": {
+              "zeroWidth": true,
+              "description": "zero width non-joiner"
+            },
+            "201c": {
+              "description": "left double quotation mark",
+              "backgroundColor": "rgba(255,127,80,.5)",
+              "overviewRulerColor": "rgba(255,127,80,1)"
+            },
+            "201d": {
+              "description": "right double quotation mark",
+              "backgroundColor": "rgba(255,127,80,.5)",
+              "overviewRulerColor": "rgba(255,127,80,1)"
+            },
+            "fffc": {
+              "zeroWidth": true,
+              "description": "object replacement character"
+            }
+          },
+          "items": {
+            "type": "object"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "bad characters list"
+        },
+        "gremlins.gutterIconSize": {
+          "type": "string",
+          "default": "75%",
+          "description": "gutter icon size"
+        }
+      }
+    }
+  },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
     "prettier": "prettier --write '**/*{js,json}'",

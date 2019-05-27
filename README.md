@@ -20,31 +20,7 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 
 ## Adding new gremlins characters
 
-The list of supported characters is an array at the begining of the extension source code:
-
-```javascript
-const gremlinsConfig = {
-  '200b': {
-    zeroWidth: true,
-    description: 'zero width space',
-  },
-  '200c': {
-    zeroWidth: true,
-    description: 'zero width non-joiner',
-  },
-  '00a0': {
-    description: 'non breaking space',
-  },
-  '201c': {
-    description: 'left double quotation mark',
-    backgroundColor: 'rgba(255,127,80,.5)',
-    overviewRulerColor: 'rgba(255,127,80,1)',
-  },
-  …
-}
-```
-
-We plan to make the characters list more configurable by the user. Follow [this issue](https://github.com/nhoizey/vscode-gremlins/issues/12) if you want to know when it makes any progress.
+under user settings `gremlins.characters`
 
 Please help enhance the extension by suggesting new characters, through Pull Requests or Issues.
 
@@ -60,6 +36,6 @@ Here's how it looks in recent versions:
 
 <p style="text-align: center"><img src="https://raw.githubusercontent.com/nhoizey/vscode-gremlins/master/images/bbedit-gremlins.png" width="50%" height="auto" alt="Searching for Gremlins in BBEdit" /></p>
 
-It looks like people liked this feature so much that they made [a dedicated website](http://zapgremlins.com/), unfortunately not only anymore. Thanks Archive.org for [the cached version](https://web.archive.org/web/20120618091150/http://zapgremlins.com/):
+It looks like people liked this feature so much that they made [a dedicated website](http://zapgremlins.com/), unfortunately not anymore. Thanks Archive.org for [the cached version](https://web.archive.org/web/20120618091150/http://zapgremlins.com/):
 
 <p style="text-align: center"><img src="https://raw.githubusercontent.com/nhoizey/vscode-gremlins/master/images/zap-gremlins.jpg" width="75%" height="auto" alt="The Zap Gremlins website" /></p>
