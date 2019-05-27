@@ -20,9 +20,9 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 
 ## Adding new gremlins characters
 
-under user settings `gremlins.characters`
+You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
 
-Please help enhance the extension by suggesting new characters, through Pull Requests or Issues.
+Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
 
 # Standing on the shoulders of giants
 
