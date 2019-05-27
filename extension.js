@@ -19,7 +19,7 @@ function gremlinsFromConfig(context) {
       light: lightIcon,
       dark: darkIcon,
       overviewRulerColor: config.overviewRulerColor || 'darkred',
-      overviewRulerLane: vscode.OverviewRulerLane.Right
+      overviewRulerLane: vscode.OverviewRulerLane.Right,
     }
 
     if (config.zeroWidth) {
@@ -35,7 +35,7 @@ function gremlinsFromConfig(context) {
       hexCodePoint,
       decorationType: vscode.window.createTextEditorDecorationType(
         decorationType,
-      )
+      ),
     })
   }
 
@@ -78,7 +78,7 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
           (match[0].length > 1 ? 's' : '') +
           ' (unicode U+' +
           gremlin.hexCodePoint +
-          ') here'
+          ') here',
       }
 
       decorationOption[matchedCharacter].push(decoration)
@@ -135,5 +135,5 @@ function activate(context) {
 exports.activate = activate
 
 // this method is called when your extension is deactivated
-function deactivate() { }
+function deactivate() {}
 exports.deactivate = deactivate
