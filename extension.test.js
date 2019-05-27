@@ -26,6 +26,18 @@ jest.mock(
       },
       workspace: {
         onDidChangeTextDocument: jest.fn(),
+        getConfiguration: jest.fn(key => {
+          const packageData = require('./package.json')
+          const characters =
+            packageData.contributes.configuration.properties[
+              'gremlins.characters'
+            ]
+          const gutterIconSize =
+            packageData.contributes.configuration.properties[
+              'gremlins.gutterIconSize'
+            ]
+          return { characters: characters, gutterIconSize: gutterIconSize }
+        }),
       },
       OverviewRulerLane: { Right: 'OverviewRulerLane.Right' },
       Position: jest.fn((line, char) => {
