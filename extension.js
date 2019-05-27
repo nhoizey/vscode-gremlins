@@ -1,16 +1,17 @@
 var vscode = require('vscode')
 
 const gremlinsConfig = vscode.workspace.getConfiguration('gremlins').characters
-const gutterIconSize = vscode.workspace.getConfiguration('gremlins').gutterIconSize
+const gutterIconSize = vscode.workspace.getConfiguration('gremlins')
+  .gutterIconSize
 
 function gremlinsFromConfig(context) {
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
-    gutterIconSize: gutterIconSize
+    gutterIconSize: gutterIconSize,
   }
   const darkIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
-    gutterIconSize: gutterIconSize
+    gutterIconSize: gutterIconSize,
   }
 
   const gremlins = {}

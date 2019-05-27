@@ -31,11 +31,11 @@ jest.mock(
           const characters =
             packageData.contributes.configuration.properties[
               'gremlins.characters'
-            ]
+            ].default
           const gutterIconSize =
             packageData.contributes.configuration.properties[
               'gremlins.gutterIconSize'
-            ]
+            ].default
           return { characters: characters, gutterIconSize: gutterIconSize }
         }),
       },
