@@ -98,25 +98,25 @@ function activate(context) {
 
   const regexpWithAllChars = new RegExp(
     Object.keys(gremlinsConfig)
-      .map((hexCodePoint) => charFromHex(hexCodePoint) + '+')
+      .map(hexCodePoint => charFromHex(hexCodePoint) + '+')
       .join('|'),
     'g',
   )
 
   vscode.window.onDidChangeActiveTextEditor(
-    (editor) => updateDecorations(editor, gremlins, regexpWithAllChars),
+    editor => updateDecorations(editor, gremlins, regexpWithAllChars),
     null,
     context.subscriptions,
   )
 
   vscode.window.onDidChangeTextEditorSelection(
-    (event) => updateDecorations(event.textEditor, gremlins, regexpWithAllChars),
+    event => updateDecorations(event.textEditor, gremlins, regexpWithAllChars),
     null,
     context.subscriptions,
   )
 
   vscode.workspace.onDidChangeTextDocument(
-    (event) =>
+    event =>
       updateDecorations(
         vscode.window.activeTextEditor,
         gremlins,
