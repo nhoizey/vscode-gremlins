@@ -50,54 +50,74 @@
       "type": "object",
       "title": "gremlins configuration",
       "properties": {
+        "gremlins.infocolor": {
+          "type": "string",
+          "default": "rgba(60, 118, 61, .75)",
+          "markdownDescription": "color for **info** level"
+        },
+        "gremlins.warningcolor": {
+          "type": "string",
+          "default": "rgba(138, 109, 59, .75)",
+          "markdownDescription": "color for **warning** level"
+        },
+        "gremlins.errorgcolor": {
+          "type": "string",
+          "default": "rgba(169, 68, 66, .75)",
+          "markdownDescription": "color for **error** level"
+        },
         "gremlins.characters": {
           "type": "object",
           "default": {
             "0003": {
-              "description": "end of text"
+              "description": "end of text",
+              "level": "warning"
             },
             "00a0": {
               "description": "non breaking space",
-              "backgroundColor": "rgba(127,255,80,.5)",
-              "overviewRulerColor": "rgba(127,255,80,1)"
+              "level": "info"
             },
             "200b": {
               "zeroWidth": true,
-              "description": "zero width space"
+              "description": "zero width space",
+              "level": "error"
             },
             "200c": {
               "zeroWidth": true,
-              "description": "zero width non-joiner"
+              "description": "zero width non-joiner",
+              "level": "warning"
             },
             "200e": {
               "zeroWidth": true,
-              "description": "left-to-right mark"
+              "description": "left-to-right mark",
+              "level": "error"
             },
             "201c": {
               "description": "left double quotation mark",
-              "backgroundColor": "rgba(255,127,80,.5)",
-              "overviewRulerColor": "rgba(255,127,80,1)"
+              "level": "warning"
             },
             "201d": {
               "description": "right double quotation mark",
-              "backgroundColor": "rgba(255,127,80,.5)",
-              "overviewRulerColor": "rgba(255,127,80,1)"
+              "level": "warning"
             },
             "202c": {
               "zeroWidth": true,
-              "description": "pop directional formatting"
+              "description": "pop directional formatting",
+              "level": "error"
             },
             "202d": {
               "zeroWidth": true,
-              "description": "left-to-right override"
+              "description": "left-to-right override",
+              "level": "error"
             },
             "202e": {
               "zeroWidth": true,
-              "description": "right-to-left override"
+              "description": "right-to-left override",
+              "level": "error"
             },
             "fffc": {
               "zeroWidth": true,
-              "description": "object replacement character"
+              "description": "object replacement character",
+              "level": "error"
             }
           },
           "items": {

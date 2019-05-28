@@ -1,6 +1,13 @@
 var vscode = require('vscode')
 
-const gremlinsConfig = vscode.workspace.getConfiguration('gremlins').characters
+const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
+const gremlinsLevels = {
+  info: vscode.workspace.getConfiguration('gremlins').infocolor,
+  warning: vscode.workspace.getConfiguration('gremlins').warningcolor,
+  error: vscode.workspace.getConfiguration('gremlins').errorcolor,
+}
+const gremlinsCharacters = vscode.workspace.getConfiguration('gremlins')
+  .characters
 const gutterIconSize = vscode.workspace.getConfiguration('gremlins')
   .gutterIconSize
 const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
@@ -16,21 +23,22 @@ function gremlinsFromConfig(context) {
   }
 
   const gremlins = {}
-  for (const [hexCodePoint, config] of Object.entries(gremlinsConfig)) {
+  for (const [hexCodePoint, config] of Object.entries(gremlinsCharacters)) {
     let decorationType = {
       light: lightIcon,
       dark: darkIcon,
-      overviewRulerColor: config.overviewRulerColor || 'darkred',
+      overviewRulerColor: config.overviewRulerColor || gremlinsDefaultColor,
       overviewRulerLane: vscode.OverviewRulerLane.Right,
     }
 
     if (config.zeroWidth) {
       decorationType.borderWidth = '1px'
       decorationType.borderStyle = 'solid'
-      decorationType.borderColor = config.borderColor || 'darkred'
+      decorationType.borderColor =
+        gremlinsLevels[config.level] || gremlinsDefaultColor
     } else {
       decorationType.backgroundColor =
-        config.backgroundColor || 'rgba(255,128,128,.5)'
+        gremlinsLevels[config.level] || gremlinsDefaultColor
     }
 
     let hexCodePointsRange = hexCodePoint.match(hexCodePointsRangeRegex)
