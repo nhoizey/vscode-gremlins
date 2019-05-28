@@ -3,6 +3,7 @@ var vscode = require('vscode')
 const gremlinsConfig = vscode.workspace.getConfiguration('gremlins').characters
 const gutterIconSize = vscode.workspace.getConfiguration('gremlins')
   .gutterIconSize
+const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
 function gremlinsFromConfig(context) {
   const lightIcon = {
@@ -32,12 +33,32 @@ function gremlinsFromConfig(context) {
         config.backgroundColor || 'rgba(255,128,128,.5)'
     }
 
-    gremlins[charFromHex(hexCodePoint)] = Object.assign({}, config, {
-      hexCodePoint,
-      decorationType: vscode.window.createTextEditorDecorationType(
-        decorationType,
-      ),
-    })
+    let hexCodePointsRange = hexCodePoint.match(hexCodePointsRangeRegex)
+    if (hexCodePointsRange[2] !== undefined) {
+      // This is a range of characters
+      // Lets create all characters of the range, with the same configuration
+      let firstChar = parseInt(`0x${hexCodePointsRange[1]}`, 16)
+      let lastChar = parseInt(`0x${hexCodePointsRange[2]}`, 16)
+
+      for (var index = firstChar; index <= lastChar; ++index) {
+        let thisHexCodePoint = index.toString(16)
+
+        gremlins[String.fromCharCode(index)] = Object.assign({}, config, {
+          thisHexCodePoint,
+          decorationType: vscode.window.createTextEditorDecorationType(
+            decorationType,
+          ),
+        })
+      }
+    } else {
+      // This is a single character
+      gremlins[charFromHex(hexCodePoint)] = Object.assign({}, config, {
+        hexCodePoint,
+        decorationType: vscode.window.createTextEditorDecorationType(
+          decorationType,
+        ),
+      })
+    }
   }
 
   return gremlins
@@ -96,10 +117,9 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
 
 function activate(context) {
   const gremlins = gremlinsFromConfig(context)
-
   const regexpWithAllChars = new RegExp(
-    Object.keys(gremlinsConfig)
-      .map(hexCodePoint => charFromHex(hexCodePoint) + '+')
+    Object.keys(gremlins)
+      .map(char => `${char}+`)
       .join('|'),
     'g',
   )
