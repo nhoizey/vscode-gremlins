@@ -53,8 +53,13 @@
         "gremlins.characters": {
           "type": "object",
           "default": {
+            "0003": {
+              "description": "end of text"
+            },
             "00a0": {
-              "description": "non breaking space"
+              "description": "non breaking space",
+              "backgroundColor": "rgba(127,255,80,.5)",
+              "overviewRulerColor": "rgba(127,255,80,1)"
             },
             "200b": {
               "zeroWidth": true,
