@@ -72,6 +72,24 @@ Array [
   ],
   Array [
     Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
       "backgroundColor": "rgba(255,127,80,.5)",
       "dark": Object {
         "gutterIconPath": "images/gremlins-dark.svg",
@@ -207,6 +225,24 @@ Array [
         "gutterIconSize": "75%",
       },
       "overviewRulerColor": "rgba(127,255,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
       "overviewRulerLane": "OverviewRulerLane.Right",
     },
     Array [],
@@ -482,6 +518,24 @@ Array [
   ],
   Array [
     Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
       "backgroundColor": "rgba(255,127,80,.5)",
       "dark": Object {
         "gutterIconPath": "images/gremlins-dark.svg",
@@ -701,6 +755,24 @@ Array [
   ],
   Array [
     Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
       "backgroundColor": "rgba(255,127,80,.5)",
       "dark": Object {
         "gutterIconPath": "images/gremlins-dark.svg",
@@ -836,6 +908,24 @@ Array [
         "gutterIconSize": "75%",
       },
       "overviewRulerColor": "rgba(127,255,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
       "overviewRulerLane": "OverviewRulerLane.Right",
     },
     Array [],
@@ -1027,6 +1117,24 @@ Array [
         "gutterIconSize": "75%",
       },
       "overviewRulerColor": "rgba(127,255,80,1)",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
       "overviewRulerLane": "OverviewRulerLane.Right",
     },
     Array [],
@@ -1274,6 +1382,24 @@ Array [
   ],
   Array [
     Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
+  ],
+  Array [
+    Object {
       "backgroundColor": "rgba(255,127,80,.5)",
       "dark": Object {
         "gutterIconPath": "images/gremlins-dark.svg",
@@ -1444,6 +1570,24 @@ Array [
         },
       },
     ],
+  ],
+  Array [
+    Object {
+      "borderColor": "darkred",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "dark": Object {
+        "gutterIconPath": "images/gremlins-dark.svg",
+        "gutterIconSize": "75%",
+      },
+      "light": Object {
+        "gutterIconPath": "images/gremlins-light.svg",
+        "gutterIconSize": "75%",
+      },
+      "overviewRulerColor": "darkred",
+      "overviewRulerLane": "OverviewRulerLane.Right",
+    },
+    Array [],
   ],
   Array [
     Object {

@@ -69,6 +69,10 @@
               "zeroWidth": true,
               "description": "zero width non-joiner"
             },
+            "200e": {
+              "zeroWidth": true,
+              "description": "left-to-right mark"
+            },
             "201c": {
               "description": "left double quotation mark",
               "backgroundColor": "rgba(255,127,80,.5)",
