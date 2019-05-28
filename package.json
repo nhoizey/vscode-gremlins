@@ -79,6 +79,18 @@
               "backgroundColor": "rgba(255,127,80,.5)",
               "overviewRulerColor": "rgba(255,127,80,1)"
             },
+            "202c": {
+              "zeroWidth": true,
+              "description": "pop directional formatting"
+            },
+            "202d": {
+              "zeroWidth": true,
+              "description": "left-to-right override"
+            },
+            "202e": {
+              "zeroWidth": true,
+              "description": "right-to-left override"
+            },
             "fffc": {
               "zeroWidth": true,
               "description": "object replacement character"
