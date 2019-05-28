@@ -18,6 +18,8 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 
 ![A screenshot of Gremlins in action](images/screenshot.png)
 
+You can also use the [“Unicode code point of current character” extension](https://marketplace.visualstudio.com/items?itemName=zeithaste.cursorCharCode) to show information about the character under cursor in the status bar.
+
 ## Adding new gremlins characters
 
 You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
