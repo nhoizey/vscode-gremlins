@@ -1,6 +1,6 @@
 {
   "name": "gremlins",
-  "displayName": "Gremlins",
+  "displayName": "Gremlins tracker for Visual Studio Code",
   "version": "0.13.0",
   "publisher": "nhoizey",
   "author": {
@@ -48,25 +48,26 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "gremlins configuration",
+      "title": "Gremlins",
       "properties": {
-        "gremlins.infocolor": {
+        "gremlins.color_info": {
           "type": "string",
           "default": "rgba(60, 118, 61, .75)",
-          "markdownDescription": "color for **info** level"
+          "markdownDescription": "Color for **info** level"
         },
-        "gremlins.warningcolor": {
+        "gremlins.color_warning": {
           "type": "string",
           "default": "rgba(138, 109, 59, .75)",
-          "markdownDescription": "color for **warning** level"
+          "markdownDescription": "Color for **warning** level"
         },
-        "gremlins.errorgcolor": {
+        "gremlins.color_error": {
           "type": "string",
           "default": "rgba(169, 68, 66, .75)",
-          "markdownDescription": "color for **error** level"
+          "markdownDescription": "Color for **error** level"
         },
         "gremlins.characters": {
           "type": "object",
+          "description": "List of characters the extension should track",
           "default": {
             "0003": {
               "description": "end of text",
@@ -124,8 +125,7 @@
             "type": "object"
           },
           "minItems": 1,
-          "uniqueItems": true,
-          "description": "bad characters list"
+          "uniqueItems": true
         },
         "gremlins.gutterIconSize": {
           "type": "string",

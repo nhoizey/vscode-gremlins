@@ -2,9 +2,9 @@ var vscode = require('vscode')
 
 const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
 const gremlinsLevels = {
-  info: vscode.workspace.getConfiguration('gremlins').infocolor,
-  warning: vscode.workspace.getConfiguration('gremlins').warningcolor,
-  error: vscode.workspace.getConfiguration('gremlins').errorcolor,
+  info: vscode.workspace.getConfiguration('gremlins').color_info,
+  warning: vscode.workspace.getConfiguration('gremlins').color_warning,
+  error: vscode.workspace.getConfiguration('gremlins').color_error,
 }
 const gremlinsCharacters = vscode.workspace.getConfiguration('gremlins')
   .characters
