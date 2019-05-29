@@ -15,7 +15,7 @@
     }
   ],
   "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
-  "icon": "images/gremlins-light.png",
+  "icon": "images/gremlins-dark.png",
   "galleryBanner": {
     "color": "#843534",
     "theme": "dark"
