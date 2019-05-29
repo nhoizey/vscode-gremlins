@@ -26,13 +26,18 @@
   "badges": [
     {
       "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=plastic",
+      "url": "https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg",
       "description": "Visual Studio Marketplace"
     },
     {
       "href": "https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins",
-      "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=plastic",
+      "url": "https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg",
       "description": "GitHub package version"
+    },
+    {
+      "href": "https://travis-ci.org/nhoizey/vscode-gremlins",
+      "url": "https://img.shields.io/travis/nhoizey/vscode-gremlins.svg",
+      "description": "Travis CI"
     }
   ],
   "engines": {
