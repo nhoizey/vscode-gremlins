@@ -151,7 +151,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.0",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "vscode": "^1.1.34"
