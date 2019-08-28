@@ -2,28 +2,28 @@
 
 ## 0.1.0
 
-- 🎉️ [Initial release of VS Code Gremlins](https://github.com/nhoizey/vscode-gremlins/commit/490a5a81917b451506fce7ca5de615d0634a7ea8)
+- 🎉 [Initial release of VS Code Gremlins](https://github.com/nhoizey/vscode-gremlins/commit/490a5a81917b451506fce7ca5de615d0634a7ea8)
 
 ## 0.2.0
 
-- 💅 [Add visual hint with a gremlin icon in the gutter](https://github.com/nhoizey/vscode-gremlins/commit/5dcc26c72c8aec30116d9d61ab5ea3786021002a)
+- 💄 [Add visual hint with a gremlin icon in the gutter](https://github.com/nhoizey/vscode-gremlins/commit/5dcc26c72c8aec30116d9d61ab5ea3786021002a)
 
 ## 0.3.0
 
-- 💅 Change the gremlin icon
+- 💄 Change the gremlin icon
 
 ## 0.4.0
 
-- 🎉 [Now also supports non-breaking spaces](https://github.com/nhoizey/vscode-gremlins/commit/a0d3446d95c884f204114d23d9ce75d1cb1bf729)
+- ✨ [Now also supports non-breaking spaces](https://github.com/nhoizey/vscode-gremlins/commit/a0d3446d95c884f204114d23d9ce75d1cb1bf729)
 
 ## 0.5.0
 
-- 🎉️ [Add right double quotation marks](https://github.com/nhoizey/vscode-gremlins/commit/d2637f038d76edfe646af0a7fb7fbda2c9bd2f70)
-- 💅 [PNG icon (SVG icons not allowed anymore)](https://github.com/nhoizey/vscode-gremlins/commit/4e46e4ea8fdd4a30baa7dfb78cec66abbcd3539f)
+- ✨️ [Add right double quotation marks](https://github.com/nhoizey/vscode-gremlins/commit/d2637f038d76edfe646af0a7fb7fbda2c9bd2f70)
+- 💄 [PNG icon (SVG icons not allowed anymore)](https://github.com/nhoizey/vscode-gremlins/commit/4e46e4ea8fdd4a30baa7dfb78cec66abbcd3539f)
 
 ## 0.5.1
 
-- 💅 [Fix issue with gutter icons](https://github.com/nhoizey/vscode-gremlins/commit/84833fed5de0ec7cdd04a1c284cd20a6350e8e3c)
+- 💄 [Fix issue with gutter icons](https://github.com/nhoizey/vscode-gremlins/commit/84833fed5de0ec7cdd04a1c284cd20a6350e8e3c)
 
 ## 0.6.0
 
@@ -31,7 +31,7 @@
 
 ## 0.6.1
 
-- ️️🎉️ [Add left double quotation marks](https://github.com/nhoizey/vscode-gremlins/commit/4a0c2bc7cda7761710757040a1b1026d780cc04d)
+- ️️✨️ [Add left double quotation marks](https://github.com/nhoizey/vscode-gremlins/commit/4a0c2bc7cda7761710757040a1b1026d780cc04d)
 
 ## 0.7.0
 
@@ -41,25 +41,25 @@
 
 ## 0.8.0
 
-- 🎉️ [Add "object replacement character"](https://github.com/nhoizey/vscode-gremlins/commit/b6fea6caf34010acc62830c66772026bbfb5f4c1)
+- ✨️ [Add "object replacement character"](https://github.com/nhoizey/vscode-gremlins/commit/b6fea6caf34010acc62830c66772026bbfb5f4c1)
 
 ## 0.9.0
 
-- 💅 Adjust UI
+- 💄 Adjust UI
 - 📝 Add mention of previous similar projects
 
 ## 0.10.0
 
-- 🎉 Add new characters
+- ✨ Add new characters
 
 ## 0.11.0
 
-- 🎉️ [Add support for user settings](https://github.com/nhoizey/vscode-gremlins/pull/30) (🙏 [Muah](https://github.com/ctf0))
+- ✨️ [Add support for user settings](https://github.com/nhoizey/vscode-gremlins/pull/30) (🙏 [Muah](https://github.com/ctf0))
 - ✅ Fix tests
 
 ## 0.12.0
 
-- 🎉 [Accept ranges of characters](https://github.com/nhoizey/vscode-gremlins/commit/c0e927e372f7489db673f49c2a40cb270e878779)
+- ✨ [Accept ranges of characters](https://github.com/nhoizey/vscode-gremlins/commit/c0e927e372f7489db673f49c2a40cb270e878779)
 - 🐛 Fix #15, #19 and #22
 
 ## 0.13.0
@@ -73,15 +73,15 @@
 
 ## 0.14.1
 
-- 💅 Better theming for the marketplace
+- 💄 Better theming for the marketplace
 
 ## 0.14.2
 
-- 💅 Cosmetics for the marketplace
+- 💄 Cosmetics for the marketplace
 
 ## 0.14.3
 
-- 💅 Enhance logos legibility
+- 💄 Enhance logos legibility
 
 ## 0.14.4
 
