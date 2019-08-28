@@ -27,7 +27,7 @@
 
 ## 0.6.0
 
-- 🛀 [Refactor all code to ease addition of new gremlins](https://github.com/nhoizey/vscode-gremlins/commit/56c506a7b49b8fc334a94ee02ffad98f729766af)
+- ♻️ [Refactor all code to ease addition of new gremlins](https://github.com/nhoizey/vscode-gremlins/commit/56c506a7b49b8fc334a94ee02ffad98f729766af)
 
 ## 0.6.1
 
@@ -46,7 +46,7 @@
 ## 0.9.0
 
 - 💅 Adjust UI
-- 📚 Add mention of previous similar projects
+- 📝 Add mention of previous similar projects
 
 ## 0.10.0
 
@@ -55,7 +55,7 @@
 ## 0.11.0
 
 - 🎉️ [Add support for user settings](https://github.com/nhoizey/vscode-gremlins/pull/30) (🙏 [Muah](https://github.com/ctf0))
-- 🐛 Fix tests
+- ✅ Fix tests
 
 ## 0.12.0
 
@@ -68,7 +68,7 @@
 
 ## 0.14.0
 
-- 📚 Add code of conduct
+- 📝 Add code of conduct
 - 🐛 [Fixing settings name and description](https://github.com/nhoizey/vscode-gremlins/commit/412924b682fec32af33eeff7967bb3be0c059b1d)
 
 ## 0.14.1
@@ -85,4 +85,4 @@
 
 ## 0.14.4
 
-- 🔒 Update dev dependencies
+- ⬆️ Update dev dependencies
