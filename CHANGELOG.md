@@ -28,3 +28,7 @@
 ## 0.6.1
 
 - Add left double quotation marks
+
+## 0.14.4
+
+- Update dev dependencies
