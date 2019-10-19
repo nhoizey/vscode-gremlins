@@ -26,6 +26,7 @@ jest.mock(
       },
       workspace: {
         onDidChangeTextDocument: jest.fn(),
+        onDidCloseTextDocument: jest.fn(),
         getConfiguration: jest.fn(key => {
           const packageData = require('./package.json')
           const characters =
@@ -39,6 +40,16 @@ jest.mock(
           return { characters: characters, gutterIconSize: gutterIconSize }
         }),
       },
+      languages: {
+        createDiagnosticCollection: jest.fn(key => {
+          return { 
+            set: jest.fn(),
+            delete: jest.fn(),
+            clear: jest.fn(),
+            dispose:jest.fn()
+          }
+        })
+      },
       OverviewRulerLane: { Right: 'OverviewRulerLane.Right' },
       Position: jest.fn((line, char) => {
         return { line, char }
@@ -46,6 +57,11 @@ jest.mock(
       Range: jest.fn((left, right) => {
         return { left, right }
       }),
+      DiagnosticSeverity: {
+        Information: 'DiagnosticSeverity.Information',
+        Warning: '.Warning',
+        Error: '.Error'
+      },
     }
   },
   { virtual: true },
