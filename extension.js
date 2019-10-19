@@ -12,6 +12,8 @@ const gutterIconSize = vscode.workspace.getConfiguration('gremlins')
   .gutterIconSize
 const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
+const diagnosticCollection = vscode.languages.createDiagnosticCollection("gremlins")
+
 function gremlinsFromConfig(context) {
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
@@ -76,7 +78,14 @@ function charFromHex(hexCodePoint) {
   return String.fromCodePoint(`0x${hexCodePoint}`)
 }
 
-function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
+/**
+ * 
+ * @param {vscode.TextEditor} activeTextEditor 
+ * @param {*} gremlins 
+ * @param {RegExp} regexpWithAllChars 
+ * @param {vscode.DiagnosticCollection} diagnosticCollection
+ */
+function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
   if (!activeTextEditor) {
     return
   }
@@ -87,6 +96,8 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
   for (const char in gremlins) {
     decorationOption[char] = []
   }
+  /** vscode.Diagnostic[] */
+  let diagnostics = [];
 
   for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
     let lineText = doc.lineAt(lineNum)
@@ -110,6 +121,9 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
           gremlin.hexCodePoint +
           ') here',
       }
+      let diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, vscode.DiagnosticSeverity.Warning)
+      diagnostic.source = "Gremlins tracker"
+      diagnostics.push(diagnostic)
 
       decorationOption[matchedCharacter].push(decoration)
     }
@@ -121,6 +135,8 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars) {
       decorationOption[char],
     )
   }
+
+  diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
 }
 
 function activate(context) {
@@ -133,13 +149,23 @@ function activate(context) {
   )
 
   vscode.window.onDidChangeActiveTextEditor(
-    editor => updateDecorations(editor, gremlins, regexpWithAllChars),
+    editor => updateDecorations(
+        editor,
+        gremlins,
+        regexpWithAllChars,
+        diagnosticCollection
+      ),
     null,
     context.subscriptions,
   )
 
   vscode.window.onDidChangeTextEditorSelection(
-    event => updateDecorations(event.textEditor, gremlins, regexpWithAllChars),
+    event => updateDecorations(
+        event.textEditor,
+        gremlins, 
+        egexpWithAllChars,
+        diagnosticCollection
+      ),
     null,
     context.subscriptions,
   )
@@ -150,15 +176,25 @@ function activate(context) {
         vscode.window.activeTextEditor,
         gremlins,
         regexpWithAllChars,
+        diagnosticCollection
       ),
     null,
     context.subscriptions,
+  )
+
+  vscode.workspace.onDidCloseTextDocument(
+    textDocument => {
+      diagnosticCollection.delete(textDocument.uri);
+    },
+    null,
+    context.subscriptions
   )
 
   updateDecorations(
     vscode.window.activeTextEditor,
     gremlins,
     regexpWithAllChars,
+    diagnosticCollection
   )
 }
 exports.activate = activate
@@ -166,3 +202,10 @@ exports.activate = activate
 // this method is called when your extension is deactivated
 function deactivate() {}
 exports.deactivate = deactivate
+
+function dispose() {
+  diagnosticCollection.clear()
+  diagnosticCollection.dispose()
+  command.dispose()
+}
+exports.dispose = dispose
