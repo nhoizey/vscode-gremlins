@@ -136,6 +136,11 @@
           "type": "string",
           "default": "75%",
           "description": "gutter icon size"
+        },
+        "gremlins.showInProblemPane": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show gremlins in the problem pane"
         }
       }
     }

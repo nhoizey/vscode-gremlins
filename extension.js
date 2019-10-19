@@ -24,6 +24,7 @@ const gremlinsCharacters = gremlinsConfiguration.characters
 const gutterIconSize = gremlinsConfiguration.gutterIconSize
 const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
+const showDiangostics = gremlinsConfiguration.showInProblemPane;
 const diagnosticCollection = vscode.languages.createDiagnosticCollection("gremlins")
 
 function gremlinsFromConfig(context) {
@@ -136,10 +137,12 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
 
       decorationOption[matchedCharacter].push(decoration)
       
-      const severity = GREMLINS_SEVERITIES[gremlin.level]
-      const diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, severity)
-      diagnostic.source = "Gremlins tracker"
-      diagnostics.push(diagnostic)
+      if (showDiangostics) {
+        const severity = GREMLINS_SEVERITIES[gremlin.level]
+        const diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, severity)
+        diagnostic.source = "Gremlins tracker"
+        diagnostics.push(diagnostic)
+      }
     }
   }
 
