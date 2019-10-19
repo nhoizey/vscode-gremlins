@@ -1,4 +1,4 @@
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
+onDidCloseTextDocument[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 [![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 [![Travis](https://img.shields.io/travis/nhoizey/vscode-gremlins.svg)](https://travis-ci.org/nhoizey/vscode-gremlins)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
@@ -27,6 +27,12 @@ You can also use the [“Unicode code point of current character” extension](h
 You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
 
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
+
+## Displaying gremlins in the Problems pane
+
+By default, gremlins will be highligted in the text editor and an icon will be displayed in the gutter for each line with at least one gremlin. You can toggle whether gremlins also show in the Problems pane with user settings key `gremlins.showInProblemPane`.
+
+![A screenshot of Gremlins in Problem Pane](images/problems-screenshot.png)
 
 # Standing on the shoulders of giants
 
