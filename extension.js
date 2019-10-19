@@ -1,15 +1,27 @@
 var vscode = require('vscode')
 
 const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
-const gremlinsLevels = {
-  info: vscode.workspace.getConfiguration('gremlins').color_info,
-  warning: vscode.workspace.getConfiguration('gremlins').color_warning,
-  error: vscode.workspace.getConfiguration('gremlins').color_error,
+
+const GREMLINS_LEVELS = {
+  INFO: 'info',
+  WARNING: 'warning',
+  ERROR: 'error',
 }
-const gremlinsCharacters = vscode.workspace.getConfiguration('gremlins')
-  .characters
-const gutterIconSize = vscode.workspace.getConfiguration('gremlins')
-  .gutterIconSize
+
+const GREMLINS_SEVERITIES = {
+  [GREMLINS_LEVELS.INFO]: vscode.DiagnosticSeverity.Information,
+  [GREMLINS_LEVELS.WARNING]: vscode.DiagnosticSeverity.Warning,
+  [GREMLINS_LEVELS.ERROR]: vscode.DiagnosticSeverity.Error,
+}
+
+const gremlinsConfiguration = vscode.workspace.getConfiguration('gremlins')
+const gremlinsLevels = {
+  [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
+  [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
+  [GREMLINS_LEVELS.ERROR]: gremlinsConfiguration.color_error,
+}
+const gremlinsCharacters = gremlinsConfiguration.characters
+const gutterIconSize = gremlinsConfiguration.gutterIconSize
 const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
 const diagnosticCollection = vscode.languages.createDiagnosticCollection("gremlins")
@@ -121,11 +133,13 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
           gremlin.hexCodePoint +
           ') here',
       }
-      let diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, vscode.DiagnosticSeverity.Warning)
-      diagnostic.source = "Gremlins tracker"
-      diagnostics.push(diagnostic)
 
       decorationOption[matchedCharacter].push(decoration)
+      
+      const severity = GREMLINS_SEVERITIES[gremlin.level]
+      const diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, severity)
+      diagnostic.source = "Gremlins tracker"
+      diagnostics.push(diagnostic)
     }
   }
 
