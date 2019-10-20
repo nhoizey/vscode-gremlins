@@ -10,6 +10,10 @@ let mockDocument = {
 }
 
 const mockSetDecorations = jest.fn()
+const mockSetDiagnostics = jest.fn()
+const mockClearDiagnostics = jest.fn()
+const mockDeleteDiagnostics = jest.fn()
+const mockDisposeDiagnostics = jest.fn()
 
 jest.mock(
   'vscode',
@@ -37,18 +41,17 @@ jest.mock(
             packageData.contributes.configuration.properties[
               'gremlins.gutterIconSize'
             ].default
-          return { characters: characters, gutterIconSize: gutterIconSize }
+          const showInProblemPane = true
+          return { characters: characters, gutterIconSize: gutterIconSize, showInProblemPane: showInProblemPane }
         }),
       },
       languages: {
-        createDiagnosticCollection: jest.fn(key => {
-          return { 
-            set: jest.fn(),
-            delete: jest.fn(),
-            clear: jest.fn(),
-            dispose:jest.fn()
-          }
-        })
+        createDiagnosticCollection: jest.fn(key => ({ 
+          set: mockSetDiagnostics,
+          delete: mockDeleteDiagnostics,
+          clear: mockClearDiagnostics,
+          dispose:mockDisposeDiagnostics
+        }))
       },
       OverviewRulerLane: { Right: 'OverviewRulerLane.Right' },
       Position: jest.fn((line, char) => {
@@ -59,8 +62,8 @@ jest.mock(
       }),
       DiagnosticSeverity: {
         Information: 'DiagnosticSeverity.Information',
-        Warning: '.Warning',
-        Error: '.Error'
+        Warning: 'DiagnosticSeverity.Warning',
+        Error: 'DiagnosticSeverity.Error'
       },
     }
   },
@@ -81,10 +84,23 @@ it('shows zero width space', () => {
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
+
+it('shows zero width space in problems', () => {
+  mockDocument.text = 'zero width space \u200b'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+})
+
 it('shows zero width non-joiner', () => {
   mockDocument.text = 'zero width non-joiner \u200c'
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
+it('shows zero width non-joiner in problems', () => {
+  mockDocument.text = 'zero width non-joiner \u200c'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
 })
 
 it('shows non breaking space', () => {
@@ -93,10 +109,22 @@ it('shows non breaking space', () => {
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
 
+it('shows non breaking space in problems', () => {
+  mockDocument.text = 'non breaking space \u00a0'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+})
+
 it('shows left double quotation mark', () => {
   mockDocument.text = 'left double quotation mark \u201c'
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
+it('shows left double quotation mark in problems', () => {
+  mockDocument.text = 'left double quotation mark \u201c'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
 })
 
 it('shows right double quotation mark', () => {
@@ -105,10 +133,22 @@ it('shows right double quotation mark', () => {
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
 })
 
+it('shows right double quotation mark in problems', () => {
+  mockDocument.text = 'right double quotation mark \u201d'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+})
+
 it('shows object replacement character', () => {
   mockDocument.text = 'object replacement character \ufffc'
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
+it('shows object replacement character in problems', () => {
+  mockDocument.text = 'object replacement character \ufffc'
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
 })
 
 it('shows multiple characters on multiple lines', () => {
@@ -121,6 +161,18 @@ it('shows multiple characters on multiple lines', () => {
   `
   activate(context)
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
+it('shows multiple characters on multiple lines in problems', () => {
+  mockDocument.text = `
+  zero width space \u200b\u200b\u200b
+  zero width non-joiner \u200c\u200c\u200c
+  non breaking space \u00a0\u00a0\u00a0
+  left double quotation mark \u201c\u201c\u201c
+  right double quotation mark \u201d\u201d\u201d
+  `
+  activate(context)
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
 })
 
 it('clears decorations with a clean document', () => {
@@ -144,4 +196,27 @@ it('clears decorations with a clean document', () => {
   activate(context)
 
   expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+})
+
+it('clears problems with a clean document', () => {
+  mockDocument.text = `
+  zero width space \u200b\u200b\u200b
+  zero width non-joiner \u200c\u200c\u200c
+  non breaking space \u00a0\u00a0\u00a0
+  left double quotation mark \u201c\u201c\u201c
+  right double quotation mark \u201d\u201d\u201d
+  `
+  activate(context)
+  mockSetDiagnostics.mockClear()
+
+  mockDocument.text = `
+  zero width space
+  zero width non-joiner
+  non breaking space
+  left double quotation mark
+  right double quotation mark
+  `
+  activate(context)
+
+  expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
 })

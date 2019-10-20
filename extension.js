@@ -139,8 +139,12 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
       
       if (showDiangostics) {
         const severity = GREMLINS_SEVERITIES[gremlin.level]
-        const diagnostic = new vscode.Diagnostic(decoration.range, decoration.hoverMessage, severity)
-        diagnostic.source = "Gremlins tracker"
+        const diagnostic = {
+          range: decoration.range,
+          message: decoration.hoverMessage,
+          severity: severity,
+          source: "Gremlins tracker",
+        }
         diagnostics.push(diagnostic)
       }
     }
