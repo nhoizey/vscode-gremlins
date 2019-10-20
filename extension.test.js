@@ -46,7 +46,7 @@ jest.mock(
         }),
       },
       languages: {
-        createDiagnosticCollection: jest.fn(key => ({ 
+        createDiagnosticCollection: jest.fn(key => ({
           set: mockSetDiagnostics,
           delete: mockDeleteDiagnostics,
           clear: mockClearDiagnostics,
@@ -70,6 +70,7 @@ jest.mock(
   { virtual: true },
 )
 
+const mockVscode = require('vscode')
 const { activate, dispose } = require('./extension')
 const context = {
   asAbsolutePath: arg => arg,
