@@ -15,6 +15,25 @@ const mockClearDiagnostics = jest.fn()
 const mockDeleteDiagnostics = jest.fn()
 const mockDisposeDiagnostics = jest.fn()
 
+/**
+ * Tag for use with template literals
+ * 
+ * Finds the indentation on the first line after the opening backtick
+ * and removes that indentation from every line in the template.
+ * @param {String[]} strings Array of lines in the template literal
+ */
+function outdent(strings) {
+  // Add in all of the expressions
+  let outdented = strings.map((s, i) => `${s}${arguments[i+1]||''}`).join('')
+  // Find the indentation after the first newline
+  const matches = /^\s+/.exec(outdented.split('\n')[1])
+  if (matches) {
+    const outdentRegex = new RegExp('\\n' + matches[0], 'g')
+    outdented = outdented.replace(outdentRegex, '\n')
+  }
+  return outdented
+}
+
 jest.mock(
   'vscode',
   () => {
@@ -154,7 +173,7 @@ describe('updateDecorations', () => {
   })
 
   it('shows multiple characters on multiple lines', () => {
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
     non breaking space \u00a0\u00a0\u00a0
@@ -166,7 +185,7 @@ describe('updateDecorations', () => {
   })
 
   it('shows multiple characters on multiple lines in problems', () => {
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
     non breaking space \u00a0\u00a0\u00a0
@@ -178,7 +197,7 @@ describe('updateDecorations', () => {
   })
 
   it('clears decorations with a clean document', () => {
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
     non breaking space \u00a0\u00a0\u00a0
@@ -188,7 +207,7 @@ describe('updateDecorations', () => {
     activate(context)
     mockSetDecorations.mockClear()
 
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space
     zero width non-joiner
     non breaking space
@@ -201,7 +220,7 @@ describe('updateDecorations', () => {
   })
 
   it('clears problems with a clean document', () => {
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
     non breaking space \u00a0\u00a0\u00a0
@@ -211,7 +230,7 @@ describe('updateDecorations', () => {
     activate(context)
     mockSetDiagnostics.mockClear()
 
-    mockDocument.text = `
+    mockDocument.text = outdent`
     zero width space
     zero width non-joiner
     non breaking space
@@ -228,8 +247,8 @@ describe('lifecycle', () => {
   it('clears and then disposes diagnostics when extension is disposed', () => {
     dispose()
 
-    const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0];
-    const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0];
-    expect(clearCallOrder).toBeLessThan(disposeCallOrder);
+    const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
+    const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
+    expect(clearCallOrder).toBeLessThan(disposeCallOrder)
   })
 })

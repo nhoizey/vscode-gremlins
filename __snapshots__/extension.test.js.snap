@@ -475,11 +475,11 @@ Array [
         "hoverMessage": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
-            "char": 23,
+            "char": 19,
             "line": 3,
           },
           "right": Object {
-            "char": 26,
+            "char": 22,
             "line": 3,
           },
         },
@@ -507,11 +507,11 @@ Array [
         "hoverMessage": "3 zero width spaces (unicode U+200b) here",
         "range": Object {
           "left": Object {
-            "char": 21,
+            "char": 17,
             "line": 1,
           },
           "right": Object {
-            "char": 24,
+            "char": 20,
             "line": 1,
           },
         },
@@ -539,11 +539,11 @@ Array [
         "hoverMessage": "3 zero width non-joiners (unicode U+200c) here",
         "range": Object {
           "left": Object {
-            "char": 26,
+            "char": 22,
             "line": 2,
           },
           "right": Object {
-            "char": 29,
+            "char": 25,
             "line": 2,
           },
         },
@@ -587,11 +587,11 @@ Array [
         "hoverMessage": "3 left double quotation marks (unicode U+201c) here",
         "range": Object {
           "left": Object {
-            "char": 31,
+            "char": 27,
             "line": 4,
           },
           "right": Object {
-            "char": 34,
+            "char": 30,
             "line": 4,
           },
         },
@@ -617,11 +617,11 @@ Array [
         "hoverMessage": "3 right double quotation marks (unicode U+201d) here",
         "range": Object {
           "left": Object {
-            "char": 32,
+            "char": 28,
             "line": 5,
           },
           "right": Object {
-            "char": 35,
+            "char": 31,
             "line": 5,
           },
         },
@@ -712,11 +712,11 @@ Array [
         "message": "3 zero width spaces (unicode U+200b) here",
         "range": Object {
           "left": Object {
-            "char": 21,
+            "char": 17,
             "line": 1,
           },
           "right": Object {
-            "char": 24,
+            "char": 20,
             "line": 1,
           },
         },
@@ -727,11 +727,11 @@ Array [
         "message": "3 zero width non-joiners (unicode U+200c) here",
         "range": Object {
           "left": Object {
-            "char": 26,
+            "char": 22,
             "line": 2,
           },
           "right": Object {
-            "char": 29,
+            "char": 25,
             "line": 2,
           },
         },
@@ -742,11 +742,11 @@ Array [
         "message": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
-            "char": 23,
+            "char": 19,
             "line": 3,
           },
           "right": Object {
-            "char": 26,
+            "char": 22,
             "line": 3,
           },
         },
@@ -757,11 +757,11 @@ Array [
         "message": "3 left double quotation marks (unicode U+201c) here",
         "range": Object {
           "left": Object {
-            "char": 31,
+            "char": 27,
             "line": 4,
           },
           "right": Object {
-            "char": 34,
+            "char": 30,
             "line": 4,
           },
         },
@@ -772,11 +772,11 @@ Array [
         "message": "3 right double quotation marks (unicode U+201d) here",
         "range": Object {
           "left": Object {
-            "char": 32,
+            "char": 28,
             "line": 5,
           },
           "right": Object {
-            "char": 35,
+            "char": 31,
             "line": 5,
           },
         },
