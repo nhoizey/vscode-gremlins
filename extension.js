@@ -227,6 +227,5 @@ exports.deactivate = deactivate
 function dispose() {
   diagnosticCollection.clear()
   diagnosticCollection.dispose()
-  command.dispose()
 }
 exports.dispose = dispose

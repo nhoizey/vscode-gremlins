@@ -70,7 +70,7 @@ jest.mock(
   { virtual: true },
 )
 
-const { activate } = require('./extension')
+const { activate, dispose } = require('./extension')
 const context = {
   asAbsolutePath: arg => arg,
 }
@@ -219,4 +219,12 @@ it('clears problems with a clean document', () => {
   activate(context)
 
   expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+})
+
+it('clears and then disposes diagnostics when extension is disposed', () => {
+  dispose()
+
+  const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0];
+  const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0];
+  expect(clearCallOrder).toBeLessThan(disposeCallOrder);
 })
