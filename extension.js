@@ -163,6 +163,7 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
   }
 }
 
+const listeners = []
 function activate(context) {
   const gremlins = gremlinsFromConfig(context)
 
@@ -177,45 +178,53 @@ function activate(context) {
       .join('|'),
     'g',
   )
-  
-  vscode.window.onDidChangeActiveTextEditor(
-    editor => updateDecorations(
-        editor,
-        gremlins,
-        regexpWithAllChars,
-        diagnosticCollection
-      ),
-    null,
-    context.subscriptions,
+
+  listeners.push(
+    vscode.window.onDidChangeActiveTextEditor(
+      editor => updateDecorations(
+          editor,
+          gremlins,
+          regexpWithAllChars,
+          diagnosticCollection
+        ),
+      null,
+      context.subscriptions,
+    )
   )
 
-  vscode.window.onDidChangeTextEditorSelection(
-    event => updateDecorations(
-        event.textEditor,
-        gremlins, 
-        egexpWithAllChars,
-        diagnosticCollection
-      ),
-    null,
-    context.subscriptions,
+  listeners.push(
+    vscode.window.onDidChangeTextEditorSelection(
+      event => updateDecorations(
+          event.textEditor,
+          gremlins, 
+          egexpWithAllChars,
+          diagnosticCollection
+        ),
+      null,
+      context.subscriptions,
+    )
   )
 
-  vscode.workspace.onDidChangeTextDocument(
-    event =>
-      updateDecorations(
-        vscode.window.activeTextEditor,
-        gremlins,
-        regexpWithAllChars,
-        diagnosticCollection
-      ),
-    null,
-    context.subscriptions,
+  listeners.push(
+    vscode.workspace.onDidChangeTextDocument(
+      event =>
+        updateDecorations(
+          vscode.window.activeTextEditor,
+          gremlins,
+          regexpWithAllChars,
+          diagnosticCollection
+        ),
+      null,
+      context.subscriptions,
+    )
   )
 
-  vscode.workspace.onDidCloseTextDocument(
-    textDocument => diagnosticCollection.delete(textDocument.uri),
-    null,
-    context.subscriptions
+  listeners.push(
+    vscode.workspace.onDidCloseTextDocument(
+      textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
+      null,
+      context.subscriptions
+    )
   )
 
   updateDecorations(
@@ -232,7 +241,10 @@ function deactivate() {}
 exports.deactivate = deactivate
 
 function dispose() {
+  if (diagnosticCollection) {
   diagnosticCollection.clear()
   diagnosticCollection.dispose()
+}
+  listeners.forEach(listener => listener.dispose())
 }
 exports.dispose = dispose

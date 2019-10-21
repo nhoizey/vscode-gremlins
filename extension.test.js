@@ -9,6 +9,10 @@ let mockDocument = {
   },
 }
 
+let mockDisposable = {
+  dispose: jest.fn()
+}
+
 const mockSetDecorations = jest.fn()
 const mockSetDiagnostics = jest.fn()
 const mockClearDiagnostics = jest.fn()
@@ -39,8 +43,8 @@ jest.mock(
   () => {
     return {
       window: {
-        onDidChangeActiveTextEditor: jest.fn(),
-        onDidChangeTextEditorSelection: jest.fn(),
+        onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
+        onDidChangeTextEditorSelection: jest.fn(() => mockDisposable),
         createTextEditorDecorationType: jest.fn(arg => arg),
         activeTextEditor: {
           document: mockDocument,
@@ -48,8 +52,8 @@ jest.mock(
         },
       },
       workspace: {
-        onDidChangeTextDocument: jest.fn(),
-        onDidCloseTextDocument: jest.fn(),
+        onDidChangeTextDocument: jest.fn(() => mockDisposable),
+        onDidCloseTextDocument: jest.fn(() => mockDisposable),
         getConfiguration: jest.fn(key => {
           const packageData = require('./package.json')
           const characters =
@@ -273,10 +277,13 @@ describe('lifecycle', () => {
   })
 
   it('clears and then disposes diagnostics when extension is disposed', () => {
+    activate(context)
+
     dispose()
 
     const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
     const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
     expect(clearCallOrder).toBeLessThan(disposeCallOrder)
+    expect(mockDisposable.dispose.mock.calls.length).toBe(4)
   })
 })
