@@ -2,6 +2,8 @@ var vscode = require('vscode')
 
 const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
 
+const GREMLINS = 'gremlins';
+
 const GREMLINS_LEVELS = {
   INFO: 'info',
   WARNING: 'warning',
@@ -14,20 +16,19 @@ const GREMLINS_SEVERITIES = {
   [GREMLINS_LEVELS.ERROR]: vscode.DiagnosticSeverity.Error,
 }
 
-const gremlinsConfiguration = vscode.workspace.getConfiguration('gremlins')
-const gremlinsLevels = {
-  [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
-  [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
-  [GREMLINS_LEVELS.ERROR]: gremlinsConfiguration.color_error,
-}
-const gremlinsCharacters = gremlinsConfiguration.characters
-const gutterIconSize = gremlinsConfiguration.gutterIconSize
-const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
-
-const showDiangostics = gremlinsConfiguration.showInProblemPane;
-const diagnosticCollection = vscode.languages.createDiagnosticCollection("gremlins")
+let diagnosticCollection = null
 
 function gremlinsFromConfig(context) {
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+  const gremlinsLevels = {
+    [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
+    [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
+    [GREMLINS_LEVELS.ERROR]: gremlinsConfiguration.color_error,
+  }
+  const gremlinsCharacters = gremlinsConfiguration.characters
+  const gutterIconSize = gremlinsConfiguration.gutterIconSize
+  const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
+
   const lightIcon = {
     gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
     gutterIconSize: gutterIconSize,
@@ -137,7 +138,7 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
 
       decorationOption[matchedCharacter].push(decoration)
       
-      if (showDiangostics) {
+      if (diagnosticCollection) {
         const severity = GREMLINS_SEVERITIES[gremlin.level]
         const diagnostic = {
           range: decoration.range,
@@ -157,18 +158,26 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
     )
   }
 
-  diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
+  if (diagnosticCollection) {
+    diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
+  }
 }
 
 function activate(context) {
   const gremlins = gremlinsFromConfig(context)
+
+  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS).showInProblemPane;
+  if(showDiagnostics) {
+    diagnosticCollection = vscode.languages.createDiagnosticCollection(GREMLINS)
+  }
+
   const regexpWithAllChars = new RegExp(
     Object.keys(gremlins)
       .map(char => `${char}+`)
       .join('|'),
     'g',
   )
-
+  
   vscode.window.onDidChangeActiveTextEditor(
     editor => updateDecorations(
         editor,
@@ -204,9 +213,7 @@ function activate(context) {
   )
 
   vscode.workspace.onDidCloseTextDocument(
-    textDocument => {
-      diagnosticCollection.delete(textDocument.uri);
-    },
+    textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
     null,
     context.subscriptions
   )
