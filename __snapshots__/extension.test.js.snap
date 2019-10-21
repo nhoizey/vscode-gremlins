@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lifecycle registers with window.onDidChangeActiveTextEditor 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registers with window.onDidChangeActiveTextEditor 2`] = `"editor => updateDecorations(editor, gremlins, regexpWithAllChars, diagnosticCollection)"`;
+
+exports[`lifecycle registers with window.onDidChangeTextEditorSelection 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registers with window.onDidChangeTextEditorSelection 2`] = `"event => updateDecorations(event.textEditor, gremlins, egexpWithAllChars, diagnosticCollection)"`;
+
+exports[`lifecycle registers with workspace.onDidChangeTextDocument 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registers with workspace.onDidChangeTextDocument 2`] = `"event => updateDecorations(vscode.window.activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection)"`;
+
+exports[`lifecycle registers with workspace.onDidCloseTextDocument 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registers with workspace.onDidCloseTextDocument 2`] = `"textDocument => diagnosticCollection.delete(textDocument.uri)"`;
+
 exports[`updateDecorations clears decorations with a clean document 1`] = `
 Array [
   Array [

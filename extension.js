@@ -213,7 +213,7 @@ function activate(context) {
   )
 
   vscode.workspace.onDidCloseTextDocument(
-    textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
+    textDocument => diagnosticCollection.delete(textDocument.uri),
     null,
     context.subscriptions
   )
