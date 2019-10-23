@@ -104,6 +104,10 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
+afterEach(() => {
+  dispose()
+})
+
 describe('updateDecorations', () => {
   it('shows zero width space', () => {
     mockDocument.text = 'zero width space \u200b'

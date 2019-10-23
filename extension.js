@@ -271,5 +271,6 @@ function dispose() {
     diagnosticCollection.dispose()
   }
   listeners.forEach(listener => listener.dispose())
+  listeners.length = 0
 }
 exports.dispose = dispose
