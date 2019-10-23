@@ -54,6 +54,7 @@ jest.mock(
       workspace: {
         onDidChangeTextDocument: jest.fn(() => mockDisposable),
         onDidCloseTextDocument: jest.fn(() => mockDisposable),
+        onDidChangeConfiguration: jest.fn(() => mockDisposable),
         getConfiguration: jest.fn(key => {
           const packageData = require('./package.json')
           const characters =
@@ -252,28 +253,30 @@ describe('lifecycle', () => {
     activate(context)
 
     expect(mockVscode.window.onDidChangeActiveTextEditor.mock.calls).toMatchSnapshot()
-    expect(mockVscode.window.onDidChangeActiveTextEditor.mock.calls[0][0].toString()).toMatchSnapshot()
   })
 
   it('registers with window.onDidChangeTextEditorSelection', () => {
     activate(context)
 
     expect(mockVscode.window.onDidChangeTextEditorSelection.mock.calls).toMatchSnapshot()
-    expect(mockVscode.window.onDidChangeTextEditorSelection.mock.calls[0][0].toString()).toMatchSnapshot()
   })
 
   it('registers with workspace.onDidChangeTextDocument', () => {
     activate(context)
 
     expect(mockVscode.workspace.onDidChangeTextDocument.mock.calls).toMatchSnapshot()
-    expect(mockVscode.workspace.onDidChangeTextDocument.mock.calls[0][0].toString()).toMatchSnapshot()
   })
 
   it('registers with workspace.onDidCloseTextDocument', () => {
     activate(context)
 
     expect(mockVscode.workspace.onDidCloseTextDocument.mock.calls).toMatchSnapshot()
-    expect(mockVscode.workspace.onDidCloseTextDocument.mock.calls[0][0].toString()).toMatchSnapshot()
+  })
+
+  it('registers with workspace.onDidChangeConfiguration', () => {
+    activate(context)
+
+    expect(mockVscode.workspace.onDidChangeConfiguration.mock.calls).toMatchSnapshot()
   })
 
   it('clears and then disposes diagnostics when extension is disposed', () => {
@@ -284,6 +287,6 @@ describe('lifecycle', () => {
     const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
     const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
     expect(clearCallOrder).toBeLessThan(disposeCallOrder)
-    expect(mockDisposable.dispose.mock.calls.length).toBe(4)
+    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
   })
 })

@@ -18,8 +18,41 @@ const GREMLINS_SEVERITIES = {
 
 let diagnosticCollection = null
 
-function gremlinsFromConfig(context) {
-  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+function configurDiagnosticsCollection(showDiagnostics) {
+  if (showDiagnostics && !diagnosticCollection) {
+    diagnosticCollection = diagnosticCollection = vscode.languages.createDiagnosticCollection(GREMLINS)
+  } else if (!showDiagnostics && diagnosticCollection) {
+    diagnosticCollection.clear()
+    diagnosticCollection.dispose()
+    diagnosticCollection = null
+  }
+  return diagnosticCollection
+}
+
+function disposeOldDecorations(gremlins) {
+  Object.entries(gremlins).forEach(([_, config]) => config.decorationType.dispose())
+}
+
+function loadConfiguration(gremlinsConfiguration, context) {
+  const gremlins = gremlinsFromConfig(gremlinsConfiguration, context)
+
+  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS).showInProblemPane
+
+  let regexpWithAllChars = new RegExp(
+    Object.keys(gremlins)
+      .map(char => `${char}+`)
+      .join('|'),
+    'g',
+  )
+
+  return {
+    gremlins,
+    showDiagnostics,
+    regexpWithAllChars
+  }
+}
+
+function gremlinsFromConfig(gremlinsConfiguration, context) {
   const gremlinsLevels = {
     [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
     [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
@@ -165,28 +198,20 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
 
 const listeners = []
 function activate(context) {
-  const gremlins = gremlinsFromConfig(context)
+  let gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+  let configuration = loadConfiguration(gremlinsConfiguration, context)
+  let diagnosticCollection = configurDiagnosticsCollection(configuration.showDiagnostics)
 
-  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS).showInProblemPane;
-  if(showDiagnostics) {
-    diagnosticCollection = vscode.languages.createDiagnosticCollection(GREMLINS)
-  }
-
-  const regexpWithAllChars = new RegExp(
-    Object.keys(gremlins)
-      .map(char => `${char}+`)
-      .join('|'),
-    'g',
+  const doUpdateDecorations = editor => updateDecorations(
+    editor,
+    configuration.gremlins,
+    configuration.regexpWithAllChars,
+    diagnosticCollection
   )
 
   listeners.push(
     vscode.window.onDidChangeActiveTextEditor(
-      editor => updateDecorations(
-          editor,
-          gremlins,
-          regexpWithAllChars,
-          diagnosticCollection
-        ),
+      editor => doUpdateDecorations(editor),
       null,
       context.subscriptions,
     )
@@ -194,12 +219,7 @@ function activate(context) {
 
   listeners.push(
     vscode.window.onDidChangeTextEditorSelection(
-      event => updateDecorations(
-          event.textEditor,
-          gremlins, 
-          egexpWithAllChars,
-          diagnosticCollection
-        ),
+      event => doUpdateDecorations(event.textEditor),
       null,
       context.subscriptions,
     )
@@ -207,13 +227,7 @@ function activate(context) {
 
   listeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      event =>
-        updateDecorations(
-          vscode.window.activeTextEditor,
-          gremlins,
-          regexpWithAllChars,
-          diagnosticCollection
-        ),
+      event => doUpdateDecorations(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     )
@@ -227,12 +241,23 @@ function activate(context) {
     )
   )
 
-  updateDecorations(
-    vscode.window.activeTextEditor,
-    gremlins,
-    regexpWithAllChars,
-    diagnosticCollection
+  listeners.push(
+    vscode.workspace.onDidChangeConfiguration(
+      event => {
+        if (event.affectsConfiguration(GREMLINS)) {
+          disposeOldDecorations(configuration.gremlins)
+          gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+          configuration = loadConfiguration(gremlinsConfiguration, context)
+          diagnosticCollection = configurDiagnosticsCollection(configuration.showDiagnostics)
+          vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
+        }
+      },
+      null,
+      context.subscriptions
+    )
   )
+
+  doUpdateDecorations(vscode.window.activeTextEditor)
 }
 exports.activate = activate
 
@@ -242,9 +267,9 @@ exports.deactivate = deactivate
 
 function dispose() {
   if (diagnosticCollection) {
-  diagnosticCollection.clear()
-  diagnosticCollection.dispose()
-}
+    diagnosticCollection.clear()
+    diagnosticCollection.dispose()
+  }
   listeners.forEach(listener => listener.dispose())
 }
 exports.dispose = dispose
