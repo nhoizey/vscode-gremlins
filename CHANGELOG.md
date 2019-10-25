@@ -86,3 +86,8 @@
 ## 0.14.4
 
 - ⬆️ Update dev dependencies
+
+## 0.15.0
+
+- ✨ [Show gremlins listing is vscode diagnostics pannel](https://github.com/nhoizey/vscode-gremlins/commit/3135ec9231039f66a8f034d3e48c88bd0a7a0ede) (🙏 [Jon Senchyna](https://github.com/TheSench))
+- ⬆️ Update dev dependencies
