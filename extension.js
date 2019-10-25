@@ -18,7 +18,7 @@ const GREMLINS_SEVERITIES = {
 
 let diagnosticCollection = null
 
-function configurDiagnosticsCollection(showDiagnostics) {
+function configureDiagnosticsCollection(showDiagnostics) {
   if (showDiagnostics && !diagnosticCollection) {
     diagnosticCollection = diagnosticCollection = vscode.languages.createDiagnosticCollection(GREMLINS)
   } else if (!showDiagnostics && diagnosticCollection) {
@@ -29,7 +29,7 @@ function configurDiagnosticsCollection(showDiagnostics) {
   return diagnosticCollection
 }
 
-function disposeOldDecorations(gremlins) {
+function disposeDecorationTypes(gremlins) {
   Object.entries(gremlins).forEach(([_, config]) => config.decorationType.dispose())
 }
 
@@ -200,7 +200,7 @@ const listeners = []
 function activate(context) {
   let gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
   let configuration = loadConfiguration(gremlinsConfiguration, context)
-  let diagnosticCollection = configurDiagnosticsCollection(configuration.showDiagnostics)
+  let diagnosticCollection = configureDiagnosticsCollection(configuration.showDiagnostics)
 
   const doUpdateDecorations = editor => updateDecorations(
     editor,
@@ -245,10 +245,10 @@ function activate(context) {
     vscode.workspace.onDidChangeConfiguration(
       event => {
         if (event.affectsConfiguration(GREMLINS)) {
-          disposeOldDecorations(configuration.gremlins)
+          disposeDecorationTypes(configuration.gremlins)
           gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
           configuration = loadConfiguration(gremlinsConfiguration, context)
-          diagnosticCollection = configurDiagnosticsCollection(configuration.showDiagnostics)
+          diagnosticCollection = configureDiagnosticsCollection(configuration.showDiagnostics)
           vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
         }
       },
