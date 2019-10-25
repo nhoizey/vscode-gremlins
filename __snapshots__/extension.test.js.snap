@@ -195,6 +195,15 @@ Array [
 ]
 `;
 
+exports[`clears problems with a clean document 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [],
+  ],
+]
+`;
+
 exports[`shows left double quotation mark 1`] = `
 Array [
   Array [
@@ -400,6 +409,31 @@ Array [
       "overviewRulerLane": "OverviewRulerLane.Right",
     },
     Array [],
+  ],
+]
+`;
+
+exports[`shows left double quotation mark in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 left double quotation mark (unicode U+201c) here",
+        "range": Object {
+          "left": Object {
+            "char": 27,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 28,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
 ]
 `;
@@ -669,6 +703,91 @@ Array [
 ]
 `;
 
+exports[`shows multiple characters on multiple lines in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "3 zero width spaces (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 19,
+            "line": 1,
+          },
+          "right": Object {
+            "char": 22,
+            "line": 1,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+      Object {
+        "message": "3 zero width non-joiners (unicode U+200c) here",
+        "range": Object {
+          "left": Object {
+            "char": 24,
+            "line": 2,
+          },
+          "right": Object {
+            "char": 27,
+            "line": 2,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+      Object {
+        "message": "3 non breaking spaces (unicode U+00a0) here",
+        "range": Object {
+          "left": Object {
+            "char": 21,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 24,
+            "line": 3,
+          },
+        },
+        "severity": "DiagnosticSeverity.Information",
+        "source": "Gremlins tracker",
+      },
+      Object {
+        "message": "3 left double quotation marks (unicode U+201c) here",
+        "range": Object {
+          "left": Object {
+            "char": 29,
+            "line": 4,
+          },
+          "right": Object {
+            "char": 32,
+            "line": 4,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+      Object {
+        "message": "3 right double quotation marks (unicode U+201d) here",
+        "range": Object {
+          "left": Object {
+            "char": 30,
+            "line": 5,
+          },
+          "right": Object {
+            "char": 33,
+            "line": 5,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`shows non breaking space 1`] = `
 Array [
   Array [
@@ -878,6 +997,31 @@ Array [
 ]
 `;
 
+exports[`shows non breaking space in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 non breaking space (unicode U+00a0) here",
+        "range": Object {
+          "left": Object {
+            "char": 19,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 20,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Information",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`shows object replacement character 1`] = `
 Array [
   Array [
@@ -1081,6 +1225,31 @@ Array [
             "line": 0,
           },
         },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`shows object replacement character in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 object replacement character (unicode U+fffc) here",
+        "range": Object {
+          "left": Object {
+            "char": 29,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 30,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
       },
     ],
   ],
@@ -1296,6 +1465,31 @@ Array [
 ]
 `;
 
+exports[`shows right double quotation mark in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 right double quotation mark (unicode U+201d) here",
+        "range": Object {
+          "left": Object {
+            "char": 28,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 29,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`shows zero width non-joiner 1`] = `
 Array [
   Array [
@@ -1505,6 +1699,31 @@ Array [
 ]
 `;
 
+exports[`shows zero width non-joiner in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width non-joiner (unicode U+200c) here",
+        "range": Object {
+          "left": Object {
+            "char": 22,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 23,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Warning",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`shows zero width space 1`] = `
 Array [
   Array [
@@ -1710,6 +1929,31 @@ Array [
       "overviewRulerLane": "OverviewRulerLane.Right",
     },
     Array [],
+  ],
+]
+`;
+
+exports[`shows zero width space in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
 ]
 `;

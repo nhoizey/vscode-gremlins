@@ -12,6 +12,10 @@
     {
       "name": "Anthony Ricaud",
       "url": "https://github.com/rik"
+    },
+    {
+      "name": "Jon Senchyna",
+      "url": "https://github.com/TheSench"
     }
   ],
   "description": "Reveals some characters that can be harmful because they are invisible or looking like legitimate ones. Inspired by Sublime Gremlins.",
@@ -136,6 +140,11 @@
           "type": "string",
           "default": "75%",
           "description": "gutter icon size"
+        },
+        "gremlins.showInProblemPane": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show gremlins in the problem pane"
         }
       }
     }

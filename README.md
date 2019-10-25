@@ -28,6 +28,12 @@ You can configure the list of characters and how they are shown under user setti
 
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
 
+## Displaying gremlins in the Problems pane
+
+By default, gremlins will be highligted in the text editor and an icon will be displayed in the gutter for each line with at least one gremlin. You can toggle whether gremlins also show in the Problems pane with user settings key `gremlins.showInProblemPane`.
+
+![A screenshot of Gremlins in Problem Pane](images/problems-screenshot.png)
+
 # Standing on the shoulders of giants
 
 VS Code Gremlins was initialy heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremlins), a [Sublime Text](https://www.sublimetext.com/) 3 plugin to help identify invisible and ambiguous Unicode whitespace characters (zero width spaces, no-break spaces, and similar.).
