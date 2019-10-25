@@ -197,9 +197,10 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
 }
 
 const listeners = []
+let configuration
 function activate(context) {
   let gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
-  let configuration = loadConfiguration(gremlinsConfiguration, context)
+  configuration = loadConfiguration(gremlinsConfiguration, context)
   let diagnosticCollection = configureDiagnosticsCollection(configuration.showDiagnostics)
 
   const doUpdateDecorations = editor => updateDecorations(
@@ -270,6 +271,7 @@ function dispose() {
     diagnosticCollection.clear()
     diagnosticCollection.dispose()
   }
+  disposeDecorationTypes(configuration.gremlins)
   listeners.forEach(listener => listener.dispose())
   listeners.length = 0
 }

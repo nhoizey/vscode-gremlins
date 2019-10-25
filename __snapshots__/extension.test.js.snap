@@ -10,8 +10,6 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with window.onDidChangeActiveTextEditor 2`] = `"editor => doUpdateDecorations(editor)"`;
-
 exports[`lifecycle registers with window.onDidChangeTextEditorSelection 1`] = `
 Array [
   Array [
@@ -22,8 +20,6 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with window.onDidChangeTextEditorSelection 2`] = `"event => doUpdateDecorations(event.textEditor)"`;
-
 exports[`lifecycle registers with workspace.onDidChangeConfiguration 1`] = `
 Array [
   Array [
@@ -32,18 +28,6 @@ Array [
     undefined,
   ],
 ]
-`;
-
-exports[`lifecycle registers with workspace.onDidChangeConfiguration 2`] = `
-"event => {
-    if (event.affectsConfiguration(GREMLINS)) {
-      disposeOldDecorations(configuration.gremlins);
-      gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS);
-      configuration = loadConfiguration(gremlinsConfiguration, context);
-      diagnosticCollection = configurDiagnosticsCollection(configuration.showDiagnostics);
-      vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor));
-    }
-  }"
 `;
 
 exports[`lifecycle registers with workspace.onDidChangeTextDocument 1`] = `
@@ -56,8 +40,6 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with workspace.onDidChangeTextDocument 2`] = `"event => doUpdateDecorations(vscode.window.activeTextEditor)"`;
-
 exports[`lifecycle registers with workspace.onDidCloseTextDocument 1`] = `
 Array [
   Array [
@@ -68,197 +50,71 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with workspace.onDidCloseTextDocument 2`] = `"textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri)"`;
-
 exports[`updateDecorations clears decorations with a clean document 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -278,103 +134,37 @@ exports[`updateDecorations shows left double quotation mark 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -394,89 +184,31 @@ Array [
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -512,33 +244,13 @@ exports[`updateDecorations shows multiple characters on multiple lines 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -558,19 +270,7 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -590,19 +290,7 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -622,35 +310,13 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -670,17 +336,7 @@ Array [
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -700,73 +356,25 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -862,33 +470,13 @@ exports[`updateDecorations shows non breaking space 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -908,159 +496,55 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -1096,191 +580,67 @@ exports[`updateDecorations shows object replacement character 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1330,119 +690,43 @@ exports[`updateDecorations shows right double quotation mark 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1462,73 +746,25 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -1564,69 +800,25 @@ exports[`updateDecorations shows zero width non-joiner 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1646,123 +838,43 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
@@ -1798,51 +910,19 @@ exports[`updateDecorations shows zero width space 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1862,141 +942,49 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],

@@ -13,6 +13,10 @@ let mockDisposable = {
   dispose: jest.fn()
 }
 
+let mockDecorationType = {
+  dispose: jest.fn()
+}
+
 const mockSetDecorations = jest.fn()
 const mockSetDiagnostics = jest.fn()
 const mockClearDiagnostics = jest.fn()
@@ -45,7 +49,7 @@ jest.mock(
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
         onDidChangeTextEditorSelection: jest.fn(() => mockDisposable),
-        createTextEditorDecorationType: jest.fn(arg => arg),
+        createTextEditorDecorationType: jest.fn(() => mockDecorationType),
         activeTextEditor: {
           document: mockDocument,
           setDecorations: mockSetDecorations,
@@ -284,6 +288,8 @@ describe('lifecycle', () => {
   })
 
   it('clears and then disposes diagnostics when extension is disposed', () => {
+    const packageData = require('./package.json')
+
     activate(context)
 
     dispose()
@@ -292,5 +298,6 @@ describe('lifecycle', () => {
     const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
     expect(clearCallOrder).toBeLessThan(disposeCallOrder)
     expect(mockDisposable.dispose.mock.calls.length).toBe(5)
+    expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
   })
 })
