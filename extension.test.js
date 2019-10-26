@@ -305,20 +305,6 @@ describe('lifecycle registration', () => {
 
     expect(mockVscode.workspace.onDidChangeConfiguration.mock.calls).toMatchSnapshot()
   })
-
-  it('clears and then disposes diagnostics when extension is disposed', () => {
-    const packageData = require('./package.json')
-
-    activate(context)
-
-    dispose()
-
-    const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
-    const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
-    expect(clearCallOrder).toBeLessThan(disposeCallOrder)
-    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
-    expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
-  })
 })
 
 describe('lifecycle event handling', () => {
@@ -377,5 +363,31 @@ describe('lifecycle event handling', () => {
       expect(editor.setDecorations.mock.calls).toMatchSnapshot()
     })
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+})
+
+describe('dispose', () => {
+  beforeEach(() => {
+    activate(context)
+  })
+
+  it('clears and then disposes diagnostics', () => {
+    dispose()
+
+    const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
+    const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
+    expect(clearCallOrder).toBeLessThan(disposeCallOrder)
+  })
+
+  it('disposes event handlers', () => {
+    dispose()
+    
+    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
+  })
+
+  it('disposes decorationTypes', () => {
+    dispose()
+    
+    expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
   })
 })
