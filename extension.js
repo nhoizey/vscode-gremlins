@@ -30,7 +30,10 @@ function configureDiagnosticsCollection(showDiagnostics) {
 }
 
 function disposeDecorationTypes(gremlins) {
-  Object.entries(gremlins).forEach(([_, config]) => config.decorationType.dispose())
+  Object.entries(gremlins).forEach(([key, config]) => {
+    config.decorationType.dispose()
+    delete gremlins[key]
+  })
 }
 
 function loadConfiguration(gremlinsConfiguration, context) {
