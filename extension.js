@@ -153,7 +153,7 @@ function charFromHex(hexCodePoint) {
  * @param {RegExp} regexpWithAllChars 
  * @param {vscode.DiagnosticCollection} diagnosticCollection
  */
-function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
+function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
   if (!activeTextEditor) {
     return
   }
@@ -222,7 +222,7 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
 function activate(context) {
   configuration = loadConfiguration(context)
 
-  const doUpdateDecorations = editor => updateDecorations(
+  const doCheckForGremlins = editor => checkForGremlins(
     editor,
     configuration.gremlins,
     configuration.regexpWithAllChars,
@@ -236,7 +236,7 @@ function activate(context) {
           disposeDecorationTypes(configuration.gremlins)
 
           configuration = loadConfiguration(context)
-          vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
+          vscode.window.visibleTextEditors.forEach(editor => doCheckForGremlins(editor))
         }
       },
       null,
@@ -248,7 +248,7 @@ function activate(context) {
     vscode.window.onDidChangeActiveTextEditor(
       editor => {
         if (!processedDocuments[editor.document.uri]) {
-          doUpdateDecorations(editor)
+          doCheckForGremlins(editor)
         }
       },
       null,
@@ -258,7 +258,7 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      event => doUpdateDecorations(vscode.window.activeTextEditor),
+      event => doCheckForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     )
@@ -275,7 +275,7 @@ function activate(context) {
     )
   )
 
-  doUpdateDecorations(vscode.window.activeTextEditor)
+  doCheckForGremlins(vscode.window.activeTextEditor)
 }
 exports.activate = activate
 
