@@ -16,6 +16,10 @@ const GREMLINS_SEVERITIES = {
   [GREMLINS_LEVELS.ERROR]: vscode.DiagnosticSeverity.Error,
 }
 
+const eventListeners = []
+
+let configuration = null
+
 let diagnosticCollection = null
 
 function configureDiagnosticsCollection(showDiagnostics) {
@@ -36,10 +40,13 @@ function disposeDecorationTypes(gremlins) {
   })
 }
 
-function loadConfiguration(gremlinsConfiguration, context) {
+function loadConfiguration(context) {
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+
   const gremlins = gremlinsFromConfig(gremlinsConfiguration, context)
 
   const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS).showInProblemPane
+  const diagnosticCollection = configureDiagnosticsCollection(showDiagnostics)
 
   let regexpWithAllChars = new RegExp(
     Object.keys(gremlins)
@@ -48,10 +55,19 @@ function loadConfiguration(gremlinsConfiguration, context) {
     'g',
   )
 
+  const dispose = () => {
+    if (diagnosticCollection) {
+      diagnosticCollection.clear()
+      diagnosticCollection.dispose()
+    }
+    disposeDecorationTypes(gremlins)
+  }
+
   return {
     gremlins,
-    showDiagnostics,
-    regexpWithAllChars
+    regexpWithAllChars,
+    diagnosticCollection,
+    dispose,
   }
 }
 
@@ -199,21 +215,32 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
   }
 }
 
-const listeners = []
-let configuration
 function activate(context) {
-  let gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
-  configuration = loadConfiguration(gremlinsConfiguration, context)
-  let diagnosticCollection = configureDiagnosticsCollection(configuration.showDiagnostics)
+  configuration = loadConfiguration(context)
 
   const doUpdateDecorations = editor => updateDecorations(
     editor,
     configuration.gremlins,
     configuration.regexpWithAllChars,
-    diagnosticCollection
+    configuration.diagnosticCollection,
   )
 
-  listeners.push(
+  eventListeners.push(
+    vscode.workspace.onDidChangeConfiguration(
+      event => {
+        if (event.affectsConfiguration(GREMLINS)) {
+          disposeDecorationTypes(configuration.gremlins)
+
+          configuration = loadConfiguration(context)
+          vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
+        }
+      },
+      null,
+      context.subscriptions
+    )
+  )
+
+  eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
       editor => doUpdateDecorations(editor),
       null,
@@ -221,7 +248,7 @@ function activate(context) {
     )
   )
 
-  listeners.push(
+  eventListeners.push(
     vscode.window.onDidChangeTextEditorSelection(
       event => doUpdateDecorations(event.textEditor),
       null,
@@ -229,7 +256,7 @@ function activate(context) {
     )
   )
 
-  listeners.push(
+  eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
       event => doUpdateDecorations(vscode.window.activeTextEditor),
       null,
@@ -237,25 +264,9 @@ function activate(context) {
     )
   )
 
-  listeners.push(
+  eventListeners.push(
     vscode.workspace.onDidCloseTextDocument(
       textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
-      null,
-      context.subscriptions
-    )
-  )
-
-  listeners.push(
-    vscode.workspace.onDidChangeConfiguration(
-      event => {
-        if (event.affectsConfiguration(GREMLINS)) {
-          disposeDecorationTypes(configuration.gremlins)
-          gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
-          configuration = loadConfiguration(gremlinsConfiguration, context)
-          diagnosticCollection = configureDiagnosticsCollection(configuration.showDiagnostics)
-          vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
-        }
-      },
       null,
       context.subscriptions
     )
@@ -267,14 +278,9 @@ exports.activate = activate
 
 // this method is called when your extension is deactivated
 function deactivate() {
-  if (diagnosticCollection) {
-    diagnosticCollection.clear()
-    diagnosticCollection.dispose()
-  }
+  configuration.dispose()
 
-  disposeDecorationTypes(configuration.gremlins)
-  
-  listeners.forEach(listener => listener.dispose())
-  listeners.length = 0
+  eventListeners.forEach(listener => listener.dispose())
+  eventListeners.length = 0
 }
 exports.deactivate = deactivate
