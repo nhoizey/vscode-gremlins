@@ -1,6 +1,7 @@
-const createMockDocument = () => {
+let incrementingUri = 1
+const createMockDocument = (text = '') => {
   return {
-    text: '',
+    text: text,
     get lineCount() {
       return this.text.split('\n').length
     },
@@ -8,6 +9,7 @@ const createMockDocument = () => {
       const lines = this.text.split('\n')
       return { text: lines[index] }
     },
+    uri: 'document' + incrementingUri++
   }
 }
 
@@ -57,7 +59,6 @@ jest.mock(
     return {
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
-        onDidChangeTextEditorSelection: jest.fn(() => mockDisposable),
         createTextEditorDecorationType: jest.fn(() => mockDecorationType),
         activeTextEditor: {
           document: mockDocument,
@@ -282,12 +283,6 @@ describe('lifecycle registration', () => {
     expect(mockVscode.window.onDidChangeActiveTextEditor.mock.calls).toMatchSnapshot()
   })
 
-  it('registers with window.onDidChangeTextEditorSelection', () => {
-    activate(context)
-
-    expect(mockVscode.window.onDidChangeTextEditorSelection.mock.calls).toMatchSnapshot()
-  })
-
   it('registers with workspace.onDidChangeTextDocument', () => {
     activate(context)
 
@@ -329,14 +324,12 @@ describe('lifecycle event handling', () => {
   })
   
   it('processes new file on window.onDidChangeActiveTextEditor', () => {
-    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
-    
-    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
-    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
-  })
+    const newMockEditor = {
+      document: createMockDocument('zero width space \u200b'),
+      setDecorations: mockSetDecorations,
+    }
 
-  it('processes new file on window.onDidChangeTextEditorSelection', () => {
-    eventHandlers.window.onDidChangeTextEditorSelection({textEditor: mockVscode.window.activeTextEditor})
+    eventHandlers.window.onDidChangeActiveTextEditor(newMockEditor)
     
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
@@ -380,9 +373,11 @@ describe('deactivate', () => {
   })
 
   it('disposes event handlers', () => {
+    const totalEvents = 4
+
     deactivate()
     
-    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
+    expect(mockDisposable.dispose.mock.calls.length).toBe(totalEvents)
   })
 
   it('disposes decorationTypes', () => {

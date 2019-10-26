@@ -90,117 +90,7 @@ Array [
 exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 2`] = `
 Array [
   Array [
-    undefined,
-    Array [
-      Object {
-        "message": "1 zero width space (unicode U+200b) here",
-        "range": Object {
-          "left": Object {
-            "char": 17,
-            "line": 0,
-          },
-          "right": Object {
-            "char": 18,
-            "line": 0,
-          },
-        },
-        "severity": "DiagnosticSeverity.Error",
-        "source": "Gremlins tracker",
-      },
-    ],
-  ],
-]
-`;
-
-exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 1`] = `
-Array [
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [
-      Object {
-        "hoverMessage": "1 zero width space (unicode U+200b) here",
-        "range": Object {
-          "left": Object {
-            "char": 17,
-            "line": 0,
-          },
-          "right": Object {
-            "char": 18,
-            "line": 0,
-          },
-        },
-      },
-    ],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "dispose": [MockFunction],
-    },
-    Array [],
-  ],
-]
-`;
-
-exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 2`] = `
-Array [
-  Array [
-    undefined,
+    "document4",
     Array [
       Object {
         "message": "1 zero width space (unicode U+200b) here",
@@ -310,7 +200,7 @@ Array [
 exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 2`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 zero width space (unicode U+200b) here",
@@ -1797,27 +1687,17 @@ Array [
 exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 3`] = `
 Array [
   Array [
-    undefined,
+    "document2",
     Array [],
   ],
   Array [
-    undefined,
+    "document3",
     Array [],
   ],
 ]
 `;
 
 exports[`lifecycle registration registers with window.onDidChangeActiveTextEditor 1`] = `
-Array [
-  Array [
-    [Function],
-    null,
-    undefined,
-  ],
-]
-`;
-
-exports[`lifecycle registration registers with window.onDidChangeTextEditorSelection 1`] = `
 Array [
   Array [
     [Function],
@@ -1931,7 +1811,7 @@ Array [
 exports[`updateDecorations clears problems with a clean document 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [],
   ],
 ]
@@ -2025,7 +1905,7 @@ Array [
 exports[`updateDecorations shows left double quotation mark in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 left double quotation mark (unicode U+201c) here",
@@ -2191,7 +2071,7 @@ Array [
 exports[`updateDecorations shows multiple characters on multiple lines in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "3 zero width spaces (unicode U+200b) here",
@@ -2361,7 +2241,7 @@ Array [
 exports[`updateDecorations shows non breaking space in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 non breaking space (unicode U+00a0) here",
@@ -2471,7 +2351,7 @@ Array [
 exports[`updateDecorations shows object replacement character in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 object replacement character (unicode U+fffc) here",
@@ -2581,7 +2461,7 @@ Array [
 exports[`updateDecorations shows right double quotation mark in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 right double quotation mark (unicode U+201d) here",
@@ -2691,7 +2571,7 @@ Array [
 exports[`updateDecorations shows zero width non-joiner in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 zero width non-joiner (unicode U+200c) here",
@@ -2801,7 +2681,7 @@ Array [
 exports[`updateDecorations shows zero width space in problems 1`] = `
 Array [
   Array [
-    undefined,
+    "document1",
     Array [
       Object {
         "message": "1 zero width space (unicode U+200b) here",
