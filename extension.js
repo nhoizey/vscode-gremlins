@@ -18,6 +18,8 @@ const GREMLINS_SEVERITIES = {
 
 const eventListeners = []
 
+const processedDocuments = {}
+
 let configuration = null
 
 let diagnosticCollection = null
@@ -213,6 +215,8 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
   if (diagnosticCollection) {
     diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
   }
+
+  processedDocuments[activeTextEditor.document.uri] = true
 }
 
 function activate(context) {
@@ -242,7 +246,11 @@ function activate(context) {
 
   eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
-      editor => doUpdateDecorations(editor),
+      editor => {
+        if (!processedDocuments[editor.document.uri]) {
+          doUpdateDecorations(editor)
+        }
+      },
       null,
       context.subscriptions,
     )
@@ -266,7 +274,10 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidCloseTextDocument(
-      textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
+      textDocument => {
+        diagnosticCollection && diagnosticCollection.delete(textDocument.uri)
+        delete processedDocuments[textDocument.uri]
+      },
       null,
       context.subscriptions
     )
