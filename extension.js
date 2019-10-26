@@ -257,14 +257,6 @@ function activate(context) {
   )
 
   eventListeners.push(
-    vscode.window.onDidChangeTextEditorSelection(
-      event => doUpdateDecorations(event.textEditor),
-      null,
-      context.subscriptions,
-    )
-  )
-
-  eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
       event => doUpdateDecorations(vscode.window.activeTextEditor),
       null,
