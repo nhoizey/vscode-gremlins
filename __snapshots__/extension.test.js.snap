@@ -1,6 +1,1813 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lifecycle registers with window.onDidChangeActiveTextEditor 1`] = `
+exports[`lifecycle event handling clears diagnostics on workspace.onDidCloseTextDocument 1`] = `undefined`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 2`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 3`] = `
+Array [
+  Array [
+    undefined,
+    Array [],
+  ],
+  Array [
+    undefined,
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with window.onDidChangeActiveTextEditor 1`] = `
 Array [
   Array [
     [Function],
@@ -10,7 +1817,7 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with window.onDidChangeTextEditorSelection 1`] = `
+exports[`lifecycle registration registers with window.onDidChangeTextEditorSelection 1`] = `
 Array [
   Array [
     [Function],
@@ -20,7 +1827,7 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with workspace.onDidChangeConfiguration 1`] = `
+exports[`lifecycle registration registers with workspace.onDidChangeConfiguration 1`] = `
 Array [
   Array [
     [Function],
@@ -30,7 +1837,7 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with workspace.onDidChangeTextDocument 1`] = `
+exports[`lifecycle registration registers with workspace.onDidChangeTextDocument 1`] = `
 Array [
   Array [
     [Function],
@@ -40,7 +1847,7 @@ Array [
 ]
 `;
 
-exports[`lifecycle registers with workspace.onDidCloseTextDocument 1`] = `
+exports[`lifecycle registration registers with workspace.onDidCloseTextDocument 1`] = `
 Array [
   Array [
     [Function],

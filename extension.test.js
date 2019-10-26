@@ -1,13 +1,22 @@
-let mockDocument = {
-  text: '',
-  get lineCount() {
-    return this.text.split('\n').length
-  },
-  lineAt(index) {
-    const lines = this.text.split('\n')
-    return { text: lines[index] }
-  },
+const createMockDocument = () => {
+  return {
+    text: '',
+    get lineCount() {
+      return this.text.split('\n').length
+    },
+    lineAt(index) {
+      const lines = this.text.split('\n')
+      return { text: lines[index] }
+    },
+  }
 }
+
+let mockDocument = createMockDocument()
+let mockVisibleDocuments = [
+  createMockDocument(),
+  createMockDocument()
+]
+
 
 let mockDisposable = {
   dispose: jest.fn()
@@ -54,6 +63,16 @@ jest.mock(
           document: mockDocument,
           setDecorations: mockSetDecorations,
         },
+        visibleTextEditors: [
+          {
+            document: mockVisibleDocuments[0],
+            setDecorations: jest.fn(),
+          },
+          {
+            document: mockVisibleDocuments[1],
+            setDecorations: jest.fn(),
+          }
+        ]
       },
       workspace: {
         onDidChangeTextDocument: jest.fn(() => mockDisposable),
@@ -256,7 +275,7 @@ describe('updateDecorations', () => {
   })
 })
 
-describe('lifecycle', () => {
+describe('lifecycle registration', () => {
   it('registers with window.onDidChangeActiveTextEditor', () => {
     activate(context)
 
@@ -299,5 +318,64 @@ describe('lifecycle', () => {
     expect(clearCallOrder).toBeLessThan(disposeCallOrder)
     expect(mockDisposable.dispose.mock.calls.length).toBe(5)
     expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
+  })
+})
+
+describe('lifecycle event handling', () => {
+  function getEventHandlers(object) {
+    return Object.keys(object)
+      .filter(key => key.startsWith('on'))
+      .reduce((handlers, nextKey) => {
+        handlers[nextKey] = object[nextKey].mock.calls[0][0]
+        return handlers
+      }, {})
+  }
+  
+  let eventHandlers = {}
+  beforeEach(() => {
+    activate(context)
+    mockDocument.text = 'zero width space \u200b'
+    eventHandlers = {
+      window: getEventHandlers(mockVscode.window),
+      workspace: getEventHandlers(mockVscode.workspace),
+    }
+    jest.clearAllMocks()
+  })
+  
+  it('processes new file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
+    
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
+  it('processes new file on window.onDidChangeTextEditorSelection', () => {
+    eventHandlers.window.onDidChangeTextEditorSelection({textEditor: mockVscode.window.activeTextEditor})
+    
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
+  it('processes new file on workspace.onDidChangeTextDocument', () => {
+    eventHandlers.workspace.onDidChangeTextDocument()
+    
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
+  it('clears diagnostics on workspace.onDidCloseTextDocument', () => {
+    eventHandlers.workspace.onDidCloseTextDocument({uri: 'someUri'})
+
+    expect(mockClearDiagnostics.calls).toMatchSnapshot()
+  })
+
+  it('processes visible text editors on workspace.onDidChangeConfiguration', () => {
+    eventHandlers.workspace.onDidChangeConfiguration({affectsConfiguration: jest.fn(arg => true)})
+    
+    expect(mockSetDecorations.mock.calls.length).toBe(0)
+    mockVscode.window.visibleTextEditors.forEach(editor => {
+      expect(editor.setDecorations.mock.calls).toMatchSnapshot()
+    })
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
 })
