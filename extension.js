@@ -263,10 +263,7 @@ function activate(context) {
 exports.activate = activate
 
 // this method is called when your extension is deactivated
-function deactivate() {}
-exports.deactivate = deactivate
-
-function dispose() {
+function deactivate() {
   if (diagnosticCollection) {
     diagnosticCollection.clear()
     diagnosticCollection.dispose()
@@ -275,4 +272,4 @@ function dispose() {
   listeners.forEach(listener => listener.dispose())
   listeners.length = 0
 }
-exports.dispose = dispose
+exports.deactivate = deactivate

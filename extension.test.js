@@ -118,7 +118,7 @@ jest.mock(
 )
 
 const mockVscode = require('vscode')
-const { activate, dispose } = require('./extension')
+const { activate, deactivate } = require('./extension')
 const context = {
   asAbsolutePath: arg => arg,
 }
@@ -128,7 +128,7 @@ beforeEach(() => {
 })
 
 afterEach(() => {
-  dispose()
+  deactivate()
 })
 
 describe('updateDecorations', () => {
@@ -366,13 +366,13 @@ describe('lifecycle event handling', () => {
   })
 })
 
-describe('dispose', () => {
+describe('deactivate', () => {
   beforeEach(() => {
     activate(context)
   })
 
   it('clears and then disposes diagnostics', () => {
-    dispose()
+    deactivate()
 
     const clearCallOrder = mockClearDiagnostics.mock.invocationCallOrder[0]
     const disposeCallOrder = mockDisposeDiagnostics.mock.invocationCallOrder[0]
@@ -380,13 +380,13 @@ describe('dispose', () => {
   })
 
   it('disposes event handlers', () => {
-    dispose()
+    deactivate()
     
     expect(mockDisposable.dispose.mock.calls.length).toBe(5)
   })
 
   it('disposes decorationTypes', () => {
-    dispose()
+    deactivate()
     
     expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
   })
