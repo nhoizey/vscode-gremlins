@@ -271,7 +271,9 @@ function deactivate() {
     diagnosticCollection.clear()
     diagnosticCollection.dispose()
   }
+
   disposeDecorationTypes(configuration.gremlins)
+  
   listeners.forEach(listener => listener.dispose())
   listeners.length = 0
 }
