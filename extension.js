@@ -193,7 +193,7 @@ function activate(context) {
     event => updateDecorations(
         event.textEditor,
         gremlins, 
-        egexpWithAllChars,
+        regexpWithAllChars,
         diagnosticCollection
       ),
     null,
