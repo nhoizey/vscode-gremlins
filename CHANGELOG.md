@@ -91,3 +91,7 @@
 
 - ✨ [Show gremlins listing is vscode diagnostics panel](https://github.com/nhoizey/vscode-gremlins/commit/3135ec9231039f66a8f034d3e48c88bd0a7a0ede) (🙏 [Jon Senchyna](https://github.com/TheSench))
 - ⬆️ Update dev dependencies
+
+## 0.15.1
+
+- ✨ [Detect settings changes and apply immediately](https://github.com/nhoizey/vscode-gremlins/pull/57) (🙏 [Jon Senchyna](https://github.com/TheSench))
