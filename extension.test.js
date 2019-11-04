@@ -334,6 +334,13 @@ describe('lifecycle event handling', () => {
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
+  
+  it('does NOT process already-processed file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
+    
+    expect(mockSetDecorations.mock.calls.length).toBe(0)
+    expect(mockSetDiagnostics.mock.calls.length).toBe(0)
+  })
 
   it('processes new file on workspace.onDidChangeTextDocument', () => {
     eventHandlers.workspace.onDidChangeTextDocument()
