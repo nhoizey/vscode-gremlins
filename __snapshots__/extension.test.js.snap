@@ -1,201 +1,1934 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`clears decorations with a clean document 1`] = `
+exports[`lifecycle event handling clears diagnostics on workspace.onDidCloseTextDocument 1`] = `undefined`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
       },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
-    },
-    Array [],
-  ],
-  Array [
-    Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`clears problems with a clean document 1`] = `
+exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 2`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 2`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle event handling processes visible text editors on workspace.onDidChangeConfiguration 3`] = `
+Array [
+  Array [
+    undefined,
+    Array [],
+  ],
+  Array [
+    undefined,
+    Array [],
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with window.onDidChangeActiveTextEditor 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with window.onDidChangeTextEditorSelection 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with workspace.onDidChangeConfiguration 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with workspace.onDidChangeTextDocument 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`lifecycle registration registers with workspace.onDidCloseTextDocument 1`] = `
+Array [
+  Array [
+    [Function],
+    null,
+    undefined,
+  ],
+]
+`;
+
+exports[`updateDecorations clears decorations with a clean document 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`updateDecorations clears problems with a clean document 1`] = `
 Array [
   Array [
     undefined,
@@ -204,107 +1937,41 @@ Array [
 ]
 `;
 
-exports[`shows left double quotation mark 1`] = `
+exports[`updateDecorations shows left double quotation mark 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -324,96 +1991,38 @@ Array [
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows left double quotation mark in problems 1`] = `
+exports[`updateDecorations shows left double quotation mark in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -438,48 +2047,28 @@ Array [
 ]
 `;
 
-exports[`shows multiple characters on multiple lines 1`] = `
+exports[`updateDecorations shows multiple characters on multiple lines 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
         "hoverMessage": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
-            "char": 21,
+            "char": 19,
             "line": 3,
           },
           "right": Object {
-            "char": 24,
+            "char": 22,
             "line": 3,
           },
         },
@@ -488,30 +2077,18 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
         "hoverMessage": "3 zero width spaces (unicode U+200b) here",
         "range": Object {
           "left": Object {
-            "char": 19,
+            "char": 17,
             "line": 1,
           },
           "right": Object {
-            "char": 22,
+            "char": 20,
             "line": 1,
           },
         },
@@ -520,30 +2097,18 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
         "hoverMessage": "3 zero width non-joiners (unicode U+200c) here",
         "range": Object {
           "left": Object {
-            "char": 24,
+            "char": 22,
             "line": 2,
           },
           "right": Object {
-            "char": 27,
+            "char": 25,
             "line": 2,
           },
         },
@@ -552,46 +2117,24 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
         "hoverMessage": "3 left double quotation marks (unicode U+201c) here",
         "range": Object {
           "left": Object {
-            "char": 29,
+            "char": 27,
             "line": 4,
           },
           "right": Object {
-            "char": 32,
+            "char": 30,
             "line": 4,
           },
         },
@@ -600,28 +2143,18 @@ Array [
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
         "hoverMessage": "3 right double quotation marks (unicode U+201d) here",
         "range": Object {
           "left": Object {
-            "char": 30,
+            "char": 28,
             "line": 5,
           },
           "right": Object {
-            "char": 33,
+            "char": 31,
             "line": 5,
           },
         },
@@ -630,80 +2163,32 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows multiple characters on multiple lines in problems 1`] = `
+exports[`updateDecorations shows multiple characters on multiple lines in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -712,11 +2197,11 @@ Array [
         "message": "3 zero width spaces (unicode U+200b) here",
         "range": Object {
           "left": Object {
-            "char": 19,
+            "char": 17,
             "line": 1,
           },
           "right": Object {
-            "char": 22,
+            "char": 20,
             "line": 1,
           },
         },
@@ -727,11 +2212,11 @@ Array [
         "message": "3 zero width non-joiners (unicode U+200c) here",
         "range": Object {
           "left": Object {
-            "char": 24,
+            "char": 22,
             "line": 2,
           },
           "right": Object {
-            "char": 27,
+            "char": 25,
             "line": 2,
           },
         },
@@ -742,11 +2227,11 @@ Array [
         "message": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
-            "char": 21,
+            "char": 19,
             "line": 3,
           },
           "right": Object {
-            "char": 24,
+            "char": 22,
             "line": 3,
           },
         },
@@ -757,11 +2242,11 @@ Array [
         "message": "3 left double quotation marks (unicode U+201c) here",
         "range": Object {
           "left": Object {
-            "char": 29,
+            "char": 27,
             "line": 4,
           },
           "right": Object {
-            "char": 32,
+            "char": 30,
             "line": 4,
           },
         },
@@ -772,11 +2257,11 @@ Array [
         "message": "3 right double quotation marks (unicode U+201d) here",
         "range": Object {
           "left": Object {
-            "char": 30,
+            "char": 28,
             "line": 5,
           },
           "right": Object {
-            "char": 33,
+            "char": 31,
             "line": 5,
           },
         },
@@ -788,37 +2273,17 @@ Array [
 ]
 `;
 
-exports[`shows non breaking space 1`] = `
+exports[`updateDecorations shows non breaking space 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -838,166 +2303,62 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows non breaking space in problems 1`] = `
+exports[`updateDecorations shows non breaking space in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -1022,195 +2383,71 @@ Array [
 ]
 `;
 
-exports[`shows object replacement character 1`] = `
+exports[`updateDecorations shows object replacement character 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1231,7 +2468,7 @@ Array [
 ]
 `;
 
-exports[`shows object replacement character in problems 1`] = `
+exports[`updateDecorations shows object replacement character in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -1256,123 +2493,47 @@ Array [
 ]
 `;
 
-exports[`shows right double quotation mark 1`] = `
+exports[`updateDecorations shows right double quotation mark 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1392,80 +2553,32 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows right double quotation mark in problems 1`] = `
+exports[`updateDecorations shows right double quotation mark in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -1490,73 +2603,29 @@ Array [
 ]
 `;
 
-exports[`shows zero width non-joiner 1`] = `
+exports[`updateDecorations shows zero width non-joiner 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1576,130 +2645,50 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows zero width non-joiner in problems 1`] = `
+exports[`updateDecorations shows zero width non-joiner in problems 1`] = `
 Array [
   Array [
     undefined,
@@ -1724,55 +2713,23 @@ Array [
 ]
 `;
 
-exports[`shows zero width space 1`] = `
+exports[`updateDecorations shows zero width space 1`] = `
 Array [
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [
       Object {
@@ -1792,148 +2749,56 @@ Array [
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "backgroundColor": "rgba(169, 68, 66, .75)",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
   Array [
     Object {
-      "borderColor": "rgba(169, 68, 66, .75)",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
-      "dark": Object {
-        "gutterIconPath": "images/gremlins-dark.svg",
-        "gutterIconSize": "75%",
-      },
-      "light": Object {
-        "gutterIconPath": "images/gremlins-light.svg",
-        "gutterIconSize": "75%",
-      },
-      "overviewRulerColor": "rgba(169, 68, 66, .75)",
-      "overviewRulerLane": "OverviewRulerLane.Right",
+      "dispose": [MockFunction],
     },
     Array [],
   ],
 ]
 `;
 
-exports[`shows zero width space in problems 1`] = `
+exports[`updateDecorations shows zero width space in problems 1`] = `
 Array [
   Array [
     undefined,
