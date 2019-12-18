@@ -20,6 +20,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 zero width space (unicode U+200b) here",
@@ -114,6 +120,12 @@ Array [
 
 exports[`lifecycle event handling processes new file on window.onDidChangeTextEditorSelection 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -240,6 +252,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 zero width space (unicode U+200b) here",
@@ -349,8 +367,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -415,8 +438,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -481,8 +509,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -547,8 +580,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -613,8 +651,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -679,8 +722,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -745,8 +793,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -811,8 +864,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -877,8 +935,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -943,8 +1006,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1009,8 +1077,84 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1080,8 +1224,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1146,8 +1295,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1212,8 +1366,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1278,8 +1437,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1344,8 +1508,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1410,8 +1579,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1476,8 +1650,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1542,8 +1721,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1608,8 +1792,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1674,8 +1863,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1740,8 +1934,84 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1925,6 +2195,12 @@ Array [
     },
     Array [],
   ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
 ]
 `;
 
@@ -1939,6 +2215,12 @@ Array [
 
 exports[`updateDecorations shows left double quotation mark 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -2049,6 +2331,12 @@ Array [
 
 exports[`updateDecorations shows multiple characters on multiple lines 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -2285,6 +2573,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 non breaking space (unicode U+00a0) here",
@@ -2449,6 +2743,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 object replacement character (unicode U+fffc) here",
@@ -2495,6 +2795,12 @@ Array [
 
 exports[`updateDecorations shows right double quotation mark 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -2627,6 +2933,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 zero width non-joiner (unicode U+200c) here",
@@ -2715,6 +3027,12 @@ Array [
 
 exports[`updateDecorations shows zero width space 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
