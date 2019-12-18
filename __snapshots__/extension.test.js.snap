@@ -2335,7 +2335,21 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
-    Array [],
+    Array [
+      Object {
+        "hoverMessage": "3 paragraph separators (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 23,
+            "line": 3,
+          },
+        },
+      },
+    ],
   ],
   Array [
     Object {
@@ -2353,11 +2367,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 19,
-            "line": 3,
+            "line": 4,
           },
           "right": Object {
             "char": 22,
-            "line": 3,
+            "line": 4,
           },
         },
       },
@@ -2419,11 +2433,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 27,
-            "line": 4,
+            "line": 5,
           },
           "right": Object {
             "char": 30,
-            "line": 4,
+            "line": 5,
           },
         },
       },
@@ -2439,11 +2453,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 28,
-            "line": 5,
+            "line": 6,
           },
           "right": Object {
             "char": 31,
-            "line": 5,
+            "line": 6,
           },
         },
       },
@@ -2512,15 +2526,30 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "message": "3 paragraph separators (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 23,
+            "line": 3,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+      Object {
         "message": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
             "char": 19,
-            "line": 3,
+            "line": 4,
           },
           "right": Object {
             "char": 22,
-            "line": 3,
+            "line": 4,
           },
         },
         "severity": "DiagnosticSeverity.Information",
@@ -2531,11 +2560,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 27,
-            "line": 4,
+            "line": 5,
           },
           "right": Object {
             "char": 30,
-            "line": 4,
+            "line": 5,
           },
         },
         "severity": "DiagnosticSeverity.Warning",
@@ -2546,11 +2575,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 28,
-            "line": 5,
+            "line": 6,
           },
           "right": Object {
             "char": 31,
-            "line": 5,
+            "line": 6,
           },
         },
         "severity": "DiagnosticSeverity.Warning",
@@ -2782,6 +2811,122 @@ Array [
           },
           "right": Object {
             "char": 30,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`updateDecorations shows paragraph separator 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 paragraph separator (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 21,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`updateDecorations shows paragraph separator in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 paragraph separator (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 21,
             "line": 0,
           },
         },
