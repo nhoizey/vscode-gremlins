@@ -161,7 +161,7 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
-    "jest": "^24.9.0",
+    "jest": "^25.2.6",
     "prettier": "^1.18.2",
     "vscode": "^1.1.36"
   }
