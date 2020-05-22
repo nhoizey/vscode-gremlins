@@ -82,6 +82,10 @@
               "description": "end of text",
               "level": "warning"
             },
+            "000b": {
+              "description": "line tabulation",
+              "level": "warning"
+            },
             "00a0": {
               "description": "non breaking space",
               "level": "info"
