@@ -1,7 +1,7 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins tracker for Visual Studio Code",
-  "version": "0.15.1",
+  "version": "0.16.0",
   "publisher": "nhoizey",
   "author": {
     "name": "Nicolas Hoizey",
@@ -78,6 +78,10 @@
           "type": "object",
           "description": "List of characters the extension should track",
           "default": {
+            "2013": {
+              "description": "en dash",
+              "level": "warning"
+            },
             "0003": {
               "description": "end of text",
               "level": "warning"
@@ -104,10 +108,6 @@
               "zeroWidth": true,
               "description": "left-to-right mark",
               "level": "error"
-            },
-            "2013": {
-              "description": "en dash",
-              "level": "warning"
             },
             "201c": {
               "description": "left double quotation mark",
