@@ -105,6 +105,10 @@
               "description": "left-to-right mark",
               "level": "error"
             },
+            "2013": {
+              "description": "en dash",
+              "level": "warning"
+            },
             "201c": {
               "description": "left double quotation mark",
               "level": "warning"
