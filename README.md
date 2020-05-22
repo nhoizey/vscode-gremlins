@@ -26,6 +26,19 @@ You can also use the [“Unicode code point of current character” extension](h
 
 You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
 
+As an example, the following snippet adds the "U+000C" FORM FEED character: 
+
+```
+    "gremlins.characters": {
+        "000c" : {
+            "zeroWidth": true,
+            "description": "FORM FEED (FF)",
+            "backgroundColor": "rgba(255,127,80,.5)",
+            "overviewRulerColor": "rgba(255,127,80,1)",
+        }
+    }
+```
+
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
 
 ## Displaying gremlins in the Problems pane
