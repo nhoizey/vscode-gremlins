@@ -2,7 +2,6 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 [![Travis](https://img.shields.io/travis/nhoizey/vscode-gremlins.svg)](https://travis-ci.org/nhoizey/vscode-gremlins)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins?ref=badge_shield)
 
 # Gremlins tracker for Visual Studio Code
 
@@ -26,7 +25,7 @@ You can also use the [“Unicode code point of current character” extension](h
 
 You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
 
-As an example, the following snippet adds the "U+000C" FORM FEED character: 
+As an example, the following snippet adds the "U+000C" FORM FEED character:
 
 ```
     "gremlins.characters": {
@@ -67,6 +66,6 @@ It looks like people liked this feature so much that they made [a dedicated webs
 
 <p style="text-align: center"><img src="https://raw.githubusercontent.com/nhoizey/vscode-gremlins/master/images/zap-gremlins.jpg" width="75%" height="auto" alt="The Zap Gremlins website" /></p>
 
-
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins?ref=badge_large)
+
+MIT
