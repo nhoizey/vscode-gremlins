@@ -47,6 +47,10 @@ By default, gremlins will be highligted in the text editor and an icon will be d
 
 ![A screenshot of Gremlins in Problem Pane](images/problems-screenshot.png)
 
+## Displaying end-of-line characters
+
+If you want to display end-of-line characters, you can use the [Render Line Endings plugin](https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf).
+
 # Standing on the shoulders of giants
 
 VS Code Gremlins was initialy heavily inspired by [Sublime Gremlins](https://packagecontrol.io/packages/Gremlins), a [Sublime Text](https://www.sublimetext.com/) 3 plugin to help identify invisible and ambiguous Unicode whitespace characters (zero width spaces, no-break spaces, and similar.).
