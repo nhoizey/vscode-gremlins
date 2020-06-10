@@ -95,3 +95,12 @@
 ## 0.15.1
 
 - ✨ [Detect settings changes and apply immediately](https://github.com/nhoizey/vscode-gremlins/pull/57) (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.16.0
+
+- 📝 [Add example for adding custom character](https://github.com/nhoizey/vscode-gremlins/pull/101) (🙏 [Andy](https://github.com/LeCyberDucky))
+- ✨ [Add line tabulation character](https://github.com/nhoizey/vscode-gremlins/commit/d49337b5eccaf1a5ce647825be40823192b7eac1)
+- ✨ [Add en dash](https://github.com/nhoizey/vscode-gremlins/commit/0714ffd6045ff4144e36766145228d75775b4cce)
+
+## 0.17.0
+
