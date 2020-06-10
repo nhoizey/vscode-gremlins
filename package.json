@@ -1,7 +1,7 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins tracker for Visual Studio Code",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "publisher": "nhoizey",
   "author": {
     "name": "Nicolas Hoizey",
