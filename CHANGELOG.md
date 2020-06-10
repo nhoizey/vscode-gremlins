@@ -104,3 +104,7 @@
 
 ## 0.17.0
 
+## 0.17.1
+
+- ✨ Add soft hyphens
+- ✨ Add Prettier and ESLint config

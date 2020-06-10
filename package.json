@@ -94,6 +94,10 @@
               "description": "non breaking space",
               "level": "info"
             },
+            "00ad": {
+              "description": "soft hyphen",
+              "level": "info"
+            },
             "200b": {
               "zeroWidth": true,
               "description": "zero width space",

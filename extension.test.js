@@ -168,6 +168,18 @@ describe('updateDecorations', () => {
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
 
+  it('shows soft hyphen', () => {
+    mockDocument.text = 'soft hyphen \u00ad'
+    activate(context)
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+  })
+
+  it('shows soft hyphen in problems', () => {
+    mockDocument.text = 'soft hyphen \u00ad'
+    activate(context)
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
   it('shows left double quotation mark', () => {
     mockDocument.text = 'left double quotation mark \u201c'
     activate(context)

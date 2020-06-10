@@ -3235,6 +3235,134 @@ Array [
 ]
 `;
 
+exports[`updateDecorations shows soft hyphen 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 soft hyphen (unicode U+00ad) here",
+        "range": Object {
+          "left": Object {
+            "char": 12,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 13,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`updateDecorations shows soft hyphen in problems 1`] = `
+Array [
+  Array [
+    undefined,
+    Array [
+      Object {
+        "message": "1 soft hyphen (unicode U+00ad) here",
+        "range": Object {
+          "left": Object {
+            "char": 12,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 13,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Information",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`updateDecorations shows zero width non-joiner 1`] = `
 Array [
   Array [
