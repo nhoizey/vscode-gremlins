@@ -1,6 +1,7 @@
-const createMockDocument = () => {
+let incrementingUri = 1
+const createMockDocument = (text = '') => {
   return {
-    text: '',
+    text: text,
     get lineCount() {
       return this.text.split('\n').length
     },
@@ -8,6 +9,7 @@ const createMockDocument = () => {
       const lines = this.text.split('\n')
       return { text: lines[index] }
     },
+    uri: 'document' + incrementingUri++
   }
 }
 
@@ -55,7 +57,6 @@ jest.mock(
     return {
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
-        onDidChangeTextEditorSelection: jest.fn(() => mockDisposable),
         createTextEditorDecorationType: jest.fn(() => mockDecorationType),
         activeTextEditor: {
           document: mockDocument,
@@ -298,14 +299,6 @@ describe('lifecycle registration', () => {
     ).toMatchSnapshot()
   })
 
-  it('registers with window.onDidChangeTextEditorSelection', () => {
-    activate(context)
-
-    expect(
-      mockVscode.window.onDidChangeTextEditorSelection.mock.calls,
-    ).toMatchSnapshot()
-  })
-
   it('registers with workspace.onDidChangeTextDocument', () => {
     activate(context)
 
@@ -353,21 +346,22 @@ describe('lifecycle event handling', () => {
   })
 
   it('processes new file on window.onDidChangeActiveTextEditor', () => {
-    eventHandlers.window.onDidChangeActiveTextEditor(
-      mockVscode.window.activeTextEditor,
-    )
+    const newMockEditor = {
+      document: createMockDocument('zero width space \u200b'),
+      setDecorations: mockSetDecorations,
+    }
 
+    eventHandlers.window.onDidChangeActiveTextEditor(newMockEditor)
+    
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
-
-  it('processes new file on window.onDidChangeTextEditorSelection', () => {
-    eventHandlers.window.onDidChangeTextEditorSelection({
-      textEditor: mockVscode.window.activeTextEditor,
-    })
-
-    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
-    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  
+  it('does NOT process already-processed file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
+    
+    expect(mockSetDecorations.mock.calls.length).toBe(0)
+    expect(mockSetDiagnostics.mock.calls.length).toBe(0)
   })
 
   it('processes new file on workspace.onDidChangeTextDocument', () => {
@@ -410,9 +404,11 @@ describe('deactivate', () => {
   })
 
   it('disposes event handlers', () => {
-    deactivate()
+    const totalEvents = 4
 
-    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
+    deactivate()
+    
+    expect(mockDisposable.dispose.mock.calls.length).toBe(totalEvents)
   })
 
   it('disposes decorationTypes', () => {
