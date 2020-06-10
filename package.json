@@ -45,7 +45,7 @@
     }
   ],
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.30.0"
   },
   "categories": [
     "Linters"
@@ -162,7 +162,6 @@
     }
   },
   "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
     "prettier": "prettier --write '**/*{js,json}'",
     "test": "jest"
   },
@@ -172,9 +171,10 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "vscode": "^1.1.36"
     "eslint": "^7.2.0",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
+    "vscode-test": "^1.4.0",
+    "@types/vscode": "^1.30.0"
   }
 }
