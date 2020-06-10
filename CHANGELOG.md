@@ -104,6 +104,8 @@
 
 ## 0.17.0
 
+- 🐛 Re-release of borked 0.16.0
+
 ## 0.17.1
 
 - ✨ Add soft hyphens
