@@ -108,5 +108,5 @@
 
 ## 0.17.1
 
-- ✨ Add soft hyphens
-- ✨ Add Prettier and ESLint config
+- ✨ [Add soft hyphens](https://github.com/nhoizey/vscode-gremlins/commit/6a0d350536b7a7252ae978811deaaed854f36aec)
+- ✨ [Add Prettier and ESLint config](https://github.com/nhoizey/vscode-gremlins/commit/f707b02a736030ce5c1c4d74190547f5f272ec95)
