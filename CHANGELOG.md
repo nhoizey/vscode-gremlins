@@ -95,3 +95,28 @@
 ## 0.15.1
 
 - ✨ [Detect settings changes and apply immediately](https://github.com/nhoizey/vscode-gremlins/pull/57) (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.16.0
+
+- 📝 [Add example for adding custom character](https://github.com/nhoizey/vscode-gremlins/pull/101) (🙏 [Andy](https://github.com/LeCyberDucky))
+- ✨ [Add line tabulation character](https://github.com/nhoizey/vscode-gremlins/commit/d49337b5eccaf1a5ce647825be40823192b7eac1)
+- ✨ [Add en dash](https://github.com/nhoizey/vscode-gremlins/commit/0714ffd6045ff4144e36766145228d75775b4cce)
+
+## 0.17.0
+
+- 🐛 Re-release of borked 0.16.0
+
+## 0.18.0
+
+- ✨ [Add soft hyphens](https://github.com/nhoizey/vscode-gremlins/commit/6a0d350536b7a7252ae978811deaaed854f36aec)
+- ✨ [Add Prettier and ESLint config](https://github.com/nhoizey/vscode-gremlins/commit/f707b02a736030ce5c1c4d74190547f5f272ec95)
+
+## 0.19.0
+
+- 📝 [Add recent characters to the sample file](https://github.com/nhoizey/vscode-gremlins/commit/752cc42ee22bca31eee1e66c8481af7185107fce)
+- ⬆️ [Update dev dependencies](https://github.com/nhoizey/vscode-gremlins/commit/85e1a3a83a84099af25edd784bf859d867a975a8)
+- ⬆️ [Follow vsscode package split](https://code.visualstudio.com/updates/v1_36#_splitting-vscode-package-into-typesvscode-and-vscodetest)
+
+## 0.20.0
+
+- 🚀 [Remove unnecessary calls to updateDecorations](https://github.com/nhoizey/vscode-gremlins/pull/61) (🙏 [Jon Senchyna](https://github.com/TheSench))

@@ -1,6 +1,7 @@
-const createMockDocument = () => {
+let incrementingUri = 1
+const createMockDocument = (text = '') => {
   return {
-    text: '',
+    text: text,
     get lineCount() {
       return this.text.split('\n').length
     },
@@ -8,22 +9,19 @@ const createMockDocument = () => {
       const lines = this.text.split('\n')
       return { text: lines[index] }
     },
+    uri: 'document' + incrementingUri++
   }
 }
 
 let mockDocument = createMockDocument()
-let mockVisibleDocuments = [
-  createMockDocument(),
-  createMockDocument()
-]
-
+let mockVisibleDocuments = [createMockDocument(), createMockDocument()]
 
 let mockDisposable = {
-  dispose: jest.fn()
+  dispose: jest.fn(),
 }
 
 let mockDecorationType = {
-  dispose: jest.fn()
+  dispose: jest.fn(),
 }
 
 const mockSetDecorations = jest.fn()
@@ -34,14 +32,16 @@ const mockDisposeDiagnostics = jest.fn()
 
 /**
  * Tag for use with template literals
- * 
+ *
  * Finds the indentation on the first line after the opening backtick
  * and removes that indentation from every line in the template.
  * @param {String[]} strings Array of lines in the template literal
  */
 function outdent(strings) {
   // Add in all of the expressions
-  let outdented = strings.map((s, i) => `${s}${arguments[i+1]||''}`).join('')
+  let outdented = strings
+    .map((s, i) => `${s}${arguments[i + 1] || ''}`)
+    .join('')
   // Find the indentation after the first newline
   const matches = /^\s+/.exec(outdented.split('\n')[1])
   if (matches) {
@@ -57,7 +57,6 @@ jest.mock(
     return {
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
-        onDidChangeTextEditorSelection: jest.fn(() => mockDisposable),
         createTextEditorDecorationType: jest.fn(() => mockDecorationType),
         activeTextEditor: {
           document: mockDocument,
@@ -71,8 +70,8 @@ jest.mock(
           {
             document: mockVisibleDocuments[1],
             setDecorations: jest.fn(),
-          }
-        ]
+          },
+        ],
       },
       workspace: {
         onDidChangeTextDocument: jest.fn(() => mockDisposable),
@@ -89,7 +88,11 @@ jest.mock(
               'gremlins.gutterIconSize'
             ].default
           const showInProblemPane = true
-          return { characters: characters, gutterIconSize: gutterIconSize, showInProblemPane: showInProblemPane }
+          return {
+            characters: characters,
+            gutterIconSize: gutterIconSize,
+            showInProblemPane: showInProblemPane,
+          }
         }),
       },
       languages: {
@@ -97,8 +100,8 @@ jest.mock(
           set: mockSetDiagnostics,
           delete: mockDeleteDiagnostics,
           clear: mockClearDiagnostics,
-          dispose:mockDisposeDiagnostics
-        }))
+          dispose: mockDisposeDiagnostics,
+        })),
       },
       OverviewRulerLane: { Right: 'OverviewRulerLane.Right' },
       Position: jest.fn((line, char) => {
@@ -110,7 +113,7 @@ jest.mock(
       DiagnosticSeverity: {
         Information: 'DiagnosticSeverity.Information',
         Warning: 'DiagnosticSeverity.Warning',
-        Error: 'DiagnosticSeverity.Error'
+        Error: 'DiagnosticSeverity.Error',
       },
     }
   },
@@ -176,6 +179,18 @@ describe('updateDecorations', () => {
 
   it('shows non breaking space in problems', () => {
     mockDocument.text = 'non breaking space \u00a0'
+    activate(context)
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
+  it('shows soft hyphen', () => {
+    mockDocument.text = 'soft hyphen \u00ad'
+    activate(context)
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+  })
+
+  it('shows soft hyphen in problems', () => {
+    mockDocument.text = 'soft hyphen \u00ad'
     activate(context)
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
@@ -297,31 +312,33 @@ describe('lifecycle registration', () => {
   it('registers with window.onDidChangeActiveTextEditor', () => {
     activate(context)
 
-    expect(mockVscode.window.onDidChangeActiveTextEditor.mock.calls).toMatchSnapshot()
-  })
-
-  it('registers with window.onDidChangeTextEditorSelection', () => {
-    activate(context)
-
-    expect(mockVscode.window.onDidChangeTextEditorSelection.mock.calls).toMatchSnapshot()
+    expect(
+      mockVscode.window.onDidChangeActiveTextEditor.mock.calls,
+    ).toMatchSnapshot()
   })
 
   it('registers with workspace.onDidChangeTextDocument', () => {
     activate(context)
 
-    expect(mockVscode.workspace.onDidChangeTextDocument.mock.calls).toMatchSnapshot()
+    expect(
+      mockVscode.workspace.onDidChangeTextDocument.mock.calls,
+    ).toMatchSnapshot()
   })
 
   it('registers with workspace.onDidCloseTextDocument', () => {
     activate(context)
 
-    expect(mockVscode.workspace.onDidCloseTextDocument.mock.calls).toMatchSnapshot()
+    expect(
+      mockVscode.workspace.onDidCloseTextDocument.mock.calls,
+    ).toMatchSnapshot()
   })
 
   it('registers with workspace.onDidChangeConfiguration', () => {
     activate(context)
 
-    expect(mockVscode.workspace.onDidChangeConfiguration.mock.calls).toMatchSnapshot()
+    expect(
+      mockVscode.workspace.onDidChangeConfiguration.mock.calls,
+    ).toMatchSnapshot()
   })
 })
 
@@ -334,7 +351,7 @@ describe('lifecycle event handling', () => {
         return handlers
       }, {})
   }
-  
+
   let eventHandlers = {}
   beforeEach(() => {
     activate(context)
@@ -345,37 +362,44 @@ describe('lifecycle event handling', () => {
     }
     jest.clearAllMocks()
   })
-  
+
   it('processes new file on window.onDidChangeActiveTextEditor', () => {
-    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
+    const newMockEditor = {
+      document: createMockDocument('zero width space \u200b'),
+      setDecorations: mockSetDecorations,
+    }
+
+    eventHandlers.window.onDidChangeActiveTextEditor(newMockEditor)
     
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
-
-  it('processes new file on window.onDidChangeTextEditorSelection', () => {
-    eventHandlers.window.onDidChangeTextEditorSelection({textEditor: mockVscode.window.activeTextEditor})
+  
+  it('does NOT process already-processed file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
     
-    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
-    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+    expect(mockSetDecorations.mock.calls.length).toBe(0)
+    expect(mockSetDiagnostics.mock.calls.length).toBe(0)
   })
 
   it('processes new file on workspace.onDidChangeTextDocument', () => {
     eventHandlers.workspace.onDidChangeTextDocument()
-    
+
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
 
   it('clears diagnostics on workspace.onDidCloseTextDocument', () => {
-    eventHandlers.workspace.onDidCloseTextDocument({uri: 'someUri'})
+    eventHandlers.workspace.onDidCloseTextDocument({ uri: 'someUri' })
 
     expect(mockClearDiagnostics.calls).toMatchSnapshot()
   })
 
   it('processes visible text editors on workspace.onDidChangeConfiguration', () => {
-    eventHandlers.workspace.onDidChangeConfiguration({affectsConfiguration: jest.fn(arg => true)})
-    
+    eventHandlers.workspace.onDidChangeConfiguration({
+      affectsConfiguration: jest.fn(arg => true),
+    })
+
     expect(mockSetDecorations.mock.calls.length).toBe(0)
     mockVscode.window.visibleTextEditors.forEach(editor => {
       expect(editor.setDecorations.mock.calls).toMatchSnapshot()
@@ -398,14 +422,18 @@ describe('deactivate', () => {
   })
 
   it('disposes event handlers', () => {
+    const totalEvents = 4
+
     deactivate()
     
-    expect(mockDisposable.dispose.mock.calls.length).toBe(5)
+    expect(mockDisposable.dispose.mock.calls.length).toBe(totalEvents)
   })
 
   it('disposes decorationTypes', () => {
     deactivate()
-    
-    expect(mockDecorationType.dispose.mock.calls.length).toBe(mockVscode.window.createTextEditorDecorationType.mock.calls.length)
+
+    expect(mockDecorationType.dispose.mock.calls.length).toBe(
+      mockVscode.window.createTextEditorDecorationType.mock.calls.length,
+    )
   })
 })

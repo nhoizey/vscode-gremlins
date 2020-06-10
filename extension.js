@@ -18,6 +18,8 @@ const GREMLINS_SEVERITIES = {
 
 const eventListeners = []
 
+const processedDocuments = {}
+
 let configuration = null
 
 let diagnosticCollection = null
@@ -151,7 +153,7 @@ function charFromHex(hexCodePoint) {
  * @param {RegExp} regexpWithAllChars 
  * @param {vscode.DiagnosticCollection} diagnosticCollection
  */
-function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
+function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
   if (!activeTextEditor) {
     return
   }
@@ -213,12 +215,14 @@ function updateDecorations(activeTextEditor, gremlins, regexpWithAllChars, diagn
   if (diagnosticCollection) {
     diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
   }
+
+  processedDocuments[activeTextEditor.document.uri] = true
 }
 
 function activate(context) {
   configuration = loadConfiguration(context)
 
-  const doUpdateDecorations = editor => updateDecorations(
+  const doCheckForGremlins = editor => checkForGremlins(
     editor,
     configuration.gremlins,
     configuration.regexpWithAllChars,
@@ -232,7 +236,7 @@ function activate(context) {
           disposeDecorationTypes(configuration.gremlins)
 
           configuration = loadConfiguration(context)
-          vscode.window.visibleTextEditors.forEach(editor => doUpdateDecorations(editor))
+          vscode.window.visibleTextEditors.forEach(editor => doCheckForGremlins(editor))
         }
       },
       null,
@@ -242,15 +246,11 @@ function activate(context) {
 
   eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
-      editor => doUpdateDecorations(editor),
-      null,
-      context.subscriptions,
-    )
-  )
-
-  eventListeners.push(
-    vscode.window.onDidChangeTextEditorSelection(
-      event => doUpdateDecorations(event.textEditor),
+      editor => {
+        if (!processedDocuments[editor.document.uri]) {
+          doCheckForGremlins(editor)
+        }
+      },
       null,
       context.subscriptions,
     )
@@ -258,7 +258,7 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      event => doUpdateDecorations(vscode.window.activeTextEditor),
+      _event => doCheckForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     )
@@ -266,13 +266,16 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidCloseTextDocument(
-      textDocument => diagnosticCollection && diagnosticCollection.delete(textDocument.uri),
+      textDocument => {
+        diagnosticCollection && diagnosticCollection.delete(textDocument.uri)
+        delete processedDocuments[textDocument.uri]
+      },
       null,
       context.subscriptions
     )
   )
 
-  doUpdateDecorations(vscode.window.activeTextEditor)
+  doCheckForGremlins(vscode.window.activeTextEditor)
 }
 exports.activate = activate
 
