@@ -2,7 +2,6 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 [![Travis](https://img.shields.io/travis/nhoizey/vscode-gremlins.svg)](https://travis-ci.org/nhoizey/vscode-gremlins)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins?ref=badge_shield)
 
 # Gremlins tracker for Visual Studio Code
 
@@ -15,6 +14,8 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 - A few characters that can be harmful have a light red or orange background
   - Non-breaking spaces
   - Left and right double quotation marks
+  - Etc.
+- Some other characters are less harmful, but you might be interested in knowing they're here, so they're also shown, in blue
 - Move the cursor over the character to have a hint of the potential issue
 - A gremlin icon is shown in the gutter for every line that contains at least one of these characters
 
@@ -26,13 +27,32 @@ You can also use the [“Unicode code point of current character” extension](h
 
 You can configure the list of characters and how they are shown under user settings key `gremlins.characters`.
 
+As an example, the following snippet adds the "U+000C" FORM FEED character:
+
+```
+    "gremlins.characters": {
+        "000c" : {
+            "zeroWidth": true,
+            "description": "FORM FEED (FF)",
+            "backgroundColor": "rgba(255,127,80,.5)",
+            "overviewRulerColor": "rgba(255,127,80,1)",
+        }
+    }
+```
+
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
+
+You can find all characters in [Unicode Table](https://unicode-table.com/en/).
 
 ## Displaying gremlins in the Problems pane
 
 By default, gremlins will be highligted in the text editor and an icon will be displayed in the gutter for each line with at least one gremlin. You can toggle whether gremlins also show in the Problems pane with user settings key `gremlins.showInProblemPane`.
 
 ![A screenshot of Gremlins in Problem Pane](images/problems-screenshot.png)
+
+## Displaying end-of-line characters
+
+If you want to display end-of-line characters, you can use the [Render Line Endings plugin](https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf).
 
 # Standing on the shoulders of giants
 
@@ -50,6 +70,6 @@ It looks like people liked this feature so much that they made [a dedicated webs
 
 <p style="text-align: center"><img src="https://raw.githubusercontent.com/nhoizey/vscode-gremlins/master/images/zap-gremlins.jpg" width="75%" height="auto" alt="The Zap Gremlins website" /></p>
 
-
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnhoizey%2Fvscode-gremlins?ref=badge_large)
+
+MIT
