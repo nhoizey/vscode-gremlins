@@ -258,7 +258,7 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      event => doCheckForGremlins(vscode.window.activeTextEditor),
+      _event => doCheckForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     )
