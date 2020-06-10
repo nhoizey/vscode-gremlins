@@ -110,3 +110,9 @@
 
 - ✨ [Add soft hyphens](https://github.com/nhoizey/vscode-gremlins/commit/6a0d350536b7a7252ae978811deaaed854f36aec)
 - ✨ [Add Prettier and ESLint config](https://github.com/nhoizey/vscode-gremlins/commit/f707b02a736030ce5c1c4d74190547f5f272ec95)
+
+## 0.19.0
+
+- 📝 [Add recent characters to the sample file](https://github.com/nhoizey/vscode-gremlins/commit/752cc42ee22bca31eee1e66c8481af7185107fce)
+- ⬆️ [Update dev dependencies](https://github.com/nhoizey/vscode-gremlins/commit/85e1a3a83a84099af25edd784bf859d867a975a8)
+- ⬆️ [Follow vsscode package split](https://code.visualstudio.com/updates/v1_36#_splitting-vscode-package-into-typesvscode-and-vscodetest)
