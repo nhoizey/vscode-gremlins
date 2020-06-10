@@ -116,3 +116,7 @@
 - 📝 [Add recent characters to the sample file](https://github.com/nhoizey/vscode-gremlins/commit/752cc42ee22bca31eee1e66c8481af7185107fce)
 - ⬆️ [Update dev dependencies](https://github.com/nhoizey/vscode-gremlins/commit/85e1a3a83a84099af25edd784bf859d867a975a8)
 - ⬆️ [Follow vsscode package split](https://code.visualstudio.com/updates/v1_36#_splitting-vscode-package-into-typesvscode-and-vscodetest)
+
+## 0.20.0
+
+- 🚀 [Remove unnecessary calls to updateDecorations](https://github.com/nhoizey/vscode-gremlins/pull/61) (🙏 [Jon Senchyna](https://github.com/TheSench))
