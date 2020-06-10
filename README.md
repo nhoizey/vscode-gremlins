@@ -14,6 +14,8 @@ This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some
 - A few characters that can be harmful have a light red or orange background
   - Non-breaking spaces
   - Left and right double quotation marks
+  - Etc.
+- Some other characters are less harmful, but you might be interested in knowing they're here, so they're also shown, in blue
 - Move the cursor over the character to have a hint of the potential issue
 - A gremlin icon is shown in the gutter for every line that contains at least one of these characters
 
@@ -39,6 +41,8 @@ As an example, the following snippet adds the "U+000C" FORM FEED character:
 ```
 
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
+
+You can find all characters in [Unicode Table](https://unicode-table.com/en/).
 
 ## Displaying gremlins in the Problems pane
 
