@@ -120,3 +120,7 @@
 ## 0.20.0
 
 - 🚀 [Remove unnecessary calls to updateDecorations](https://github.com/nhoizey/vscode-gremlins/pull/61) (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.21.0
+
+- ✨ [Add paragraph separator](https://github.com/nhoizey/vscode-gremlins/pull/66) (🙏 [Florian Reuschel](https://github.com/loilo))
