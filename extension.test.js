@@ -159,6 +159,18 @@ describe('updateDecorations', () => {
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
 
+  it('shows paragraph separator', () => {
+    mockDocument.text = 'paragraph separator \u2029'
+    activate(context)
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+  })
+
+  it('shows paragraph separator in problems', () => {
+    mockDocument.text = 'paragraph separator \u2029'
+    activate(context)
+    expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+  })
+
   it('shows non breaking space', () => {
     mockDocument.text = 'non breaking space \u00a0'
     activate(context)
@@ -223,6 +235,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
+    paragraph separator \u2029\u2029\u2029
     non breaking space \u00a0\u00a0\u00a0
     left double quotation mark \u201c\u201c\u201c
     right double quotation mark \u201d\u201d\u201d
@@ -235,6 +248,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
+    paragraph separator \u2029\u2029\u2029
     non breaking space \u00a0\u00a0\u00a0
     left double quotation mark \u201c\u201c\u201c
     right double quotation mark \u201d\u201d\u201d
@@ -247,6 +261,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
+    paragraph separator \u2029\u2029\u2029
     non breaking space \u00a0\u00a0\u00a0
     left double quotation mark \u201c\u201c\u201c
     right double quotation mark \u201d\u201d\u201d
@@ -257,6 +272,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space
     zero width non-joiner
+    paragraph separator
     non breaking space
     left double quotation mark
     right double quotation mark
@@ -270,6 +286,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space \u200b\u200b\u200b
     zero width non-joiner \u200c\u200c\u200c
+    paragraph separator \u2029\u2029\u2029
     non breaking space \u00a0\u00a0\u00a0
     left double quotation mark \u201c\u201c\u201c
     right double quotation mark \u201d\u201d\u201d
@@ -280,6 +297,7 @@ describe('updateDecorations', () => {
     mockDocument.text = outdent`
     zero width space
     zero width non-joiner
+    paragraph separator
     non breaking space
     left double quotation mark
     right double quotation mark

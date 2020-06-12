@@ -121,6 +121,11 @@
               "description": "right double quotation mark",
               "level": "warning"
             },
+            "2029": {
+              "zeroWidth": true,
+              "description": "paragraph separator",
+              "level": "error"
+            },
             "202c": {
               "zeroWidth": true,
               "description": "pop directional formatting",

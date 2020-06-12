@@ -38,6 +38,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 zero width space (unicode U+200b) here",
@@ -132,6 +138,12 @@ Array [
 
 exports[`lifecycle event handling processes new file on workspace.onDidChangeTextDocument 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -278,8 +290,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -359,8 +376,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -440,8 +462,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -521,8 +548,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -602,8 +634,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -683,8 +720,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -764,8 +806,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -845,8 +892,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -926,8 +978,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1007,8 +1064,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1088,8 +1150,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1169,8 +1236,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1250,8 +1322,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1331,8 +1408,99 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1417,8 +1585,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1498,8 +1671,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1579,8 +1757,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1660,8 +1843,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1741,8 +1929,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1822,8 +2015,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1903,8 +2101,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -1984,8 +2187,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2065,8 +2273,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2146,8 +2359,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2227,8 +2445,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2308,8 +2531,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2389,8 +2617,13 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2470,8 +2703,99 @@ Array [
           Array [],
           Array [],
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -2675,6 +2999,12 @@ Array [
     },
     Array [],
   ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
 ]
 `;
 
@@ -2689,6 +3019,12 @@ Array [
 
 exports[`updateDecorations shows left double quotation mark 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -2827,6 +3163,26 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [
+      Object {
+        "hoverMessage": "3 paragraph separators (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 23,
+            "line": 3,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [],
   ],
   Array [
@@ -2845,11 +3201,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 19,
-            "line": 3,
+            "line": 4,
           },
           "right": Object {
             "char": 22,
-            "line": 3,
+            "line": 4,
           },
         },
       },
@@ -2917,11 +3273,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 27,
-            "line": 4,
+            "line": 5,
           },
           "right": Object {
             "char": 30,
-            "line": 4,
+            "line": 5,
           },
         },
       },
@@ -2937,11 +3293,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 28,
-            "line": 5,
+            "line": 6,
           },
           "right": Object {
             "char": 31,
-            "line": 5,
+            "line": 6,
           },
         },
       },
@@ -3010,15 +3366,30 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "message": "3 paragraph separators (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 3,
+          },
+          "right": Object {
+            "char": 23,
+            "line": 3,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+      Object {
         "message": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
             "char": 19,
-            "line": 3,
+            "line": 4,
           },
           "right": Object {
             "char": 22,
-            "line": 3,
+            "line": 4,
           },
         },
         "severity": "DiagnosticSeverity.Information",
@@ -3029,11 +3400,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 27,
-            "line": 4,
+            "line": 5,
           },
           "right": Object {
             "char": 30,
-            "line": 4,
+            "line": 5,
           },
         },
         "severity": "DiagnosticSeverity.Warning",
@@ -3044,11 +3415,11 @@ Array [
         "range": Object {
           "left": Object {
             "char": 28,
-            "line": 5,
+            "line": 6,
           },
           "right": Object {
             "char": 31,
-            "line": 5,
+            "line": 6,
           },
         },
         "severity": "DiagnosticSeverity.Warning",
@@ -3061,6 +3432,12 @@ Array [
 
 exports[`updateDecorations shows non breaking space 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -3271,6 +3648,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 object replacement character (unicode U+fffc) here",
@@ -3315,8 +3698,148 @@ Array [
 ]
 `;
 
+exports[`updateDecorations shows paragraph separator 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 paragraph separator (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 21,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`updateDecorations shows paragraph separator in problems 1`] = `
+Array [
+  Array [
+    "document1",
+    Array [
+      Object {
+        "message": "1 paragraph separator (unicode U+2029) here",
+        "range": Object {
+          "left": Object {
+            "char": 20,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 21,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
+  ],
+]
+`;
+
 exports[`updateDecorations shows right double quotation mark 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -3445,6 +3968,12 @@ Array [
 
 exports[`updateDecorations shows soft hyphen 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
@@ -3613,6 +4142,12 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
+    Array [],
+  ],
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
     Array [
       Object {
         "hoverMessage": "1 zero width non-joiner (unicode U+200c) here",
@@ -3701,6 +4236,12 @@ Array [
 
 exports[`updateDecorations shows zero width space 1`] = `
 Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
   Array [
     Object {
       "dispose": [MockFunction],
