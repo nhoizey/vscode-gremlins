@@ -95,8 +95,8 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
   const gremlins = {}
   for (const [hexCodePoint, config] of Object.entries(gremlinsCharacters)) {
     let decorationType = {
-      light: lightIcon,
-      dark: darkIcon,
+      light: config.hideGutterIcon ? {} : lightIcon,
+      dark: config.hideGutterIcon ? {} : darkIcon,
       overviewRulerColor: config.overviewRulerColor || gremlinsDefaultColor,
       overviewRulerLane: vscode.OverviewRulerLane.Right,
     }
@@ -147,10 +147,10 @@ function charFromHex(hexCodePoint) {
 }
 
 /**
- * 
- * @param {vscode.TextEditor} activeTextEditor 
- * @param {*} gremlins 
- * @param {RegExp} regexpWithAllChars 
+ *
+ * @param {vscode.TextEditor} activeTextEditor
+ * @param {*} gremlins
+ * @param {RegExp} regexpWithAllChars
  * @param {vscode.DiagnosticCollection} diagnosticCollection
  */
 function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
@@ -191,7 +191,7 @@ function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagno
       }
 
       decorationOption[matchedCharacter].push(decoration)
-      
+
       if (diagnosticCollection) {
         const severity = GREMLINS_SEVERITIES[gremlin.level]
         const diagnostic = {
