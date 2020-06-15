@@ -128,3 +128,7 @@
 ## 0.22.0
 
 - ✨ [Add left and right single quotation mark](https://github.com/nhoizey/vscode-gremlins/commit/db48a5fa3872b9bacf5057bafedf0c8b68f30914)
+
+## 0.23.0
+
+- ✨ [Allow hiding the gremlin icon from the gutter for some characters](https://github.com/nhoizey/vscode-gremlins/pull/105) (🙏 [Karl Swedberg](https://github.com/kswedberg))
