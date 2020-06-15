@@ -1,7 +1,7 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins tracker for Visual Studio Code",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "publisher": "nhoizey",
   "author": {
     "name": "Nicolas Hoizey",
@@ -82,6 +82,14 @@
               "description": "en dash",
               "level": "warning"
             },
+            "2018": {
+              "description": "left single quotation mark",
+              "level": "warning"
+            },
+            "2019": {
+              "description": "right single quotation mark",
+              "level": "warning"
+            },
             "2029": {
               "zeroWidth": true,
               "description": "paragraph separator",
@@ -117,14 +125,6 @@
               "zeroWidth": true,
               "description": "left-to-right mark",
               "level": "error"
-            },
-            "2018": {
-              "description": "left single quotation mark",
-              "level": "warning"
-            },
-            "2019": {
-              "description": "right single quotation mark",
-              "level": "warning"
             },
             "201c": {
               "description": "left double quotation mark",
