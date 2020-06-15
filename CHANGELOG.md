@@ -124,3 +124,7 @@
 ## 0.21.0
 
 - ✨ [Add paragraph separator](https://github.com/nhoizey/vscode-gremlins/pull/66) (🙏 [Florian Reuschel](https://github.com/loilo))
+
+## 0.22.0
+
+- ✨ [Add left and right single quotation mark](https://github.com/nhoizey/vscode-gremlins/commit/db48a5fa3872b9bacf5057bafedf0c8b68f30914)
