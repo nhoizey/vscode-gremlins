@@ -2,7 +2,7 @@ var vscode = require('vscode')
 
 const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
 
-const GREMLINS = 'gremlins';
+const GREMLINS = 'gremlins'
 
 const GREMLINS_LEVELS = {
   INFO: 'info',
@@ -165,7 +165,7 @@ function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagno
     decorationOption[char] = []
   }
   /** vscode.Diagnostic[] */
-  let diagnostics = [];
+  let diagnostics = []
 
   for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
     let lineText = doc.lineAt(lineNum)
