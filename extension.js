@@ -26,7 +26,9 @@ let diagnosticCollection = null
 
 function configureDiagnosticsCollection(showDiagnostics) {
   if (showDiagnostics && !diagnosticCollection) {
-    diagnosticCollection = diagnosticCollection = vscode.languages.createDiagnosticCollection(GREMLINS)
+    diagnosticCollection = diagnosticCollection = vscode.languages.createDiagnosticCollection(
+      GREMLINS,
+    )
   } else if (!showDiagnostics && diagnosticCollection) {
     diagnosticCollection.clear()
     diagnosticCollection.dispose()
@@ -47,12 +49,13 @@ function loadConfiguration(context) {
 
   const gremlins = gremlinsFromConfig(gremlinsConfiguration, context)
 
-  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS).showInProblemPane
+  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS)
+    .showInProblemPane
   const diagnosticCollection = configureDiagnosticsCollection(showDiagnostics)
 
   let regexpWithAllChars = new RegExp(
     Object.keys(gremlins)
-      .map(char => `${char}+`)
+      .map((char) => `${char}+`)
       .join('|'),
     'g',
   )
@@ -153,7 +156,12 @@ function charFromHex(hexCodePoint) {
  * @param {RegExp} regexpWithAllChars
  * @param {vscode.DiagnosticCollection} diagnosticCollection
  */
-function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagnosticCollection) {
+function checkForGremlins(
+  activeTextEditor,
+  gremlins,
+  regexpWithAllChars,
+  diagnosticCollection,
+) {
   if (!activeTextEditor) {
     return
   }
@@ -198,7 +206,7 @@ function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagno
           range: decoration.range,
           message: decoration.hoverMessage,
           severity: severity,
-          source: "Gremlins tracker",
+          source: 'Gremlins tracker',
         }
         diagnostics.push(diagnostic)
       }
@@ -222,26 +230,29 @@ function checkForGremlins(activeTextEditor, gremlins, regexpWithAllChars, diagno
 function activate(context) {
   configuration = loadConfiguration(context)
 
-  const doCheckForGremlins = editor => checkForGremlins(
-    editor,
-    configuration.gremlins,
-    configuration.regexpWithAllChars,
-    configuration.diagnosticCollection,
-  )
+  const doCheckForGremlins = (editor) =>
+    checkForGremlins(
+      editor,
+      configuration.gremlins,
+      configuration.regexpWithAllChars,
+      configuration.diagnosticCollection,
+    )
 
   eventListeners.push(
     vscode.workspace.onDidChangeConfiguration(
-      event => {
+      (event) => {
         if (event.affectsConfiguration(GREMLINS)) {
           disposeDecorationTypes(configuration.gremlins)
 
           configuration = loadConfiguration(context)
-          vscode.window.visibleTextEditors.forEach(editor => doCheckForGremlins(editor))
+          vscode.window.visibleTextEditors.forEach((editor) =>
+            doCheckForGremlins(editor),
+          )
         }
       },
       null,
-      context.subscriptions
-    )
+      context.subscriptions,
+    ),
   )
 
   eventListeners.push(
@@ -253,26 +264,26 @@ function activate(context) {
       },
       null,
       context.subscriptions,
-    )
+    ),
   )
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      _event => doCheckForGremlins(vscode.window.activeTextEditor),
+      (_event) => doCheckForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
-    )
+    ),
   )
 
   eventListeners.push(
     vscode.workspace.onDidCloseTextDocument(
-      textDocument => {
+      (textDocument) => {
         diagnosticCollection && diagnosticCollection.delete(textDocument.uri)
         delete processedDocuments[textDocument.uri]
       },
       null,
-      context.subscriptions
-    )
+      context.subscriptions,
+    ),
   )
 
   doCheckForGremlins(vscode.window.activeTextEditor)
@@ -283,7 +294,7 @@ exports.activate = activate
 function deactivate() {
   configuration.dispose()
 
-  eventListeners.forEach(listener => listener.dispose())
+  eventListeners.forEach((listener) => listener.dispose())
   eventListeners.length = 0
 }
 exports.deactivate = deactivate
