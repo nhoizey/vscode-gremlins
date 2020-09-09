@@ -246,8 +246,8 @@ function activate(context) {
 
   eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
-      editor => {
-        if (!processedDocuments[editor.document.uri]) {
+      (editor) => {
+        if (editor && !processedDocuments[editor.document.uri]) {
           doCheckForGremlins(editor)
         }
       },
