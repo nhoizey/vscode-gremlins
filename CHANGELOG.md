@@ -132,3 +132,7 @@
 ## 0.23.0
 
 - ✨ [Allow hiding the gremlin icon from the gutter for some characters](https://github.com/nhoizey/vscode-gremlins/pull/105) (🙏 [Karl Swedberg](https://github.com/kswedberg))
+
+## 0.23.1
+
+- 🐛 [Fix warning in VS Code devtools when there is no known editor](https://github.com/nhoizey/vscode-gremlins/commit/5638ebbe73586432c59f172c1d233be80db5b8f7) (🙏 [Lukas Reinhart](https://github.com/LukasReinhart) for opening [the issue](https://github.com/nhoizey/vscode-gremlins/issues/129))
