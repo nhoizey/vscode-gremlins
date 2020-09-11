@@ -9,6 +9,6 @@ updates:
     commit-message:
       prefix: '[skip ci]'
     labels:
-      - 'type: dependencies 🧷'
+      - 'type: dependencies 🔗'
       # Add Kodiak `merge.automerge_label`
       - 'automerge 🤞'
