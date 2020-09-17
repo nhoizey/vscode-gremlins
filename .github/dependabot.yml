@@ -6,8 +6,8 @@ updates:
       interval: 'daily'
       time: '04:00'
     open-pull-requests-limit: 20
-    commit-message:
-      prefix: '[skip ci]'
+    # commit-message:
+    #   prefix: '[skip ci]'
     labels:
       - 'type: dependencies 🔗'
       # Add Kodiak `merge.automerge_label`
