@@ -176,6 +176,7 @@
   },
   "scripts": {
     "lint": "eslint ./extension.js",
+    "lint:fix": "npm run lin -- --fix",
     "prettier": "prettier --write '**/*{js,json}'",
     "test": "jest"
   },
