@@ -380,8 +380,16 @@ describe('lifecycle event handling', () => {
       mockVscode.window.activeTextEditor,
     )
 
-    expect(mockSetDecorations.mock.calls.length).toBe(0)
     expect(mockSetDiagnostics.mock.calls.length).toBe(0)
+  })
+
+  it('re-paints gremlins for already-processed file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(
+      mockVscode.window.activeTextEditor,
+    )
+
+    expect(mockSetDecorations.mock.calls.length).toBe(1)
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
   })
 
   it('processes new file on workspace.onDidChangeTextDocument', () => {
