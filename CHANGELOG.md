@@ -136,3 +136,7 @@
 ## 0.23.1
 
 - 🐛 [Fix warning in VS Code devtools when there is no known editor](https://github.com/nhoizey/vscode-gremlins/commit/5638ebbe73586432c59f172c1d233be80db5b8f7) (🙏 [Lukas Reinhart](https://github.com/LukasReinhart) for opening [the issue](https://github.com/nhoizey/vscode-gremlins/issues/129))
+
+## 0.24.0
+
+- 🚀 [Cache decoration types](https://github.com/nhoizey/vscode-gremlins/pull/138) (🙏 [Jon Senchyna](https://github.com/TheSench))
