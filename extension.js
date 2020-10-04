@@ -224,11 +224,8 @@ function checkForGremlins(
   const decorations = groupDecorationsByType(gremlins, decorationOption)
 
   for (const { decorationType, options } of Object.values(decorations)) {
-    activeTextEditor.setDecorations(
-        decorationType,
-        options
-    )
-}
+    activeTextEditor.setDecorations(decorationType, options)
+  }
 
   if (diagnosticCollection) {
     diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
@@ -239,18 +236,20 @@ function checkForGremlins(
 
 function groupDecorationsByType(gremlins, decorationOption) {
   return Object.entries(gremlins).reduce((obj, [char, gremlin]) => {
-      const decorationType = gremlin.decorationType,
-          options = decorationOption[char]
+    const decorationType = gremlin.decorationType,
+      options = decorationOption[char]
 
-      if (!obj.hasOwnProperty(decorationType.key)) {
-          obj[decorationType.key] = {
-              decorationType: decorationType,
-              options: options,
-          }
-      } else {
-          obj[decorationType.key].options = obj[decorationType.key].options.concat(options)
+    if (!obj.hasOwnProperty(decorationType.key)) {
+      obj[decorationType.key] = {
+        decorationType: decorationType,
+        options: options,
       }
-      return obj
+    } else {
+      obj[decorationType.key].options = obj[decorationType.key].options.concat(
+        options,
+      )
+    }
+    return obj
   }, {})
 }
 
