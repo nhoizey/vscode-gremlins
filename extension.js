@@ -20,7 +20,7 @@ const eventListeners = []
 
 let decorationTypes = {}
 
-const processedDocuments = {}
+let processedDocuments = {}
 
 let configuration = null
 
@@ -273,6 +273,7 @@ function activate(context) {
       (event) => {
         if (event.affectsConfiguration(GREMLINS)) {
           disposeDecorationTypes()
+          processedDocuments = {}
 
           configuration = loadConfiguration(context)
           vscode.window.visibleTextEditors.forEach((editor) =>
