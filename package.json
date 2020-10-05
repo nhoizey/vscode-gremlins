@@ -45,7 +45,7 @@
     }
   ],
   "engines": {
-    "vscode": "^1.30.0"
+    "vscode": "^1.49.0"
   },
   "categories": [
     "Linters"
