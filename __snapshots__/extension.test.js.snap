@@ -167,6 +167,31 @@ Array [
 ]
 `;
 
+exports[`lifecycle event handling re-paints gremlins for already-processed file on window.onDidChangeActiveTextEditor 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+]
+`;
+
 exports[`lifecycle registration registers with window.onDidChangeActiveTextEditor 1`] = `
 Array [
   Array [

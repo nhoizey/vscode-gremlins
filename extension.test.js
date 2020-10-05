@@ -9,7 +9,7 @@ const createMockDocument = (text = '') => {
       const lines = this.text.split('\n')
       return { text: lines[index] }
     },
-    uri: 'document' + incrementingUri++
+    uri: 'document' + incrementingUri++,
   }
 }
 
@@ -77,7 +77,7 @@ jest.mock(
         onDidChangeTextDocument: jest.fn(() => mockDisposable),
         onDidCloseTextDocument: jest.fn(() => mockDisposable),
         onDidChangeConfiguration: jest.fn(() => mockDisposable),
-        getConfiguration: jest.fn(key => {
+        getConfiguration: jest.fn((key) => {
           const packageData = require('./package.json')
           const characters =
             packageData.contributes.configuration.properties[
@@ -96,7 +96,7 @@ jest.mock(
         }),
       },
       languages: {
-        createDiagnosticCollection: jest.fn(key => ({
+        createDiagnosticCollection: jest.fn((key) => ({
           set: mockSetDiagnostics,
           delete: mockDeleteDiagnostics,
           clear: mockClearDiagnostics,
@@ -123,7 +123,7 @@ jest.mock(
 const mockVscode = require('vscode')
 const { activate, deactivate } = require('./extension')
 const context = {
-  asAbsolutePath: arg => arg,
+  asAbsolutePath: (arg) => arg,
 }
 
 beforeEach(() => {
@@ -345,7 +345,7 @@ describe('lifecycle registration', () => {
 describe('lifecycle event handling', () => {
   function getEventHandlers(object) {
     return Object.keys(object)
-      .filter(key => key.startsWith('on'))
+      .filter((key) => key.startsWith('on'))
       .reduce((handlers, nextKey) => {
         handlers[nextKey] = object[nextKey].mock.calls[0][0]
         return handlers
@@ -370,16 +370,26 @@ describe('lifecycle event handling', () => {
     }
 
     eventHandlers.window.onDidChangeActiveTextEditor(newMockEditor)
-    
+
     expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
   })
-  
+
   it('does NOT process already-processed file on window.onDidChangeActiveTextEditor', () => {
-    eventHandlers.window.onDidChangeActiveTextEditor(mockVscode.window.activeTextEditor)
-    
-    expect(mockSetDecorations.mock.calls.length).toBe(0)
+    eventHandlers.window.onDidChangeActiveTextEditor(
+      mockVscode.window.activeTextEditor,
+    )
+
     expect(mockSetDiagnostics.mock.calls.length).toBe(0)
+  })
+
+  it('re-paints gremlins for already-processed file on window.onDidChangeActiveTextEditor', () => {
+    eventHandlers.window.onDidChangeActiveTextEditor(
+      mockVscode.window.activeTextEditor,
+    )
+
+    expect(mockSetDecorations.mock.calls.length).toBe(1)
+    expect(mockSetDecorations.mock.calls).toMatchSnapshot()
   })
 
   it('processes new file on workspace.onDidChangeTextDocument', () => {
@@ -397,11 +407,11 @@ describe('lifecycle event handling', () => {
 
   it('processes visible text editors on workspace.onDidChangeConfiguration', () => {
     eventHandlers.workspace.onDidChangeConfiguration({
-      affectsConfiguration: jest.fn(arg => true),
+      affectsConfiguration: jest.fn((arg) => true),
     })
 
     expect(mockSetDecorations.mock.calls.length).toBe(0)
-    mockVscode.window.visibleTextEditors.forEach(editor => {
+    mockVscode.window.visibleTextEditors.forEach((editor) => {
       expect(editor.setDecorations.mock.calls).toMatchSnapshot()
     })
     expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
@@ -425,7 +435,7 @@ describe('deactivate', () => {
     const totalEvents = 4
 
     deactivate()
-    
+
     expect(mockDisposable.dispose.mock.calls.length).toBe(totalEvents)
   })
 

@@ -18,9 +18,9 @@ const GREMLINS_SEVERITIES = {
 
 const eventListeners = []
 
-const decorationTypes = {}
+let decorationTypes = {}
 
-const processedDocuments = {}
+let processedDocuments = {}
 
 let configuration = null
 
@@ -42,8 +42,8 @@ function configureDiagnosticsCollection(showDiagnostics) {
 function disposeDecorationTypes() {
   Object.entries(decorationTypes).forEach(([key, decorationType]) => {
     decorationType.dispose()
-    delete decorationTypes[key]
   })
+  decorationTypes = {}
 }
 
 function loadConfiguration(context) {
@@ -223,15 +223,13 @@ function checkForGremlins(
 
   const decorations = groupDecorationsByType(gremlins, decorationOption)
 
-  for (const { decorationType, options } of Object.values(decorations)) {
-    activeTextEditor.setDecorations(decorationType, options)
-  }
+  drawDecorations(activeTextEditor, decorations)
 
   if (diagnosticCollection) {
     diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
   }
 
-  processedDocuments[activeTextEditor.document.uri] = true
+  processedDocuments[activeTextEditor.document.uri] = { decorations }
 }
 
 function groupDecorationsByType(gremlins, decorationOption) {
@@ -253,6 +251,12 @@ function groupDecorationsByType(gremlins, decorationOption) {
   }, {})
 }
 
+function drawDecorations(activeTextEditor, decorations) {
+  for (const { decorationType, options } of Object.values(decorations)) {
+    activeTextEditor.setDecorations(decorationType, options)
+  }
+}
+
 function activate(context) {
   configuration = loadConfiguration(context)
 
@@ -269,6 +273,7 @@ function activate(context) {
       (event) => {
         if (event.affectsConfiguration(GREMLINS)) {
           disposeDecorationTypes()
+          processedDocuments = {}
 
           configuration = loadConfiguration(context)
           vscode.window.visibleTextEditors.forEach((editor) =>
@@ -284,8 +289,13 @@ function activate(context) {
   eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
       (editor) => {
-        if (editor && !processedDocuments[editor.document.uri]) {
-          doCheckForGremlins(editor)
+        if (editor) {
+          const processedDocument = processedDocuments[editor.document.uri]
+          if (!processedDocument) {
+            doCheckForGremlins(editor)
+          } else {
+            drawDecorations(editor, processedDocument.decorations)
+          }
         }
       },
       null,
