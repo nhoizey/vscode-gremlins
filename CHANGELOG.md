@@ -140,3 +140,4 @@
 ## 0.24.0
 
 - 🚀 [Cache decoration types](https://github.com/nhoizey/vscode-gremlins/pull/138) (🙏 [Jon Senchyna](https://github.com/TheSench))
+- 🐛 [Repaint decorations when switching back to tab](https://github.com/nhoizey/vscode-gremlins/pull/140) (🙏 [Jon Senchyna](https://github.com/TheSench))
