@@ -170,7 +170,13 @@
               "level": {
                 "type": "string",
                 "description": "Severity level associated with this character",
-                "enum": ["info", "warning", "error"]
+                "enum": ["none", "info", "warning", "error"],
+                "enumDescriptions": [
+                  "Do not mark - used to disable configuration from other scopes (e.g. defaults)",
+                  "Highlight using **info** color and log as **info** in problem pane",
+                  "Highlight using **warning** color and log as **warning** in problem pane",
+                  "Highlight using **error** color and log as **error** in problem pane"
+                ]
               },
               "hideGutterIcon" : {
                 "type": "boolean",
