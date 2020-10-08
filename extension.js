@@ -5,6 +5,7 @@ const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
 const GREMLINS = 'gremlins'
 
 const GREMLINS_LEVELS = {
+  NONE: 'none',
   INFO: 'info',
   WARNING: 'warning',
   ERROR: 'error',
@@ -99,6 +100,10 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
 
   const gremlins = {}
   for (const [hexCodePoint, config] of Object.entries(gremlinsCharacters)) {
+    if (config.level === GREMLINS_LEVELS.NONE) {
+      // Ignore gremlins marked as "none"
+      continue;
+    }
     let decorationType = {
       light: config.hideGutterIcon ? {} : lightIcon,
       dark: config.hideGutterIcon ? {} : darkIcon,
