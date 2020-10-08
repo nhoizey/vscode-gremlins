@@ -1,7 +1,5 @@
 var vscode = require('vscode')
 
-const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
-
 const GREMLINS = 'gremlins'
 
 const GREMLINS_LEVELS = {
@@ -16,6 +14,8 @@ const GREMLINS_SEVERITIES = {
   [GREMLINS_LEVELS.WARNING]: vscode.DiagnosticSeverity.Warning,
   [GREMLINS_LEVELS.ERROR]: vscode.DiagnosticSeverity.Error,
 }
+
+const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
 
 const eventListeners = []
 
@@ -100,10 +100,12 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
 
   const gremlins = {}
   for (const [hexCodePoint, config] of Object.entries(gremlinsCharacters)) {
-    if (config.level === GREMLINS_LEVELS.NONE) {
+    const severityLevel = (config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR)
+    if (severityLevel === GREMLINS_LEVELS.NONE) {
       // Ignore gremlins marked as "none"
       continue;
     }
+    
     let decorationType = {
       light: config.hideGutterIcon ? {} : lightIcon,
       dark: config.hideGutterIcon ? {} : darkIcon,
@@ -114,11 +116,9 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
     if (config.zeroWidth) {
       decorationType.borderWidth = '1px'
       decorationType.borderStyle = 'solid'
-      decorationType.borderColor =
-        gremlinsLevels[config.level] || gremlinsDefaultColor
+      decorationType.borderColor = gremlinsLevels[severityLevel]
     } else {
-      decorationType.backgroundColor =
-        gremlinsLevels[config.level] || gremlinsDefaultColor
+      decorationType.backgroundColor = gremlinsLevels[severityLevel]
     }
 
     let hexCodePointsRange = hexCodePoint.match(hexCodePointsRangeRegex)
