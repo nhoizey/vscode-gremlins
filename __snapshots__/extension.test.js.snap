@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`configuration level setting level to none prevents decoration from being displayed 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`configuration level setting level to none prevents decoration from being displayed 2`] = `Array []`;
+
+exports[`configuration level setting level to none prevents decoration from being displayed 3`] = `
+Array [
+  Array [
+    "document1",
+    Array [],
+  ],
+]
+`;
+
+exports[`configuration level setting level to none prevents decoration from being displayed 4`] = `
+Array [
+  Array [
+    "document1",
+    Array [],
+  ],
+  Array [
+    "document2",
+    Array [],
+  ],
+  Array [
+    "document3",
+    Array [],
+  ],
+]
+`;
+
 exports[`lifecycle event handling clears diagnostics on workspace.onDidCloseTextDocument 1`] = `undefined`;
 
 exports[`lifecycle event handling processes new file on window.onDidChangeActiveTextEditor 1`] = `

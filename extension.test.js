@@ -1,3 +1,5 @@
+const configDefinition = require('./package.json').contributes.configuration
+
 let incrementingUri = 1
 const createMockDocument = (text = '') => {
   return {
@@ -23,6 +25,8 @@ let mockDisposable = {
 let mockDecorationType = {
   dispose: jest.fn(),
 }
+
+let mockConfiguration = {}
 
 const mockSetDecorations = jest.fn()
 const mockSetDiagnostics = jest.fn()
@@ -77,23 +81,7 @@ jest.mock(
         onDidChangeTextDocument: jest.fn(() => mockDisposable),
         onDidCloseTextDocument: jest.fn(() => mockDisposable),
         onDidChangeConfiguration: jest.fn(() => mockDisposable),
-        getConfiguration: jest.fn((key) => {
-          const packageData = require('./package.json')
-          const characters =
-            packageData.contributes.configuration.properties[
-              'gremlins.characters'
-            ].default
-          const gutterIconSize =
-            packageData.contributes.configuration.properties[
-              'gremlins.gutterIconSize'
-            ].default
-          const showInProblemPane = true
-          return {
-            characters: characters,
-            gutterIconSize: gutterIconSize,
-            showInProblemPane: showInProblemPane,
-          }
-        }),
+        getConfiguration: jest.fn((key) => mockConfiguration),
       },
       languages: {
         createDiagnosticCollection: jest.fn((key) => ({
@@ -128,6 +116,16 @@ const context = {
 
 beforeEach(() => {
   jest.clearAllMocks()
+
+  const characters = configDefinition.properties['gremlins.characters'].default
+  const gutterIconSize = configDefinition.properties['gremlins.gutterIconSize'].default
+  const showInProblemPane = true
+
+  mockConfiguration = {
+    characters: characters,
+    gutterIconSize: gutterIconSize,
+    showInProblemPane: showInProblemPane,
+  }
 })
 
 afterEach(() => {
@@ -445,5 +443,41 @@ describe('deactivate', () => {
     expect(mockDecorationType.dispose.mock.calls.length).toBe(
       mockVscode.window.createTextEditorDecorationType.mock.calls.length,
     )
+  })
+})
+
+describe('configuration', () => {
+  describe('level', () => {
+    it('setting level to none prevents decoration from being displayed', () => {
+      // Default is to display decoration
+      mockDocument.text = 'zero width space \u200b'
+      activate(context)
+      expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+
+      // When overriding level to 'none'
+      mockSetDecorations.mockClear()
+      mockConfiguration.characters['200b'].level = 'none'
+      const configChangeHandler = mockVscode.workspace.onDidChangeConfiguration.mock.calls[0][0]
+      configChangeHandler({ affectsConfiguration: () => true})
+
+      // Decoration is no longer displayed
+      expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+    })
+    
+    it('setting level to none prevents decoration from being displayed', () => {
+      // Default is to create diagnostic
+      mockDocument.text = 'zero width space \u200b'
+      activate(context)
+      expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+
+      // When overriding level to 'none'
+      mockSetDecorations.mockClear()
+      mockConfiguration.characters['200b'].level = 'none'
+      const configChangeHandler = mockVscode.workspace.onDidChangeConfiguration.mock.calls[0][0]
+      configChangeHandler({ affectsConfiguration: () => true})
+
+      // Diagnostic is no longer created
+      expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+    })
   })
 })
