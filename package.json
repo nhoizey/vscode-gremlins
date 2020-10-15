@@ -155,8 +155,32 @@
               "level": "error"
             }
           },
-          "items": {
-            "type": "object"
+          "additionalProperties": {
+            "type": "object",
+            "required": ["level"],
+            "properties": {
+              "zeroWidth": {
+                "type": "boolean",
+                "description": "Whether this character is a zero-width character"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of this character"
+              },
+              "level": {
+                "type": "string",
+                "description": "Severity level associated with this character",
+                "enum": ["info", "warning", "error"]
+              },
+              "hideGutterIcon" : {
+                "type": "boolean",
+                "description": "If true, hides the gutter icon for this character"
+              },
+              "overviewRulerColor": {
+                "type": "boolean",
+                "description": "Color to use in the overview ruler (defaults to dark red)"
+              }
+            }
           },
           "minItems": 1,
           "uniqueItems": true
