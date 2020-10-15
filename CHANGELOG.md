@@ -141,3 +141,8 @@
 
 - 🚀 [Cache decoration types](https://github.com/nhoizey/vscode-gremlins/pull/138) (🙏 [Jon Senchyna](https://github.com/TheSench))
 - 🐛 [Repaint decorations when switching back to tab](https://github.com/nhoizey/vscode-gremlins/pull/140) (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.25.0
+
+- ✨ [Add `gremlins.characters` schema](https://github.com/nhoizey/vscode-gremlins/pull/141) makes it easier to configure the `gremlins.characters` setting by providing intellisense for the fields (🙏 [Jon Senchyna](https://github.com/TheSench))
+- ✨ [Add "none" level to ignore character defined in defaults](https://github.com/nhoizey/vscode-gremlins/pull/145) to allow a character to be marked as "not an issue" (🙏 [Jon Senchyna](https://github.com/TheSench))
