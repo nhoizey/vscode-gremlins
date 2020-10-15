@@ -209,7 +209,7 @@
   },
   "devDependencies": {
     "eslint": "^7.11.0",
-    "jest": "^26.5.2",
+    "jest": "^26.5.3",
     "prettier": "^2.1.2",
     "vscode-test": "^1.4.0",
     "@types/vscode": "^1.50.0"
