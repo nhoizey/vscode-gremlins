@@ -157,7 +157,9 @@
           },
           "additionalProperties": {
             "type": "object",
-            "required": ["level"],
+            "required": [
+              "level"
+            ],
             "properties": {
               "zeroWidth": {
                 "type": "boolean",
@@ -170,7 +172,12 @@
               "level": {
                 "type": "string",
                 "description": "Severity level associated with this character",
-                "enum": ["none", "info", "warning", "error"],
+                "enum": [
+                  "none",
+                  "info",
+                  "warning",
+                  "error"
+                ],
                 "enumDescriptions": [
                   "Do not mark - used to disable configuration from other scopes (e.g. defaults)",
                   "Highlight using **info** color and log as **info** in problem pane",
@@ -178,7 +185,7 @@
                   "Highlight using **error** color and log as **error** in problem pane"
                 ]
               },
-              "hideGutterIcon" : {
+              "hideGutterIcon": {
                 "type": "boolean",
                 "description": "If true, hides the gutter icon for this character"
               },
