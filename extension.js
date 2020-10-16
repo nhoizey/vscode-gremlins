@@ -23,8 +23,6 @@ let decorationTypes = {}
 
 let processedDocuments = {}
 
-let configuration = null
-
 const icons = {
   light : null,
   dark: null
@@ -66,8 +64,7 @@ function loadConfiguration() {
 
   const gremlins = gremlinsFromConfig(gremlinsConfiguration)
 
-  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS)
-    .showInProblemPane
+  const showDiagnostics = gremlinsConfiguration.showInProblemPane
   const diagnosticCollection = configureDiagnosticsCollection(showDiagnostics)
 
   let regexpWithAllChars = new RegExp(
@@ -77,19 +74,10 @@ function loadConfiguration() {
     'g',
   )
 
-  const dispose = () => {
-    if (diagnosticCollection) {
-      diagnosticCollection.clear()
-      diagnosticCollection.dispose()
-    }
-    disposeDecorationTypes()
-  }
-
   return {
     gremlins,
     regexpWithAllChars,
     diagnosticCollection,
-    dispose,
   }
 }
 
@@ -185,15 +173,14 @@ function charFromHex(hexCodePoint) {
  */
 function checkForGremlins(
   activeTextEditor,
-  gremlins,
-  regexpWithAllChars,
-  diagnosticCollection,
 ) {
   if (!activeTextEditor) {
     return
   }
 
   const doc = activeTextEditor.document
+
+  let { gremlins, regexpWithAllChars, diagnosticCollection } = loadConfiguration()
 
   const decorationOption = {}
   for (const char in gremlins) {
@@ -283,16 +270,6 @@ function drawDecorations(activeTextEditor, decorations) {
 function activate(context) {
   loadIcons(context)
 
-  configuration = loadConfiguration()
-
-  const doCheckForGremlins = (editor) =>
-    checkForGremlins(
-      editor,
-      configuration.gremlins,
-      configuration.regexpWithAllChars,
-      configuration.diagnosticCollection,
-    )
-
   eventListeners.push(
     vscode.workspace.onDidChangeConfiguration(
       (event) => {
@@ -300,9 +277,8 @@ function activate(context) {
           disposeDecorationTypes()
           processedDocuments = {}
 
-          configuration = loadConfiguration(context)
           vscode.window.visibleTextEditors.forEach((editor) =>
-            doCheckForGremlins(editor),
+            checkForGremlins(editor),
           )
         }
       },
@@ -317,7 +293,7 @@ function activate(context) {
         if (editor) {
           const processedDocument = processedDocuments[editor.document.uri]
           if (!processedDocument) {
-            doCheckForGremlins(editor)
+            checkForGremlins(editor)
           } else {
             drawDecorations(editor, processedDocument.decorations)
           }
@@ -330,7 +306,7 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      (_event) => doCheckForGremlins(vscode.window.activeTextEditor),
+      (_event) => checkForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     ),
@@ -347,13 +323,18 @@ function activate(context) {
     ),
   )
 
-  doCheckForGremlins(vscode.window.activeTextEditor)
+  checkForGremlins(vscode.window.activeTextEditor)
 }
 exports.activate = activate
 
 // this method is called when your extension is deactivated
 function deactivate() {
-  configuration.dispose()
+  if (diagnosticCollection) {
+    diagnosticCollection.clear()
+    diagnosticCollection.dispose()
+  }
+
+  disposeDecorationTypes()
 
   eventListeners.forEach((listener) => listener.dispose())
   eventListeners.length = 0
