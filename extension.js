@@ -59,8 +59,12 @@ function loadIcons(context) {
   icons.dark = context.asAbsolutePath('images/gremlins-dark.svg')
 }
 
-function loadConfiguration() {
-  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+/**
+ * 
+ * @param {vscode.TextDocument} document 
+ */
+function loadConfiguration(document) {
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS, document)
 
   const gremlins = gremlinsFromConfig(gremlinsConfiguration)
 
@@ -180,7 +184,7 @@ function checkForGremlins(
 
   const doc = activeTextEditor.document
 
-  let { gremlins, regexpWithAllChars, diagnosticCollection } = loadConfiguration()
+  let { gremlins, regexpWithAllChars, diagnosticCollection } = loadConfiguration(doc)
 
   const decorationOption = {}
   for (const char in gremlins) {
@@ -333,7 +337,7 @@ function deactivate() {
     diagnosticCollection.clear()
     diagnosticCollection.dispose()
   }
-
+  
   disposeDecorationTypes()
 
   eventListeners.forEach((listener) => listener.dispose())
