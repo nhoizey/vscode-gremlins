@@ -172,7 +172,8 @@
               },
               "level": {
                 "type": "string",
-                "description": "Severity level associated with this character",
+                "description": "Severity level associated with this character (default is error)",
+                "default": "error",
                 "enum": [
                   "none",
                   "info",
