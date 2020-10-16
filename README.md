@@ -29,7 +29,7 @@ You can configure the list of additional characters and how they are shown under
 
 As an example, the following snippet adds the "U+000C" FORM FEED character:
 
-```
+```jsonc
 "gremlins.characters": {
   "000c" : {
     "zeroWidth": true,
@@ -52,7 +52,7 @@ You can override the characters for a specific language by configuring them in t
 
 As an example, the following snippet adds the "U+000C" (form feed) character and disables the "U+00A0" (non-breaking space) character for markdown files:
 
-```
+```jsonc
 "[markdown]": {
   "gremlins.characters": {
     // Add the form feed character for markdown files
@@ -78,7 +78,7 @@ Still under user settings key `gremlins.characters`, you can add the `hideGutter
 
 For example, this removes the gremlin icon in the gutter for non breakable spaces:
 
-```
+```jsonc
 "gremlins.characters": {
   "00a0" : {
     "hideGutterIcon": true
