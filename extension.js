@@ -25,6 +25,11 @@ let processedDocuments = {}
 
 let configuration = null
 
+const icons = {
+  light : null,
+  dark: null
+}
+
 let diagnosticCollection = null
 
 function configureDiagnosticsCollection(showDiagnostics) {
@@ -47,10 +52,19 @@ function disposeDecorationTypes() {
   decorationTypes = {}
 }
 
-function loadConfiguration(context) {
+/**
+ * 
+ * @param {vscode.ExtensionContext} context 
+ */
+function loadIcons(context) {
+  icons.light = context.asAbsolutePath('images/gremlins-light.svg')
+  icons.dark = context.asAbsolutePath('images/gremlins-dark.svg')
+}
+
+function loadConfiguration() {
   const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
 
-  const gremlins = gremlinsFromConfig(gremlinsConfiguration, context)
+  const gremlins = gremlinsFromConfig(gremlinsConfiguration)
 
   const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS)
     .showInProblemPane
@@ -79,7 +93,7 @@ function loadConfiguration(context) {
   }
 }
 
-function gremlinsFromConfig(gremlinsConfiguration, context) {
+function gremlinsFromConfig(gremlinsConfiguration) {
   const gremlinsLevels = {
     [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
     [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
@@ -90,11 +104,11 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
   const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
   const lightIcon = {
-    gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+    gutterIconPath: icons.light,
     gutterIconSize: gutterIconSize,
   }
   const darkIcon = {
-    gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+    gutterIconPath: icons.dark,
     gutterIconSize: gutterIconSize,
   }
 
@@ -262,8 +276,14 @@ function drawDecorations(activeTextEditor, decorations) {
   }
 }
 
+/**
+ * 
+ * @param {vscode.ExtensionContext} context 
+ */
 function activate(context) {
-  configuration = loadConfiguration(context)
+  loadIcons(context)
+
+  configuration = loadConfiguration()
 
   const doCheckForGremlins = (editor) =>
     checkForGremlins(
