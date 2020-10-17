@@ -479,5 +479,21 @@ describe('configuration', () => {
       // Diagnostic is no longer created
       expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
     })
+    
+    it('setting `gremlins.disabled` to `true` prevents decoration from being displayed', () => {
+      // Default is to create diagnostic
+      mockDocument.text = 'zero width space \u200b'
+      activate(context)
+      expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+
+      // When overriding level to 'none'
+      mockSetDecorations.mockClear()
+      mockConfiguration.disabled = true
+      const configChangeHandler = mockVscode.workspace.onDidChangeConfiguration.mock.calls[0][0]
+      configChangeHandler({ affectsConfiguration: () => true})
+
+      // Diagnostic is no longer created
+      expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
+    })
   })
 })

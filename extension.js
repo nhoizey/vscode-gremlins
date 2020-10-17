@@ -88,6 +88,10 @@ function loadConfiguration(document) {
 }
 
 function gremlinsFromConfig(gremlinsConfiguration) {
+  if (gremlinsConfiguration.disabled) {
+    return {}
+  }
+
   const gremlinsLevels = {
     [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
     [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
@@ -187,6 +191,10 @@ function checkForGremlins(activeTextEditor) {
 
   let { gremlins, regexpWithAllChars, diagnosticCollection } =
     loadConfiguration(doc)
+
+  if (Object.keys(gremlins).length === 0) {
+    return
+  }
 
   const decorationOption = {}
   for (const char in gremlins) {
