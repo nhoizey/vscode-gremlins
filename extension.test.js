@@ -448,7 +448,7 @@ describe('deactivate', () => {
 
 describe('configuration', () => {
   describe('level', () => {
-    it('setting level to none prevents decoration from being displayed', () => {
+    it('when set to none prevents decoration from being displayed', () => {
       // Default is to display decoration
       mockDocument.text = 'zero width space \u200b'
       activate(context)
@@ -463,8 +463,8 @@ describe('configuration', () => {
       // Decoration is no longer displayed
       expect(mockSetDecorations.mock.calls).toMatchSnapshot()
     })
-    
-    it('setting level to none prevents decoration from being displayed', () => {
+
+    it('when set to none prevents diagnostic from being displayed', () => {
       // Default is to create diagnostic
       mockDocument.text = 'zero width space \u200b'
       activate(context)
@@ -479,8 +479,26 @@ describe('configuration', () => {
       // Diagnostic is no longer created
       expect(mockSetDiagnostics.mock.calls).toMatchSnapshot()
     })
+  })
+
+  describe('gremlins.disabled', () => {
+    it('when set to `true` prevents decoration from being displayed', () => {
+      // Default is to display decoration
+      mockDocument.text = 'zero width space \u200b'
+      activate(context)
+      expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+
+      // When overriding level to 'none'
+      mockSetDecorations.mockClear()
+      mockConfiguration.disabled = true
+      const configChangeHandler = mockVscode.workspace.onDidChangeConfiguration.mock.calls[0][0]
+      configChangeHandler({ affectsConfiguration: () => true})
+
+      // Decoration is no longer displayed
+      expect(mockSetDecorations.mock.calls).toMatchSnapshot()
+    })
     
-    it('setting `gremlins.disabled` to `true` prevents decoration from being displayed', () => {
+    it('when set to `true` prevents diagnostic from being displayed', () => {
       // Default is to create diagnostic
       mockDocument.text = 'zero width space \u200b'
       activate(context)

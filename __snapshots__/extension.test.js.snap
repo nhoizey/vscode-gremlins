@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`configuration level setting \`gremlins.disabled\` to \`true\` prevents decoration from being displayed 1`] = `
+exports[`configuration gremlins.disabled when set to \`true\` prevents decoration from being displayed 1`] = `
+Array [
+  Array [
+    Object {
+      "dispose": [MockFunction],
+    },
+    Array [],
+  ],
+]
+`;
+
+exports[`configuration gremlins.disabled when set to \`true\` prevents decoration from being displayed 2`] = `Array []`;
+
+exports[`configuration gremlins.disabled when set to \`true\` prevents diagnostic from being displayed 1`] = `
 Array [
   Array [
     "document1",
@@ -9,16 +22,24 @@ Array [
 ]
 `;
 
-exports[`configuration level setting \`gremlins.disabled\` to \`true\` prevents decoration from being displayed 2`] = `
+exports[`configuration gremlins.disabled when set to \`true\` prevents diagnostic from being displayed 2`] = `
 Array [
   Array [
     "document1",
     Array [],
   ],
+  Array [
+    "document2",
+    Array [],
+  ],
+  Array [
+    "document3",
+    Array [],
+  ],
 ]
 `;
 
-exports[`configuration level setting level to none prevents decoration from being displayed 1`] = `
+exports[`configuration level when set to none prevents decoration from being displayed 1`] = `
 Array [
   Array [
     Object {
@@ -43,9 +64,9 @@ Array [
 ]
 `;
 
-exports[`configuration level setting level to none prevents decoration from being displayed 2`] = `Array []`;
+exports[`configuration level when set to none prevents decoration from being displayed 2`] = `Array []`;
 
-exports[`configuration level setting level to none prevents decoration from being displayed 3`] = `
+exports[`configuration level when set to none prevents diagnostic from being displayed 1`] = `
 Array [
   Array [
     "document1",
@@ -54,7 +75,7 @@ Array [
 ]
 `;
 
-exports[`configuration level setting level to none prevents decoration from being displayed 4`] = `
+exports[`configuration level when set to none prevents diagnostic from being displayed 2`] = `
 Array [
   Array [
     "document1",
