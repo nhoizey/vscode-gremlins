@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`configuration level setting \`gremlins.disabled\` to \`true\` prevents decoration from being displayed 1`] = `
+Array [
+  Array [
+    "document1",
+    Array [],
+  ],
+]
+`;
+
+exports[`configuration level setting \`gremlins.disabled\` to \`true\` prevents decoration from being displayed 2`] = `
+Array [
+  Array [
+    "document1",
+    Array [],
+  ],
+]
+`;
+
 exports[`configuration level setting level to none prevents decoration from being displayed 1`] = `
 Array [
   Array [
