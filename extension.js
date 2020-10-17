@@ -193,6 +193,10 @@ function checkForGremlins(activeTextEditor) {
     loadConfiguration(doc)
 
   if (Object.keys(gremlins).length === 0) {
+    // Clear any diagnostics from previous runs (after config change)
+    if (diagnosticCollection) {
+      diagnosticCollection.set(activeTextEditor.document.uri, [])
+    }
     return
   }
 
