@@ -34,7 +34,6 @@ As an example, the following snippet adds the "U+000C" FORM FEED character:
   "000c" : {
     "zeroWidth": true,
     "description": "FORM FEED (FF)",
-    "backgroundColor": "rgba(255,127,80,.5)",
     "overviewRulerColor": "rgba(255,127,80,1)",
   }
 }
@@ -59,7 +58,6 @@ As an example, the following snippet adds the "U+000C" (form feed) character and
     "000c" : {
       "zeroWidth": true,
       "description": "FORM FEED (FF)",
-      "backgroundColor": "rgba(255,127,80,.5)",
       "overviewRulerColor": "rgba(255,127,80,1)",
     },
     // Ignore the non-breaking space character for markdown files
