@@ -146,3 +146,9 @@
 
 - ✨ [Add `gremlins.characters` schema](https://github.com/nhoizey/vscode-gremlins/pull/141) makes it easier to configure the `gremlins.characters` setting by providing intellisense for the fields (🙏 [Jon Senchyna](https://github.com/TheSench))
 - ✨ [Add "none" level to ignore character defined in defaults](https://github.com/nhoizey/vscode-gremlins/pull/145) to allow a character to be marked as "not an issue" (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.26.0
+
+- ✨ [Make `gremlins.characters` language-overridable](https://github.com/nhoizey/vscode-gremlins/pull/150) allows you to make some characters perfectly fine in Markdown files, but dangerous in JavaScript files (for example) (🙏 [Jon Senchyna](https://github.com/TheSench), again)
+
+Also, I'm really pleased to welcome [Jon Senchyna](https://github.com/TheSench) into the team of maintainers! 🎉
