@@ -25,16 +25,15 @@ You can also use the [“Unicode code point of current character” extension](h
 
 ## Adding new gremlins characters
 
-You can configure the list of additionnal characters and how they are shown under user settings key `gremlins.characters`.
+You can configure the list of additional characters and how they are shown under user settings key `gremlins.characters`.
 
 As an example, the following snippet adds the "U+000C" FORM FEED character:
 
-```
+```jsonc
 "gremlins.characters": {
   "000c" : {
     "zeroWidth": true,
     "description": "FORM FEED (FF)",
-    "backgroundColor": "rgba(255,127,80,.5)",
     "overviewRulerColor": "rgba(255,127,80,1)",
   }
 }
@@ -44,6 +43,31 @@ Please help enhance the extension by suggesting new default characters, through 
 
 You can find all characters in [Unicode Table](https://unicode-table.com/en/).
 
+## Language-specific gremlins characters
+
+You can override the characters for a specific language by configuring them in the `gremlins.characters` property of the language-specific settings key (e.g. `[markdown]` for Markdown files).
+
+> More information about language specific settings can be found in the [Language specific editor settings](https://code.visualstudio.com/docs/getstarted/settings#_language-specific-editor-settings) VSCode documentation page.
+
+As an example, the following snippet adds the "U+000C" (form feed) character and disables the "U+00A0" (non-breaking space) character for markdown files:
+
+```jsonc
+"[markdown]": {
+  "gremlins.characters": {
+    // Add the form feed character for markdown files
+    "000c" : {
+      "zeroWidth": true,
+      "description": "FORM FEED (FF)",
+      "level": "error",
+    },
+    // Ignore the non-breaking space character for markdown files
+    "00a0": {
+      "level": "none"
+    }
+  }
+}
+```
+
 ## Hiding the gremlin icon in the gutter for a character
 
 You can chose to hide the gremlin icon in the gutter for some characters.
@@ -52,7 +76,7 @@ Still under user settings key `gremlins.characters`, you can add the `hideGutter
 
 For example, this removes the gremlin icon in the gutter for non breakable spaces:
 
-```
+```jsonc
 "gremlins.characters": {
   "00a0" : {
     "hideGutterIcon": true
