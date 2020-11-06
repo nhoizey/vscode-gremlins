@@ -40,6 +40,7 @@ const mockClearDiagnostics = jest.fn()
 const mockDeleteDiagnostics = jest.fn()
 const mockDisposeDiagnostics = jest.fn()
 const mockRegisterCommand = jest.fn(() => mockDisposable)
+const mockRegisterCodeActionsProvider = jest.fn(() => mockDisposable)
 const mockEditDocument = jest.fn()
 
 /**
@@ -102,6 +103,7 @@ jest.mock(
           clear: mockClearDiagnostics,
           dispose: mockDisposeDiagnostics,
         })),
+        registerCodeActionsProvider: mockRegisterCodeActionsProvider,
       },
       OverviewRulerLane: { Right: 'OverviewRulerLane.Right' },
       Position: jest.fn((line, char) => {
