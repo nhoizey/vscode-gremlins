@@ -59,6 +59,9 @@ jest.mock(
   'vscode',
   () => {
     return {
+      commands: {
+        registerCommand: jest.fn(() => mockDisposable),
+      },
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
         createTextEditorDecorationType: jest.fn(() => mockDecorationType),
@@ -112,6 +115,7 @@ const mockVscode = require('vscode')
 const { activate, deactivate } = require('./extension')
 const context = {
   asAbsolutePath: (arg) => arg,
+  subscriptions: [],
 }
 
 beforeEach(() => {
@@ -126,6 +130,8 @@ beforeEach(() => {
     gutterIconSize: gutterIconSize,
     showInProblemPane: showInProblemPane,
   }
+
+  context.subscriptions.length = 0
 })
 
 afterEach(() => {

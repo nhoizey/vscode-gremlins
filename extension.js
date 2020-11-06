@@ -59,6 +59,21 @@ function loadIcons(context) {
 }
 
 /**
+ * 
+ * @param {vscode.ExtensionContext} context 
+ */
+function registerCommands(context) {
+  context.subscriptions.push(vscode.commands.registerCommand(
+    'gremlins.zap',
+    zapGremlins,
+  ));
+}
+
+function zapGremlins(level) {
+  console.log(`Zapping ${level} or greater!!!`);
+}
+
+/**
  *
  * @param {vscode.TextDocument} document
  */
@@ -287,6 +302,8 @@ function drawDecorations(activeTextEditor, decorations) {
  */
 function activate(context) {
   loadIcons(context)
+  
+  registerCommands(context)
 
   eventListeners.push(
     vscode.workspace.onDidChangeConfiguration(
