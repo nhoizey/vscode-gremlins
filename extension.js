@@ -114,18 +114,12 @@ function zapDiagnostic(document, diagnostic) {
     return
   }
 
-  const zapConfig = loadZapConfiguration(document)
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS, document)
+  
+  const gremlin = gremlinsFromConfig(gremlinsConfiguration)[diagnostic.code]
 
-  const selectedText = document.getText(diagnostic.range)
-
-  let withoutGremlins = zapConfig.reduce((text, nextZapRule) => {
-      return text.split(nextZapRule.regex).join(nextZapRule.replacement)
-    },
-    selectedText,
-  )
-
-  if (withoutGremlins !== selectedText) {
-    activeTextEditor.edit(editBuilder => editBuilder.replace(diagnostic.range, withoutGremlins))
+  if (gremlin) {
+    activeTextEditor.edit(editBuilder => editBuilder.replace(diagnostic.range, gremlin.replacement))
   }
 }
 
@@ -348,6 +342,7 @@ function checkForGremlins(activeTextEditor) {
           message: decoration.hoverMessage,
           severity: severity,
           source: DIAGNOSTIC_SOURCE,
+          code: matchedCharacter
         }
         diagnostics.push(diagnostic)
       }
