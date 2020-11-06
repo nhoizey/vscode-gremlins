@@ -75,6 +75,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -100,6 +101,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -160,6 +162,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -185,6 +188,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -245,6 +249,7 @@ Array [
     "document4",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -295,6 +300,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -413,6 +419,9 @@ Array [
       Object {
         "dispose": [MockFunction],
       },
+      Object {
+        "dispose": [MockFunction],
+      },
     ],
   ],
 ]
@@ -424,6 +433,9 @@ Array [
     [Function],
     null,
     Array [
+      Object {
+        "dispose": [MockFunction],
+      },
       Object {
         "dispose": [MockFunction],
       },
@@ -441,6 +453,9 @@ Array [
       Object {
         "dispose": [MockFunction],
       },
+      Object {
+        "dispose": [MockFunction],
+      },
     ],
   ],
 ]
@@ -452,6 +467,9 @@ Array [
     [Function],
     null,
     Array [
+      Object {
+        "dispose": [MockFunction],
+      },
       Object {
         "dispose": [MockFunction],
       },
@@ -511,6 +529,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "“",
         "message": "1 left double quotation mark (unicode U+201c) here",
         "range": Object {
           "left": Object {
@@ -626,6 +645,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "3 zero width spaces (unicode U+200b) here",
         "range": Object {
           "left": Object {
@@ -641,6 +661,7 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "code": "‌",
         "message": "3 zero width non-joiners (unicode U+200c) here",
         "range": Object {
           "left": Object {
@@ -656,6 +677,7 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "code": " ",
         "message": "3 paragraph separators (unicode U+2029) here",
         "range": Object {
           "left": Object {
@@ -671,6 +693,7 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "code": " ",
         "message": "3 non breaking spaces (unicode U+00a0) here",
         "range": Object {
           "left": Object {
@@ -686,6 +709,7 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "code": "“",
         "message": "3 left double quotation marks (unicode U+201c) here",
         "range": Object {
           "left": Object {
@@ -701,6 +725,7 @@ Array [
         "source": "Gremlins tracker",
       },
       Object {
+        "code": "”",
         "message": "3 right double quotation marks (unicode U+201d) here",
         "range": Object {
           "left": Object {
@@ -751,6 +776,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": " ",
         "message": "1 non breaking space (unicode U+00a0) here",
         "range": Object {
           "left": Object {
@@ -801,6 +827,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "￼",
         "message": "1 object replacement character (unicode U+fffc) here",
         "range": Object {
           "left": Object {
@@ -851,6 +878,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": " ",
         "message": "1 paragraph separator (unicode U+2029) here",
         "range": Object {
           "left": Object {
@@ -901,6 +929,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "”",
         "message": "1 right double quotation mark (unicode U+201d) here",
         "range": Object {
           "left": Object {
@@ -951,6 +980,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "­",
         "message": "1 soft hyphen (unicode U+00ad) here",
         "range": Object {
           "left": Object {
@@ -1001,6 +1031,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "‌",
         "message": "1 zero width non-joiner (unicode U+200c) here",
         "range": Object {
           "left": Object {
@@ -1051,6 +1082,7 @@ Array [
     "document1",
     Array [
       Object {
+        "code": "​",
         "message": "1 zero width space (unicode U+200b) here",
         "range": Object {
           "left": Object {
