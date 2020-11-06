@@ -17,7 +17,7 @@ Array [
       "left": "Position0",
       "right": "Position46",
     },
-    "zero width space ,left double quotation mark ",
+    "zero width space  ,left double quotation mark \\"",
   ],
 ]
 `;
@@ -37,7 +37,7 @@ Array [
       "left": "Position0",
       "right": "Position46",
     },
-    "zero width space ,left double quotation mark “",
+    "zero width space  ,left double quotation mark “",
   ],
 ]
 `;

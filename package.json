@@ -81,20 +81,24 @@
           "default": {
             "2013": {
               "description": "en dash",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "-"
             },
             "2018": {
               "description": "left single quotation mark",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "'"
             },
             "2019": {
               "description": "right single quotation mark",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "'"
             },
             "2029": {
               "zeroWidth": true,
               "description": "paragraph separator",
-              "level": "error"
+              "level": "error",
+              "replacement": "\r"
             },
             "2066": {
               "zeroWidth": true,
@@ -112,20 +116,24 @@
             },
             "000b": {
               "description": "line tabulation",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "\t"
             },
             "00a0": {
               "description": "non breaking space",
-              "level": "info"
+              "level": "info",
+              "replacement": " "
             },
             "00ad": {
               "description": "soft hyphen",
-              "level": "info"
+              "level": "info",
+              "replacement": "-"
             },
             "200b": {
               "zeroWidth": true,
               "description": "zero width space",
-              "level": "error"
+              "level": "error",
+              "replacement": " "
             },
             "200c": {
               "zeroWidth": true,
@@ -139,11 +147,13 @@
             },
             "201c": {
               "description": "left double quotation mark",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "\""
             },
             "201d": {
               "description": "right double quotation mark",
-              "level": "warning"
+              "level": "warning",
+              "replacement": "\""
             },
             "202c": {
               "zeroWidth": true,
