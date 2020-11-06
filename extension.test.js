@@ -4,6 +4,9 @@ let incrementingUri = 1
 const createMockDocument = (text = '') => {
   return {
     text: text,
+    getText() {
+      return this.text
+    },
     get lineCount() {
       return this.text.split('\n').length
     },
@@ -12,6 +15,9 @@ const createMockDocument = (text = '') => {
       return { text: lines[index] }
     },
     uri: 'document' + incrementingUri++,
+    positionAt(index) {
+      return `Position${index}`
+    }
   }
 }
 
@@ -33,6 +39,8 @@ const mockSetDiagnostics = jest.fn()
 const mockClearDiagnostics = jest.fn()
 const mockDeleteDiagnostics = jest.fn()
 const mockDisposeDiagnostics = jest.fn()
+const mockRegisterCommand = jest.fn(() => mockDisposable)
+const mockEditDocument = jest.fn()
 
 /**
  * Tag for use with template literals
@@ -60,7 +68,7 @@ jest.mock(
   () => {
     return {
       commands: {
-        registerCommand: jest.fn(() => mockDisposable),
+        registerCommand: mockRegisterCommand,
       },
       window: {
         onDidChangeActiveTextEditor: jest.fn(() => mockDisposable),
@@ -68,6 +76,7 @@ jest.mock(
         activeTextEditor: {
           document: mockDocument,
           setDecorations: mockSetDecorations,
+          edit: mockEditDocument,
         },
         visibleTextEditors: [
           {
