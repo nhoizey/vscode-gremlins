@@ -5,6 +5,14 @@ exports[`commands zap does nothing when disabled 1`] = `Array []`;
 exports[`commands zap replaces gremlins with configured replacement 1`] = `
 Array [
   Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`commands zap replaces gremlins with configured replacement 2`] = `
+Array [
+  Array [
     Object {
       "left": "Position0",
       "right": "Position46",
@@ -15,6 +23,14 @@ Array [
 `;
 
 exports[`commands zap skips gremlins with level of "none" 1`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`commands zap skips gremlins with level of "none" 2`] = `
 Array [
   Array [
     Object {

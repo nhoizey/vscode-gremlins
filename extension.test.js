@@ -553,6 +553,8 @@ describe('commands', () => {
 
       const zapCommand = getRegisteredCommand('gremlins.zap')
       zapCommand()
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
       const editFn = mockEditDocument.mock.calls[0][0]
       const mockEditbuilder = { replace: jest.fn() }
       editFn(mockEditbuilder)
@@ -567,6 +569,8 @@ describe('commands', () => {
 
       const zapCommand = getRegisteredCommand('gremlins.zap')
       zapCommand()
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
       const editFn = mockEditDocument.mock.calls[0][0]
       const mockEditbuilder = { replace: jest.fn() }
       editFn(mockEditbuilder)
