@@ -153,9 +153,9 @@ function loadZapConfiguration(document) {
     )
 
     return Object.entries(zapRuleGroups).map(([replacement, characters]) => {
-      const escapedChars = characters.map((char) => `\\${char}`).join('')
+      const escapedChars = characters.map((char) => `\\${char}`).join('|')
       return {
-        regex: new RegExp(`[${escapedChars}]`),
+        regex: new RegExp(escapedChars),
         replacement: replacement
       }
     })
