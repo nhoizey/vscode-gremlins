@@ -9,7 +9,7 @@ Array [
       "left": "Position0",
       "right": "Position46",
     },
-    "zero width space ​,left double quotation mark ",
+    "zero width space ,left double quotation mark ",
   ],
 ]
 `;
@@ -21,7 +21,7 @@ Array [
       "left": "Position0",
       "right": "Position46",
     },
-    "zero width space ​,left double quotation mark ",
+    "zero width space ,left double quotation mark “",
   ],
 ]
 `;
@@ -32,7 +32,21 @@ Array [
     Object {
       "dispose": [MockFunction],
     },
-    Array [],
+    Array [
+      Object {
+        "hoverMessage": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+      },
+    ],
   ],
 ]
 `;
@@ -43,7 +57,23 @@ exports[`configuration gremlins.disabled when set to \`true\` prevents diagnosti
 Array [
   Array [
     "document1",
-    Array [],
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
 ]
 `;
@@ -52,7 +82,23 @@ exports[`configuration gremlins.disabled when set to \`true\` prevents diagnosti
 Array [
   Array [
     "document1",
-    Array [],
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
   Array [
     "document2",
@@ -96,7 +142,23 @@ exports[`configuration level when set to none prevents diagnostic from being dis
 Array [
   Array [
     "document1",
-    Array [],
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
 ]
 `;
@@ -105,7 +167,23 @@ exports[`configuration level when set to none prevents diagnostic from being dis
 Array [
   Array [
     "document1",
-    Array [],
+    Array [
+      Object {
+        "message": "1 zero width space (unicode U+200b) here",
+        "range": Object {
+          "left": Object {
+            "char": 17,
+            "line": 0,
+          },
+          "right": Object {
+            "char": 18,
+            "line": 0,
+          },
+        },
+        "severity": "DiagnosticSeverity.Error",
+        "source": "Gremlins tracker",
+      },
+    ],
   ],
   Array [
     "document2",

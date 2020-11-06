@@ -127,11 +127,15 @@ const context = {
   subscriptions: [],
 }
 
+function simpleClone(obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
 beforeEach(() => {
   jest.clearAllMocks()
 
-  const characters = configDefinition.properties['gremlins.characters'].default
-  const gutterIconSize = configDefinition.properties['gremlins.gutterIconSize'].default
+  const characters = simpleClone(configDefinition.properties['gremlins.characters'].default)
+  const gutterIconSize = simpleClone(configDefinition.properties['gremlins.gutterIconSize'].default)
   const showInProblemPane = true
 
   mockConfiguration = {
@@ -559,7 +563,7 @@ describe('commands', () => {
     it('skips gremlins with level of "none"', () => {
       mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
       activate(context)
-      mockConfiguration.characters['200b'].level = 'none'
+      mockConfiguration.characters['201c'].level = 'none'
 
       const zapCommand = getRegisteredCommand('gremlins.zap')
       zapCommand()
