@@ -1,6 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`commands zap replaces gremlins with configured replacement 1`] = `Array []`;
+exports[`commands zap does nothing when disabled 1`] = `Array []`;
+
+exports[`commands zap replaces gremlins with configured replacement 1`] = `
+Array [
+  Array [
+    Object {
+      "left": "Position0",
+      "right": "Position46",
+    },
+    "zero width space ​,left double quotation mark ",
+  ],
+]
+`;
+
+exports[`commands zap skips gremlins with level of "none" 1`] = `
+Array [
+  Array [
+    Object {
+      "left": "Position0",
+      "right": "Position46",
+    },
+    "zero width space ​,left double quotation mark ",
+  ],
+]
+`;
 
 exports[`configuration gremlins.disabled when set to \`true\` prevents decoration from being displayed 1`] = `
 Array [

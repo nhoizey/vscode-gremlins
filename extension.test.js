@@ -544,10 +544,38 @@ describe('commands', () => {
 
   describe('zap', () => {
     it('replaces gremlins with configured replacement', () => {
-      mockDocument.text = 'zero width space \u200b'
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
       activate(context)
-      const zapCommand = getRegisteredCommand('gremlins.zap')
 
+      const zapCommand = getRegisteredCommand('gremlins.zap')
+      zapCommand()
+      const editFn = mockEditDocument.mock.calls[0][0]
+      const mockEditbuilder = { replace: jest.fn() }
+      editFn(mockEditbuilder)
+
+      expect(mockEditbuilder.replace.mock.calls).toMatchSnapshot()
+    })
+    
+    it('skips gremlins with level of "none"', () => {
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
+      activate(context)
+      mockConfiguration.characters['200b'].level = 'none'
+
+      const zapCommand = getRegisteredCommand('gremlins.zap')
+      zapCommand()
+      const editFn = mockEditDocument.mock.calls[0][0]
+      const mockEditbuilder = { replace: jest.fn() }
+      editFn(mockEditbuilder)
+
+      expect(mockEditbuilder.replace.mock.calls).toMatchSnapshot()
+    })
+    
+    it('does nothing when disabled', () => {
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
+      activate(context)
+      mockConfiguration.disabled = true
+
+      const zapCommand = getRegisteredCommand('gremlins.zap')
       zapCommand()
 
       expect(mockEditDocument.mock.calls).toMatchSnapshot()
