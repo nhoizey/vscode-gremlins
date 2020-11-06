@@ -3,6 +3,8 @@ var vscode = require('vscode')
 
 const GREMLINS = 'gremlins'
 
+const DIAGNOSTIC_SOURCE = 'Gremlins tracker'
+
 const GREMLINS_LEVELS = {
   NONE: 'none',
   INFO: 'info',
@@ -67,7 +69,12 @@ function registerCommands(context) {
   context.subscriptions.push(vscode.commands.registerCommand(
     'gremlins.zap',
     zapGremlins,
-  ));
+  ))
+  
+  context.subscriptions.push(vscode.commands.registerCommand(
+    'gremlins.zapDiagnostic',
+    zapDiagnostic,
+  ))
 }
 
 function zapGremlins(level) {
@@ -92,6 +99,33 @@ function zapGremlins(level) {
     )
 
     activeTextEditor.edit(editBuilder => editBuilder.replace(fullRange, withoutGremlins))
+  }
+}
+
+/**
+ * 
+ * @param {vscode.TextDocument} document 
+ * @param {vscode.Diagnostic} diagnostic 
+ */
+function zapDiagnostic(document, diagnostic) {
+  const activeTextEditor = vscode.window.activeTextEditor
+  const activeDocument = activeTextEditor.document
+  if (activeDocument !== document) {
+    return
+  }
+
+  const zapConfig = loadZapConfiguration(document)
+
+  const selectedText = document.getText(diagnostic.range)
+
+  let withoutGremlins = zapConfig.reduce((text, nextZapRule) => {
+      return text.split(nextZapRule.regex).join(nextZapRule.replacement)
+    },
+    selectedText,
+  )
+
+  if (withoutGremlins !== selectedText) {
+    activeTextEditor.edit(editBuilder => editBuilder.replace(diagnostic.range, withoutGremlins))
   }
 }
 
@@ -313,7 +347,7 @@ function checkForGremlins(activeTextEditor) {
           range: decoration.range,
           message: decoration.hoverMessage,
           severity: severity,
-          source: 'Gremlins tracker',
+          source: DIAGNOSTIC_SOURCE,
         }
         diagnostics.push(diagnostic)
       }
@@ -353,6 +387,22 @@ function drawDecorations(activeTextEditor, decorations) {
   for (const { decorationType, options } of Object.values(decorations)) {
     activeTextEditor.setDecorations(decorationType, options)
   }
+}
+
+// Implements CodeActionsProvider.provideCodeActions to provide information and fix rule violations
+function provideCodeActions(document, _range, codeActionContext, _token) {
+  const codeActions = [];
+  const diagnostics = codeActionContext.diagnostics || [];
+  diagnostics.filter(function filterDiagnostic(diagnostic) {
+      return diagnostic.source === DIAGNOSTIC_SOURCE;
+  }).forEach(function forDiagnostic(diagnostic) {
+      codeActions.push({
+          title: 'Zap',
+          command: 'gremlins.zapDiagnostic',
+          arguments: [ document, diagnostic ]
+      });
+  });
+  return codeActions;
 }
 
 /**
@@ -414,6 +464,18 @@ function activate(context) {
       },
       null,
       context.subscriptions,
+    ),
+  )
+
+  eventListeners.push(
+    vscode.languages.registerCodeActionsProvider(
+      [
+        { scheme: 'file' },
+        { scheme: 'untitled' }
+      ],
+      {
+        "provideCodeActions": provideCodeActions
+      },
     ),
   )
 

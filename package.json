@@ -248,6 +248,9 @@
           "dark": "images/gremlins-dark.svg"
         }
       }
+    ],
+    "codeActions": [
+      
     ]
   },
   "scripts": {
