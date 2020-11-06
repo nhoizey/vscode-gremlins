@@ -1,3 +1,4 @@
+const { doc } = require('prettier')
 var vscode = require('vscode')
 
 const GREMLINS = 'gremlins'
@@ -70,7 +71,28 @@ function registerCommands(context) {
 }
 
 function zapGremlins(level) {
-  console.log(`Zapping ${level} or greater!!!`);
+  const activeTextEditor = vscode.window.activeTextEditor
+
+  const document = activeTextEditor.document
+
+  const zapConfig = loadZapConfiguration(document)
+  
+  const fullText = document.getText()
+
+  const withoutGremlins = zapConfig.reduce((text, nextGremlin) => {
+      return text.split(nextGremlin.gremlin).join(nextGremlin.replacement)
+    },
+    fullText,
+  )
+
+  if (withoutGremlins !== fullText) {
+    const fullRange = new vscode.Range(
+        document.positionAt(0),
+        document.positionAt(fullText.length - 1)
+    )
+
+    activeTextEditor.edit(editBuilder =>  editBuilder.replace(fullRange, withoutGremlins))
+  }
 }
 
 /**
@@ -100,6 +122,27 @@ function loadConfiguration(document) {
     regexpWithAllChars,
     diagnosticCollection,
   }
+}
+
+/**
+ * 
+ * @param {vscode.TextDocument} document 
+ */
+function loadZapConfiguration(document) {
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS, document)
+  if (gremlinsConfiguration.disabled) {
+    return []
+  }
+
+  const gremlins = gremlinsFromConfig(gremlinsConfiguration)
+
+  return Object.entries(gremlins)
+    .map(([gremlin, config]) => ({
+      gremlin: gremlin,
+      replacement: config.replacement || '',
+      level: (config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR),
+    }))
+    .filter(gremlin => gremlin.level !== GREMLINS_LEVELS.NONE)
 }
 
 function gremlinsFromConfig(gremlinsConfiguration) {
