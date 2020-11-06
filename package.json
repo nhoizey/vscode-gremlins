@@ -227,7 +227,18 @@
           "scope": "language-overridable"
         }
       }
-    }
+    },
+    "commands": [
+      {
+        "command": "gremlins.zap",
+        "category": "",
+        "title": "Zap all Gremlins",
+        "icon": {
+          "light": "images/gremlins-light.svg",
+          "dark": "images/gremlins-dark.svg"
+        }
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint ./extension.js",
