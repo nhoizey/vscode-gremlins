@@ -91,7 +91,7 @@ function zapGremlins(level) {
         document.positionAt(fullText.length - 1)
     )
 
-    activeTextEditor.edit(editBuilder =>  editBuilder.replace(fullRange, withoutGremlins))
+    activeTextEditor.edit(editBuilder => editBuilder.replace(fullRange, withoutGremlins))
   }
 }
 
