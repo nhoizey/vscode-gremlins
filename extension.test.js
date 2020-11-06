@@ -530,3 +530,27 @@ describe('configuration', () => {
     })
   })
 })
+
+describe('commands', () => {
+  function getRegisteredCommand(name) {
+    const commands = mockRegisterCommand.mock.calls
+      .filter(call => call[0] === name)
+      .map(call => call[1])
+
+    expect(commands.length).toBe(1)
+
+    return commands[0]
+  }
+
+  describe('zap', () => {
+    it('replaces gremlins with configured replacement', () => {
+      mockDocument.text = 'zero width space \u200b'
+      activate(context)
+      const zapCommand = getRegisteredCommand('gremlins.zap')
+
+      zapCommand()
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
+    })
+  })
+})
