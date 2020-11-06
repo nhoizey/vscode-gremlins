@@ -451,7 +451,7 @@ describe('deactivate', () => {
   })
 
   it('disposes event handlers', () => {
-    const totalEvents = 4
+    const totalEvents = 5
 
     deactivate()
 
