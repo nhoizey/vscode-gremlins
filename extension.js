@@ -307,7 +307,7 @@ function checkForGremlins(activeTextEditor) {
   for (const char in gremlins) {
     decorationOption[char] = []
   }
-  /** vscode.Diagnostic[] */
+  /** @type vscode.Diagnostic[] */
   let diagnostics = []
 
   for (let lineNum = 0; lineNum < doc.lineCount; lineNum++) {
