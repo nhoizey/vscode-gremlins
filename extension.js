@@ -79,8 +79,8 @@ function zapGremlins(level) {
   
   const fullText = document.getText()
 
-  const withoutGremlins = zapConfig.reduce((text, nextGremlin) => {
-      return text.split(nextGremlin.gremlin).join(nextGremlin.replacement)
+  const withoutGremlins = zapConfig.reduce((text, nextZapRule) => {
+      return text.split(nextZapRule.regex).join(nextZapRule.replacement)
     },
     fullText,
   )
@@ -136,13 +136,29 @@ function loadZapConfiguration(document) {
 
   const gremlins = gremlinsFromConfig(gremlinsConfiguration)
 
-  return Object.entries(gremlins)
+  const zapRuleGroups = Object.entries(gremlins)
     .map(([gremlin, config]) => ({
-      gremlin: gremlin,
+      character: gremlin,
       replacement: config.replacement || '',
-      level: (config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR),
+      level: config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR,
     }))
-    .filter(gremlin => gremlin.level !== GREMLINS_LEVELS.NONE)
+    .filter((zapRule) => zapRule.level !== GREMLINS_LEVELS.NONE)
+    .reduce(
+      (zapRuleGroups, zapRule) => {
+        zapRuleGroups[zapRule.replacement] = zapRuleGroups[zapRule.replacement] || []
+        zapRuleGroups[zapRule.replacement].push(zapRule.character)
+        return zapRuleGroups
+      },
+      {},
+    )
+
+    return Object.entries(zapRuleGroups).map(([replacement, characters]) => {
+      const escapedChars = characters.map((char) => `\\${char}`).join('')
+      return {
+        regex: new RegExp(`[${escapedChars}]`),
+        replacement: replacement
+      }
+    })
 }
 
 function gremlinsFromConfig(gremlinsConfiguration) {
