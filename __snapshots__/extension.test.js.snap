@@ -22,7 +22,11 @@ Array [
 ]
 `;
 
-exports[`commands zapDiagnostic skips gremlins with level of "none" 1`] = `
+exports[`commands zapDiagnostic skips gremlins with level of "none" 1`] = `Array []`;
+
+exports[`commands zapDiagnosticMatches does nothing when disabled 1`] = `Array []`;
+
+exports[`commands zapDiagnosticMatches replaces all gremlins matching the selected one 1`] = `
 Array [
   Array [
     [Function],
@@ -30,17 +34,19 @@ Array [
 ]
 `;
 
-exports[`commands zapDiagnostic skips gremlins with level of "none" 2`] = `
+exports[`commands zapDiagnosticMatches replaces all gremlins matching the selected one 2`] = `
 Array [
   Array [
     Object {
-      "end": 18,
-      "start": 17,
+      "left": "Position0",
+      "right": "Position46",
     },
-    " ",
+    "zero width space  ,left double quotation mark  ",
   ],
 ]
 `;
+
+exports[`commands zapDiagnosticMatches skips gremlins with level of "none" 1`] = `Array []`;
 
 exports[`commands zapFile does nothing when disabled 1`] = `Array []`;
 

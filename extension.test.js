@@ -4,8 +4,12 @@ let incrementingUri = 1
 const createMockDocument = (text = '') => {
   return {
     text: text,
-    getText() {
-      return this.text
+    getText(range) {
+      if (range) {
+        return this.text.substring(range.start, range.end)
+      } else {
+        return this.text
+      }
     },
     get lineCount() {
       return this.text.split('\n').length
@@ -603,7 +607,7 @@ describe('commands', () => {
     }
 
     it('replaces gremlins with configured replacement', () => {
-      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
       activate(context)
 
       const zapCommand = getRegisteredCommand('gremlins.zapDiagnostic')
@@ -618,11 +622,43 @@ describe('commands', () => {
     })
     
     it('skips gremlins with level of "none"', () => {
-      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
       activate(context)
-      mockConfiguration.characters['201c'].level = 'none'
+      mockConfiguration.characters['200b'].level = 'none'
 
       const zapCommand = getRegisteredCommand('gremlins.zapDiagnostic')
+      zapCommand(mockDocument, mockDiagnostic('\u200b'))
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
+    })
+    
+    it('does nothing when disabled', () => {
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
+      activate(context)
+      mockConfiguration.disabled = true
+
+      const zapCommand = getRegisteredCommand('gremlins.zapDiagnostic')
+      zapCommand(mockDocument, mockDiagnostic('\u200b'))
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
+    })
+  })
+
+  describe('zapDiagnosticMatches', () => {
+    function mockDiagnostic(character) {
+      const charIndex = mockDocument.text.indexOf(character)
+      return {
+        range: { start: charIndex, end: charIndex+1},
+        message: 'Found a gremlin',
+        code: character
+      }
+    }
+
+    it('replaces all gremlins matching the selected one', () => {
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
+      activate(context)
+
+      const zapCommand = getRegisteredCommand('gremlins.zapDiagnosticMatches')
       zapCommand(mockDocument, mockDiagnostic('\u200b'))
 
       expect(mockEditDocument.mock.calls).toMatchSnapshot()
@@ -633,12 +669,23 @@ describe('commands', () => {
       expect(mockEditbuilder.replace.mock.calls).toMatchSnapshot()
     })
     
+    it('skips gremlins with level of "none"', () => {
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
+      activate(context)
+      mockConfiguration.characters['200b'].level = 'none'
+
+      const zapCommand = getRegisteredCommand('gremlins.zapDiagnosticMatches')
+      zapCommand(mockDocument, mockDiagnostic('\u200b'))
+
+      expect(mockEditDocument.mock.calls).toMatchSnapshot()
+    })
+    
     it('does nothing when disabled', () => {
-      mockDocument.text = 'zero width space \u200b,left double quotation mark \u201c'
+      mockDocument.text = 'zero width space \u200b,left double quotation mark \u200b'
       activate(context)
       mockConfiguration.disabled = true
 
-      const zapCommand = getRegisteredCommand('gremlins.zapDiagnostic')
+      const zapCommand = getRegisteredCommand('gremlins.zapDiagnosticMatches')
       zapCommand(mockDocument, mockDiagnostic('\u200b'))
 
       expect(mockEditDocument.mock.calls).toMatchSnapshot()
