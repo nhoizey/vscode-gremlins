@@ -67,7 +67,7 @@ function loadIcons(context) {
  */
 function registerCommands(context) {
   context.subscriptions.push(vscode.commands.registerCommand(
-    'gremlins.zap',
+    'gremlins.zapFile',
     zapGremlins,
   ))
   
@@ -75,14 +75,29 @@ function registerCommands(context) {
     'gremlins.zapDiagnostic',
     zapDiagnostic,
   ))
+  
+  context.subscriptions.push(vscode.commands.registerCommand(
+    'gremlins.zapDiagnosticMatches',
+    zapMatchingGremlins,
+  ))
 }
 
-function zapGremlins(level) {
+/**
+ * 
+ * @param {vscode.TextDocument} document 
+ * @param {vscode.Diagnostic} diagnostic 
+ */
+function zapMatchingGremlins(document, diagnostic) {
+  const gremlin = document.getText(diagnostic.range)
+  zapGremlins(gremlin)
+}
+
+function zapGremlins(specificGremlin) {
   const activeTextEditor = vscode.window.activeTextEditor
 
   const document = activeTextEditor.document
 
-  const zapConfig = loadZapConfiguration(document)
+  const zapConfig = loadZapConfiguration(document, specificGremlin)
   
   const fullText = document.getText()
 
@@ -156,7 +171,7 @@ function loadConfiguration(document) {
  * 
  * @param {vscode.TextDocument} document 
  */
-function loadZapConfiguration(document) {
+function loadZapConfiguration(document, specificGremlin) {
   const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS, document)
   if (gremlinsConfiguration.disabled) {
     return []
@@ -171,6 +186,7 @@ function loadZapConfiguration(document) {
       level: config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR,
     }))
     .filter((zapRule) => zapRule.level !== GREMLINS_LEVELS.NONE)
+    .filter((zapRule) => specificGremlin === undefined || zapRule.character === specificGremlin)
     .reduce(
       (zapRuleGroups, zapRule) => {
         zapRuleGroups[zapRule.replacement] = zapRuleGroups[zapRule.replacement] || []
@@ -384,16 +400,34 @@ function drawDecorations(activeTextEditor, decorations) {
   }
 }
 
-// Implements CodeActionsProvider.provideCodeActions to provide information and fix rule violations
+/**
+ * Implements CodeActionsProvider.provideCodeActions to provide information and fix rule violations
+ * 
+ * @param {*} document 
+ * @param {*} _range 
+ * @param {*} codeActionContext 
+ * @param {*} _token 
+ */
 function provideCodeActions(document, _range, codeActionContext, _token) {
   const codeActions = [];
   const diagnostics = codeActionContext.diagnostics || [];
   diagnostics.filter(function filterDiagnostic(diagnostic) {
       return diagnostic.source === DIAGNOSTIC_SOURCE;
   }).forEach(function forDiagnostic(diagnostic) {
-      codeActions.push({
+      codeActions.push(
+        {
           title: 'Zap',
-          command: 'gremlins.zapDiagnostic',
+          command: {
+            command: 'gremlins.zapDiagnostic',
+            arguments: [ document, diagnostic ]
+          },
+          diagnostics: [diagnostic],
+          isPreferred: true,
+          kind: vscode.CodeActionKind.QuickFix
+      });
+      codeActions.push({
+          title: 'Zap all occurrences',
+          command: 'gremlins.zapDiagnosticMatches',
           arguments: [ document, diagnostic ]
       });
   });

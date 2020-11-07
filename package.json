@@ -240,9 +240,9 @@
     },
     "commands": [
       {
-        "command": "gremlins.zap",
+        "command": "gremlins.zapFile",
         "category": "",
-        "title": "Zap all Gremlins",
+        "title": "Zap all gremlins in current file",
         "icon": {
           "light": "images/gremlins-light.svg",
           "dark": "images/gremlins-dark.svg"

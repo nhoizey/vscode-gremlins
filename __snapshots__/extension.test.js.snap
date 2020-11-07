@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`commands zap does nothing when disabled 1`] = `Array []`;
+exports[`commands zapDiagnostic does nothing when disabled 1`] = `Array []`;
 
-exports[`commands zap replaces gremlins with configured replacement 1`] = `
+exports[`commands zapDiagnostic replaces gremlins with configured replacement 1`] = `
 Array [
   Array [
     [Function],
@@ -10,7 +10,49 @@ Array [
 ]
 `;
 
-exports[`commands zap replaces gremlins with configured replacement 2`] = `
+exports[`commands zapDiagnostic replaces gremlins with configured replacement 2`] = `
+Array [
+  Array [
+    Object {
+      "end": 18,
+      "start": 17,
+    },
+    " ",
+  ],
+]
+`;
+
+exports[`commands zapDiagnostic skips gremlins with level of "none" 1`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`commands zapDiagnostic skips gremlins with level of "none" 2`] = `
+Array [
+  Array [
+    Object {
+      "end": 18,
+      "start": 17,
+    },
+    " ",
+  ],
+]
+`;
+
+exports[`commands zapFile does nothing when disabled 1`] = `Array []`;
+
+exports[`commands zapFile replaces gremlins with configured replacement 1`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`commands zapFile replaces gremlins with configured replacement 2`] = `
 Array [
   Array [
     Object {
@@ -22,7 +64,7 @@ Array [
 ]
 `;
 
-exports[`commands zap skips gremlins with level of "none" 1`] = `
+exports[`commands zapFile skips gremlins with level of "none" 1`] = `
 Array [
   Array [
     [Function],
@@ -30,7 +72,7 @@ Array [
 ]
 `;
 
-exports[`commands zap skips gremlins with level of "none" 2`] = `
+exports[`commands zapFile skips gremlins with level of "none" 2`] = `
 Array [
   Array [
     Object {
@@ -422,6 +464,9 @@ Array [
       Object {
         "dispose": [MockFunction],
       },
+      Object {
+        "dispose": [MockFunction],
+      },
     ],
   ],
 ]
@@ -433,6 +478,9 @@ Array [
     [Function],
     null,
     Array [
+      Object {
+        "dispose": [MockFunction],
+      },
       Object {
         "dispose": [MockFunction],
       },
@@ -456,6 +504,9 @@ Array [
       Object {
         "dispose": [MockFunction],
       },
+      Object {
+        "dispose": [MockFunction],
+      },
     ],
   ],
 ]
@@ -467,6 +518,9 @@ Array [
     [Function],
     null,
     Array [
+      Object {
+        "dispose": [MockFunction],
+      },
       Object {
         "dispose": [MockFunction],
       },
