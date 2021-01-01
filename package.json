@@ -227,6 +227,6 @@
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "vscode-test": "^1.4.1",
-    "@types/vscode": "^1.51.0"
+    "@types/vscode": "^1.52.0"
   }
 }
