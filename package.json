@@ -226,7 +226,7 @@
     "eslint": "^7.19.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "vscode-test": "^1.4.1",
+    "vscode-test": "^1.5.0",
     "@types/vscode": "^1.52.0"
   }
 }
