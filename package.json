@@ -1,7 +1,7 @@
 {
   "name": "gremlins",
   "displayName": "Gremlins tracker for Visual Studio Code",
-  "version": "0.23.1",
+  "version": "0.26.0",
   "publisher": "nhoizey",
   "author": {
     "name": "Nicolas Hoizey",
@@ -45,7 +45,7 @@
     }
   ],
   "engines": {
-    "vscode": "^1.30.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Linters"
@@ -77,6 +77,7 @@
         "gremlins.characters": {
           "type": "object",
           "description": "List of characters the extension should track",
+          "scope": "language-overridable",
           "default": {
             "2013": {
               "description": "en dash",
@@ -155,8 +156,46 @@
               "level": "error"
             }
           },
-          "items": {
-            "type": "object"
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "level"
+            ],
+            "properties": {
+              "zeroWidth": {
+                "type": "boolean",
+                "description": "Whether this character is a zero-width character"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of this character"
+              },
+              "level": {
+                "type": "string",
+                "description": "Severity level associated with this character (default is error)",
+                "default": "error",
+                "enum": [
+                  "none",
+                  "info",
+                  "warning",
+                  "error"
+                ],
+                "enumDescriptions": [
+                  "Do not mark - used to disable configuration from other scopes (e.g. defaults)",
+                  "Highlight using **info** color and log as **info** in problem pane",
+                  "Highlight using **warning** color and log as **warning** in problem pane",
+                  "Highlight using **error** color and log as **error** in problem pane"
+                ]
+              },
+              "hideGutterIcon": {
+                "type": "boolean",
+                "description": "If true, hides the gutter icon for this character"
+              },
+              "overviewRulerColor": {
+                "type": "boolean",
+                "description": "Color to use in the overview ruler (defaults to dark red)"
+              }
+            }
           },
           "minItems": 1,
           "uniqueItems": true
@@ -186,12 +225,12 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@types/vscode": "^1.49.0",
-    "eslint": "^7.10.0",
+    "eslint": "^7.21.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-prettier": "3.1.4",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.2",
-    "vscode-test": "^1.4.0"
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "vscode-test": "^1.5.1",
+    "@types/vscode": "^1.53.0"
   }
 }

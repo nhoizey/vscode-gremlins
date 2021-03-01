@@ -140,3 +140,15 @@
 ## 0.24.0
 
 - 🚀 [Cache decoration types](https://github.com/nhoizey/vscode-gremlins/pull/138) (🙏 [Jon Senchyna](https://github.com/TheSench))
+- 🐛 [Repaint decorations when switching back to tab](https://github.com/nhoizey/vscode-gremlins/pull/140) (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.25.0
+
+- ✨ [Add `gremlins.characters` schema](https://github.com/nhoizey/vscode-gremlins/pull/141) makes it easier to configure the `gremlins.characters` setting by providing intellisense for the fields (🙏 [Jon Senchyna](https://github.com/TheSench))
+- ✨ [Add "none" level to ignore character defined in defaults](https://github.com/nhoizey/vscode-gremlins/pull/145) to allow a character to be marked as "not an issue" (🙏 [Jon Senchyna](https://github.com/TheSench))
+
+## 0.26.0
+
+- ✨ [Make `gremlins.characters` language-overridable](https://github.com/nhoizey/vscode-gremlins/pull/150) allows you to make some characters perfectly fine in Markdown files, but dangerous in JavaScript files (for example) (🙏 [Jon Senchyna](https://github.com/TheSench), again)
+
+Also, I'm really pleased to welcome [Jon Senchyna](https://github.com/TheSench) into the team of maintainers! 🎉

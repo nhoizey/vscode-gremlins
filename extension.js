@@ -1,10 +1,9 @@
 var vscode = require('vscode')
 
-const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
-
 const GREMLINS = 'gremlins'
 
 const GREMLINS_LEVELS = {
+  NONE: 'none',
   INFO: 'info',
   WARNING: 'warning',
   ERROR: 'error',
@@ -16,13 +15,18 @@ const GREMLINS_SEVERITIES = {
   [GREMLINS_LEVELS.ERROR]: vscode.DiagnosticSeverity.Error,
 }
 
+const gremlinsDefaultColor = 'rgba(169, 68, 66, .75)'
+
 const eventListeners = []
 
-const decorationTypes = {}
+let decorationTypes = {}
 
-const processedDocuments = {}
+let processedDocuments = {}
 
-let configuration = null
+const icons = {
+  light : null,
+  dark: null
+}
 
 let diagnosticCollection = null
 
@@ -42,17 +46,29 @@ function configureDiagnosticsCollection(showDiagnostics) {
 function disposeDecorationTypes() {
   Object.entries(decorationTypes).forEach(([key, decorationType]) => {
     decorationType.dispose()
-    delete decorationTypes[key]
   })
+  decorationTypes = {}
 }
 
-function loadConfiguration(context) {
-  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS)
+/**
+ * 
+ * @param {vscode.ExtensionContext} context 
+ */
+function loadIcons(context) {
+  icons.light = context.asAbsolutePath('images/gremlins-light.svg')
+  icons.dark = context.asAbsolutePath('images/gremlins-dark.svg')
+}
 
-  const gremlins = gremlinsFromConfig(gremlinsConfiguration, context)
+/**
+ * 
+ * @param {vscode.TextDocument} document 
+ */
+function loadConfiguration(document) {
+  const gremlinsConfiguration = vscode.workspace.getConfiguration(GREMLINS, document)
 
-  const showDiagnostics = vscode.workspace.getConfiguration(GREMLINS)
-    .showInProblemPane
+  const gremlins = gremlinsFromConfig(gremlinsConfiguration)
+
+  const showDiagnostics = gremlinsConfiguration.showInProblemPane
   const diagnosticCollection = configureDiagnosticsCollection(showDiagnostics)
 
   let regexpWithAllChars = new RegExp(
@@ -62,23 +78,14 @@ function loadConfiguration(context) {
     'g',
   )
 
-  const dispose = () => {
-    if (diagnosticCollection) {
-      diagnosticCollection.clear()
-      diagnosticCollection.dispose()
-    }
-    disposeDecorationTypes()
-  }
-
   return {
     gremlins,
     regexpWithAllChars,
     diagnosticCollection,
-    dispose,
   }
 }
 
-function gremlinsFromConfig(gremlinsConfiguration, context) {
+function gremlinsFromConfig(gremlinsConfiguration) {
   const gremlinsLevels = {
     [GREMLINS_LEVELS.INFO]: gremlinsConfiguration.color_info,
     [GREMLINS_LEVELS.WARNING]: gremlinsConfiguration.color_warning,
@@ -89,16 +96,22 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
   const hexCodePointsRangeRegex = /^([0-9a-f]+)(?:-([0-9a-f]+))?$/i
 
   const lightIcon = {
-    gutterIconPath: context.asAbsolutePath('images/gremlins-light.svg'),
+    gutterIconPath: icons.light,
     gutterIconSize: gutterIconSize,
   }
   const darkIcon = {
-    gutterIconPath: context.asAbsolutePath('images/gremlins-dark.svg'),
+    gutterIconPath: icons.dark,
     gutterIconSize: gutterIconSize,
   }
 
   const gremlins = {}
   for (const [hexCodePoint, config] of Object.entries(gremlinsCharacters)) {
+    const severityLevel = (config.level ? config.level.toLowerCase() : GREMLINS_LEVELS.ERROR)
+    if (severityLevel === GREMLINS_LEVELS.NONE) {
+      // Ignore gremlins marked as "none"
+      continue;
+    }
+    
     let decorationType = {
       light: config.hideGutterIcon ? {} : lightIcon,
       dark: config.hideGutterIcon ? {} : darkIcon,
@@ -109,11 +122,9 @@ function gremlinsFromConfig(gremlinsConfiguration, context) {
     if (config.zeroWidth) {
       decorationType.borderWidth = '1px'
       decorationType.borderStyle = 'solid'
-      decorationType.borderColor =
-        gremlinsLevels[config.level] || gremlinsDefaultColor
+      decorationType.borderColor = gremlinsLevels[severityLevel]
     } else {
-      decorationType.backgroundColor =
-        gremlinsLevels[config.level] || gremlinsDefaultColor
+      decorationType.backgroundColor = gremlinsLevels[severityLevel]
     }
 
     let hexCodePointsRange = hexCodePoint.match(hexCodePointsRangeRegex)
@@ -166,15 +177,14 @@ function charFromHex(hexCodePoint) {
  */
 function checkForGremlins(
   activeTextEditor,
-  gremlins,
-  regexpWithAllChars,
-  diagnosticCollection,
 ) {
   if (!activeTextEditor) {
     return
   }
 
   const doc = activeTextEditor.document
+
+  let { gremlins, regexpWithAllChars, diagnosticCollection } = loadConfiguration(doc)
 
   const decorationOption = {}
   for (const char in gremlins) {
@@ -223,15 +233,13 @@ function checkForGremlins(
 
   const decorations = groupDecorationsByType(gremlins, decorationOption)
 
-  for (const { decorationType, options } of Object.values(decorations)) {
-    activeTextEditor.setDecorations(decorationType, options)
-  }
+  drawDecorations(activeTextEditor, decorations)
 
   if (diagnosticCollection) {
     diagnosticCollection.set(activeTextEditor.document.uri, diagnostics)
   }
 
-  processedDocuments[activeTextEditor.document.uri] = true
+  processedDocuments[activeTextEditor.document.uri] = { decorations }
 }
 
 function groupDecorationsByType(gremlins, decorationOption) {
@@ -253,26 +261,28 @@ function groupDecorationsByType(gremlins, decorationOption) {
   }, {})
 }
 
-function activate(context) {
-  configuration = loadConfiguration(context)
+function drawDecorations(activeTextEditor, decorations) {
+  for (const { decorationType, options } of Object.values(decorations)) {
+    activeTextEditor.setDecorations(decorationType, options)
+  }
+}
 
-  const doCheckForGremlins = (editor) =>
-    checkForGremlins(
-      editor,
-      configuration.gremlins,
-      configuration.regexpWithAllChars,
-      configuration.diagnosticCollection,
-    )
+/**
+ * 
+ * @param {vscode.ExtensionContext} context 
+ */
+function activate(context) {
+  loadIcons(context)
 
   eventListeners.push(
     vscode.workspace.onDidChangeConfiguration(
       (event) => {
         if (event.affectsConfiguration(GREMLINS)) {
           disposeDecorationTypes()
+          processedDocuments = {}
 
-          configuration = loadConfiguration(context)
           vscode.window.visibleTextEditors.forEach((editor) =>
-            doCheckForGremlins(editor),
+            checkForGremlins(editor),
           )
         }
       },
@@ -284,8 +294,13 @@ function activate(context) {
   eventListeners.push(
     vscode.window.onDidChangeActiveTextEditor(
       (editor) => {
-        if (editor && !processedDocuments[editor.document.uri]) {
-          doCheckForGremlins(editor)
+        if (editor) {
+          const processedDocument = processedDocuments[editor.document.uri]
+          if (!processedDocument) {
+            checkForGremlins(editor)
+          } else {
+            drawDecorations(editor, processedDocument.decorations)
+          }
         }
       },
       null,
@@ -295,7 +310,7 @@ function activate(context) {
 
   eventListeners.push(
     vscode.workspace.onDidChangeTextDocument(
-      (_event) => doCheckForGremlins(vscode.window.activeTextEditor),
+      (_event) => checkForGremlins(vscode.window.activeTextEditor),
       null,
       context.subscriptions,
     ),
@@ -312,13 +327,18 @@ function activate(context) {
     ),
   )
 
-  doCheckForGremlins(vscode.window.activeTextEditor)
+  checkForGremlins(vscode.window.activeTextEditor)
 }
 exports.activate = activate
 
 // this method is called when your extension is deactivated
 function deactivate() {
-  configuration.dispose()
+  if (diagnosticCollection) {
+    diagnosticCollection.clear()
+    diagnosticCollection.dispose()
+  }
+  
+  disposeDecorationTypes()
 
   eventListeners.forEach((listener) => listener.dispose())
   eventListeners.length = 0

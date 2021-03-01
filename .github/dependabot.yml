@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: 'daily'
-      time: '04:00'
+      interval: 'monthly'
     open-pull-requests-limit: 20
     # commit-message:
     #   prefix: '[skip ci]'
