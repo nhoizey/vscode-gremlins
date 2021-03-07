@@ -225,7 +225,7 @@
   },
   "scripts": {
     "lint": "eslint ./extension.js",
-    "lint:fix": "npm run lin -- --fix",
+    "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write '**/*{js,json}'",
     "test": "jest"
   },
