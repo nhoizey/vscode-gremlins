@@ -18,9 +18,9 @@ Responsibilities
 
 Unsure where to begin contributing to Gremlins?
 
-You can start by looking through these "[good first issue](issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue"+sort%3Areactions-%2B1-desc)" issues, which should only require a few lines of code, and a test or two. These issues are sorted by total number of reactions. While not perfect, number of reactions is a reasonable proxy for impact a given change will have.
+You can start by looking through these "[good starter issue](https://github.com/nhoizey/vscode-gremlins/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+starter+issue+%F0%9F%90%A3%22+sort%3Areactions-1-desc+)" issues, which should only require a few lines of code, and a test or two. These issues are sorted by total number of reactions. While not perfect, number of reactions is a reasonable proxy for impact a given change will have.
 
-Working on your first Pull Request? You can learn how from this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
+Working on your first Pull Request? You can learn how from this *free* series, [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
 
 At this point, you're ready to make your changes! Feel free to ask for help; everyone is a beginner at first :smile_cat:
 
