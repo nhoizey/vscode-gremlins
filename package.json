@@ -209,6 +209,12 @@
           "type": "boolean",
           "default": false,
           "description": "Show gremlins in the problem pane"
+        },
+        "gremlins.disabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable processing of all gremlins characters (used for disabling for files of a specific languages)",
+          "scope": "language-overridable"
         }
       }
     }
