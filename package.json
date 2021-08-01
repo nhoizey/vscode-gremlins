@@ -223,7 +223,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
+    "eslint": "^7.32.0",
     "jest": "^27.0.3",
     "prettier": "^2.2.1",
     "vscode-test": "^1.5.2",
