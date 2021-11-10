@@ -96,6 +96,16 @@
               "description": "paragraph separator",
               "level": "error"
             },
+            "2066": {
+              "zeroWidth": true,
+              "description": "Left to right",
+              "level": "error"
+            },
+            "2069": {
+              "zeroWidth": true,
+              "description": "Pop directional",
+              "level": "error"
+            },
             "0003": {
               "description": "end of text",
               "level": "warning"
