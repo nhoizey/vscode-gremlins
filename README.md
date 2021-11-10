@@ -88,6 +88,14 @@ Configure a rule like this:
 }
 ```
 
+To test this out, copy some of the [characters](https://unicode-table.com/en/blocks/latin-1-supplement/) or try the sample below.
+If you have the problems pane set to flag as errors, this should show up immediately with each character being identified as a problem.
+
+```text
+»
+×
+Ö
+```
 
 ## Hiding the gremlin icon in the gutter for a character
 
@@ -103,15 +111,6 @@ For example, this removes the gremlin icon in the gutter for non breakable space
     "hideGutterIcon": true
   }
 }
-```
-
-To test this out, copy some of the [characters](https://unicode-table.com/en/blocks/latin-1-supplement/) or try the sample below.
-If you have the problems pane set to flag as errors, this should show up immediately with each character being identified as a problem.
-
-```text
-»
-×
-Ö
 ```
 
 ## Displaying gremlins in the Problems pane
