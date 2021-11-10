@@ -96,6 +96,16 @@
               "description": "paragraph separator",
               "level": "error"
             },
+            "2066": {
+              "zeroWidth": true,
+              "description": "Left to right",
+              "level": "error"
+            },
+            "2069": {
+              "zeroWidth": true,
+              "description": "Pop directional",
+              "level": "error"
+            },
             "0003": {
               "description": "end of text",
               "level": "warning"
@@ -223,10 +233,10 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
-    "jest": "^27.0.3",
-    "prettier": "^2.2.1",
-    "vscode-test": "^1.5.2",
-    "@types/vscode": "^1.56.0"
+    "eslint": "^8.2.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "vscode-test": "^1.6.1",
+    "@types/vscode": "^1.62.0"
   }
 }
