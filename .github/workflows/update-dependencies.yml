@@ -1,0 +1,16 @@
+name: Update dependencies
+
+on:
+  schedule:
+    # https://crontab.guru/#0_8_*_*_1
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: update-dependencies
+  cancel-in-progress: true
+
+jobs:
+  update-dependencies:
+    uses: nhoizey/automations/.github/workflows/update-dependencies.yml@main
+    secrets: inherit
