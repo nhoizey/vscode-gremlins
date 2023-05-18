@@ -1,9 +1,9 @@
-[![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
-[![Travis](https://img.shields.io/travis/nhoizey/vscode-gremlins.svg)](https://travis-ci.org/nhoizey/vscode-gremlins)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
-
 # Gremlins tracker for Visual Studio Code
+
+[![GitHub package version](https://img.shields.io/github/package-json/v/nhoizey/vscode-gremlins.svg?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
+[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/nhoizey.gremlins.svg?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
+[![GitHub stars](https://img.shields.io/github/stars/nhoizey/vscode-gremlins.svg?style=for-the-badge&logo=github)](https://github.com/nhoizey/vscode-gremlins/stargazers)
+[![Follow @nhoizey@mamot.fr](https://img.shields.io/mastodon/follow/000262395?domain=https%3A%2F%2Fmamot.fr&style=for-the-badge&logo=mastodon&logoColor=white&color=6364FF)](https://mamot.fr/@nhoizey)
 
 This [Visual Studio Code](https://code.visualstudio.com/) extension reveals some characters that can be harmful because they are invisible or looking like legitimate ones.
 
@@ -67,6 +67,7 @@ As an example, the following snippet adds the "U+000C" (form feed) character and
   }
 }
 ```
+
 ## Specifying a Range of Invalid Characters
 
 You can give a range to flag multiple characters with a single rule.
