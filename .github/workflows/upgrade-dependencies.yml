@@ -1,4 +1,4 @@
-name: Update dependencies
+name: Upgrade dependencies
 
 on:
   schedule:
@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: update-dependencies
+  group: upgrade-dependencies
   cancel-in-progress: true
 
 jobs:
-  update-dependencies:
-    uses: nhoizey/automations/.github/workflows/update-dependencies.yml@main
+  upgrade-dependencies:
+    uses: nhoizey/upgrade-dependencies/.github/workflows/upgrade-dependencies.yml@main
     secrets: inherit
