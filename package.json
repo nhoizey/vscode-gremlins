@@ -235,7 +235,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
+    "@types/vscode": "^1.86.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
