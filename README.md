@@ -41,7 +41,7 @@ As an example, the following snippet adds the "U+000C" FORM FEED character:
 
 Please help enhance the extension by suggesting new default characters, through Pull Requests or Issues.
 
-You can find all characters in [Unicode Table](https://unicode-table.com/en/).
+You can find all characters in [Unicode Table](https://symbl.cc/en/).
 
 ## Language-specific gremlins characters
 
@@ -72,7 +72,7 @@ As an example, the following snippet adds the "U+000C" (form feed) character and
 
 You can give a range to flag multiple characters with a single rule.
 
-For example, if using macOS and the option key is set to a modifier, it's easy to accidentally include a [Latin-1 Supplemental Character](https://unicode-table.com/en/blocks/latin-1-supplement/) that can be difficult to notice in your code.
+For example, if using macOS and the option key is set to a modifier, it's easy to accidentally include a [Latin-1 Supplemental Character](https://symbl.cc/en/unicode/blocks/latin-1-supplement/) that can be difficult to notice in your code.
 
 To catch the entire range, the Latin-1-Supplement link provided shows a unicode range of: `0080—00FF`
 
@@ -89,7 +89,7 @@ Configure a rule like this:
 }
 ```
 
-To test this out, copy some of the [characters](https://unicode-table.com/en/blocks/latin-1-supplement/) or try the sample below.
+To test this out, copy some of the [characters](https://symbl.cc/en/unicode/blocks/latin-1-supplement/) or try the sample below.
 If you have the problems pane set to flag as errors, this should show up immediately with each character being identified as a problem.
 
 ```text
