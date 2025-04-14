@@ -45,7 +45,7 @@ You can find all characters in [Unicode Table](https://unicode-table.com/en/).
 
 ## Language-specific gremlins characters
 
-You can override the characters for a specific language by configuring them in the `gremlins.characters` property of the language-specific settings key (e.g. `[markdown]` for Markdown files).
+You can override the characters for a specific language by configuring them in the `gremlins.characters` property of the language-specific settings key (e.g. `[markdown]` for Markdown files).  To completely disable gremlins for a specific language, you can use the `gremlins.disabled` property.
 
 > More information about language specific settings can be found in the [Language specific editor settings](https://code.visualstudio.com/docs/getstarted/settings#_language-specific-editor-settings) VSCode documentation page.
 
@@ -65,6 +65,10 @@ As an example, the following snippet adds the "U+000C" (form feed) character and
       "level": "none"
     }
   }
+},
+// Do not show any gremlins in plaintext files
+"[plaintext]": {
+  "gremlins.disabled": true
 }
 ```
 
