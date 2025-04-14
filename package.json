@@ -79,6 +79,11 @@
           "description": "List of characters the extension should track",
           "scope": "language-overridable",
           "default": {
+            "0000": {
+              "zeroWidth": true,
+              "description": "null",
+              "level": "error"
+            },
             "2013": {
               "description": "en dash",
               "level": "warning"
